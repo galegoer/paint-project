@@ -5,8 +5,8 @@ Name: William Li
 Email: willl.li@mail.utoronto.ca
 
 Member 2:
-Name:
-Email:
+Name: Eric Galego
+Email: eric.galego@mail.utoronto.ca
 
 Member 3:
 Name:
