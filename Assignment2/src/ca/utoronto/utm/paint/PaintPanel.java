@@ -154,7 +154,6 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 				this.circle.setRadius(radius);
 				this.model.addCircle(this.circle);
 				this.circle = null;
-			System.out.println(this.model.getCircles().size());
 			}
 		}
 
