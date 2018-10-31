@@ -65,7 +65,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			int x = c.getCentre().getX();
 			int y = c.getCentre().getY();
 			int radius = c.getRadius();
-			g.strokeOval(x, y, radius, radius);
+			g.strokeOval(x-radius, y-radius, 2*radius, 2*radius);
 		}
 	}
 
@@ -144,7 +144,8 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		} else if (this.mode == "Circle") {
 			if (this.circle != null) {
 				// Problematic notion of radius and centre!!
-				int radius = Math.abs((int) this.circle.getCentre().getX() - (int) e.getX());
+				int radius = (int) Math.sqrt(Math.pow((int) this.circle.getCentre().getX() - (int) e.getX(), 2) + 
+						Math.pow((int) this.circle.getCentre().getY() - (int) e.getY(), 2));
 				this.circle.setRadius(radius);
 				this.model.addCircle(this.circle);
 				this.circle = null;
