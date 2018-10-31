@@ -23,6 +23,10 @@ public class PaintModel extends Observable {
 		this.setChanged();
 		this.notifyObservers();
 	}
+	
+	public void removeCircle(int i) {
+		this.circles.remove(i);
+	}
 
 	public ArrayList<Circle> getCircles() {
 		return circles;
