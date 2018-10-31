@@ -2,8 +2,21 @@
 # to the appropriate Sprint below, after the 
 # Sprint Planning Meeting.
 
-# Sprint 1 Dec 28, 2018
+# Sprint 1 Oct 28, 2018
 # Sprint 1 Backlog UserStories go below
+
+--------------------------------------------------------------------------
+TYPE     : USER STORY 1 : galegoer
+NAME     : Draw Circle
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+AS A     : user
+I WANT   : To click the center of the circle, drag, and release to specify
+           a circle to be drawn in the current style.
+SO THAT  : I can add circles to my canvas
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
 
 # Sprint 2 Nov 3, 2018
 # Sprint 2 Backlog UserStories go below

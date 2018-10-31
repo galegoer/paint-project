@@ -5,22 +5,22 @@
 # 2 Implementation of selected color into the drawing stream.
 
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1 : UTORID
+TYPE     : USER STORY 1 : galegoer
 NAME     : Draw Circle
 OWNER    : 
-PRIORITY :
-ESTIMATE : 
+PRIORITY : 
+ESTIMATE : 5 minutes
 AS A     : user
 I WANT   : To click the center of the circle, drag, and release to specify
            a circle to be drawn in the current style.
 SO THAT  : I can add circles to my canvas
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 2 : UTORID
+TYPE     : USER STORY 2 : liwill13
 NAME     : Draw Circle Feedback
 OWNER    : 
 PRIORITY :
-ESTIMATE : 
+ESTIMATE : 1 hour
 AS A     : user
 I WANT   : As a user is specifying a Circle, during the drag, a 'current'
            circle should be on display. As the user drags, the 'current'

@@ -107,7 +107,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		if (this.mode == "Squiggle") {
 
 		} else if (this.mode == "Circle") {
-
+			
 		}
 	}
 
@@ -115,7 +115,13 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		if (this.mode == "Squiggle") {
 			this.model.addPoint(new Point((int) e.getX(), (int) e.getY()));
 		} else if (this.mode == "Circle") {
-
+			//System.out.println("Dragged");
+			int radius = (int) Math.sqrt(Math.pow((int) this.circle.getCentre().getX() - (int) e.getX(), 2) + 
+						Math.pow((int) this.circle.getCentre().getY() - (int) e.getY(), 2));
+			this.circle.setRadius(radius);
+			//this.model.addCircle(this.circle);
+			
+			
 		}
 	}
 
@@ -149,6 +155,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 				this.circle.setRadius(radius);
 				this.model.addCircle(this.circle);
 				this.circle = null;
+			System.out.println(this.model.getCircles().size());
 			}
 		}
 
