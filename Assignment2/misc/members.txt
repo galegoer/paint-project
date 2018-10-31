@@ -9,8 +9,8 @@ Name: Eric Galego
 Email: eric.galego@mail.utoronto.ca
 
 Member 3:
-Name:
-Email:
+Name: Gurashish Arneja 
+Email: gurashish.arneja@mail.utoronto.ca
 
 Member 4:
 Name:
