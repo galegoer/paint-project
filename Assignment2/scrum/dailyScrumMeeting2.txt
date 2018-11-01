@@ -1,5 +1,5 @@
 # Fill in, commit and push each day.
-# Group Member: FILL THIS IN
+# Group Member: galegoer
 Oct 28, 2018
 	Yesterday :
 	Today     :
@@ -12,13 +12,13 @@ Oct 29, 2018
 
 Oct 30, 2018
 	Yesterday :
-	Today     :
+	Today     : Met up and divided the work
 	Obstacles :
 
 Oct 31, 2018
 	Yesterday :
-	Today     :
-	Obstacles :
+	Today     : Completed UserStory1, began UserStory4
+	Obstacles : Couldn't test UserStory4 as UserStory3 was not complete
 
 Nov 1, 2018
 	Yesterday :
