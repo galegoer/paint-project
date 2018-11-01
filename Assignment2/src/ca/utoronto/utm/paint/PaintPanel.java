@@ -121,6 +121,13 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			this.circle.setRadius(radius);
 			this.model.addCircle(this.circle);
 			this.model.removeCircle(this.model.getCircles().size()-1);
+		} else if (this.mode == "Rectangle") {
+			int diagonal = (int) Math.sqrt(Math.pow((int) this.circle.getCentre().getX() - (int) e.getX(), 2) + 
+					Math.pow((int) this.circle.getCentre().getY() - (int) e.getY(), 2));
+			this.rectangle.setLength(length);
+			this.model.addRectangle(this.rectangle);
+			this.model.removeRectangle(this.model.getRectangle().size()-1);
+			
 		}
 	}
 
@@ -140,6 +147,12 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			Point centre = new Point((int) e.getX(), (int) e.getY());
 			int radius = 0;
 			this.circle = new Circle(centre, radius);
+		} else if(this.mode == "Rectangle") {
+			Point corner = new Point((int) e.getX(), (int) e.getY());
+			int length = 0;
+			int height = 0;
+			this.rectangle = new Rectangle(corner, length, height);
+
 		}
 	}
 
@@ -154,6 +167,10 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 				this.circle.setRadius(radius);
 				this.model.addCircle(this.circle);
 				this.circle = null;
+			}
+		} else if (this.mode == "Rectangle") {
+			if(this.rectangle != null) {
+				int length = (int)
 			}
 		}
 
