@@ -16,9 +16,9 @@ Oct 30, 2018
 	Obstacles :
 
 Oct 31, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday : Assigned a few UserStorys to group members
+	Today     : Completed UserStory2 -Circle Feedback, fixed Bug11 associated with UserStory2
+	Obstacles : Encountered bug in UserStory2 where excess circles were not being removed
 
 Nov 1, 2018
 	Yesterday :
