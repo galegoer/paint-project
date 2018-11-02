@@ -55,7 +55,7 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 		}
 		
 		try {
-			Image image = new Image(new FileInputStream("./images/squiggle.png"));
+			Image image = new Image(new FileInputStream("images/squiggle.png"));
 			//Image image = new Image("C:\\Users\\William\\repo_a2_TheCentipedeBoys\\Assignment2\\images\\polyline.png");
 			ImageView imageView = new ImageView(image);
 			imageView.setFitHeight(20);
@@ -66,7 +66,7 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 			this.add(button5, 0, row);
 			
 			row++;
-			Image image2 = new Image(new FileInputStream("./images/polyline.png"));
+			Image image2 = new Image(new FileInputStream("images/polyline.png"));
 			ImageView imageView2 = new ImageView(image2);
 			imageView2.setFitHeight(20);
 			imageView2.setFitWidth(50);
