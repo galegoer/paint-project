@@ -28,7 +28,7 @@ public class ColorChooserPanel extends GridPane implements EventHandler<ActionEv
 	@Override
 	public void handle(ActionEvent event) {
 		String command = ((Button) event.getSource()).getText();
-		this.view.getPaintPanel().setMode(command);
+		this.view.getPaintPanel().setColor(command);
 		System.out.println(command);
 	}
 	
