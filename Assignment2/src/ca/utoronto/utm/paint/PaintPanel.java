@@ -33,6 +33,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 
 		this.addEventHandler(MouseEvent.ANY, this);
 
+		
 		//this.mode = "Circle"; // bad code here?
 		this.mode = "Rectangle";
 
@@ -181,25 +182,48 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		} else if (this.mode == "Rectangle"){
 
 			if (this.rectangle != null) {
-				// Ratio x and y is the ratio of width to height
-				int ratio_x = 21;
-				int ratio_y = 9;
-				// Diagnol of the rectangle
-				/**
+				int width = 0;
+				int height= 0;
+				//Point centre = new Point((int) e.getX(), (int) e.getY());
+				// Begin
 				int x1 = this.rectangle.getCentre().getX();
-				int x2 = (int) e.getX();
 				int y1 = this.rectangle.getCentre().getY();
+				// mouse release or end
+				int x2 = (int) e.getX();
 				int y2 = (int) e.getY();
-				int diagnol = (int)Math.sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2));
-				 **/
-				int diagnol = (int) Math.sqrt(Math.pow((int) this.rectangle.getCentre().getX() - (int) e.getX(), 2) + 
-						Math.pow((int) this.rectangle.getCentre().getY() - (int) e.getY(), 2)) ;
-				// formula for height using rectangle and ration 16:9 (diagnol*ratio_y)/(ratio_x^2 + ratio_y^2)^1/2) 
-				int height = (int)((diagnol*ratio_y)/Math.sqrt(Math.pow(ratio_x, 2)+Math.pow(ratio_y, 2)));
-				//System.out.println(height);
-				int width = (int)((int)(ratio_x/ratio_y)* height);
-				//System.out.println(width);
-
+				
+				// Scenerio 1
+				if (x2>x1 && y2>y1){
+					Point centre = new Point(x1,y1);
+					height = (int)Math.sqrt((x1-x1)*(x1-x1) + (y1-y2)*(y1-y2));
+					width = (int)Math.sqrt((x1-x2)*(x1-x2) + (y2-y2)*(y2-y2));
+					this.rectangle.setCentre(centre);	
+				}
+				//Scenerio 2 works perfectly
+				else if (x1>x2 && y2<y1){
+					Point centre = new Point(x2,y2);
+					height = (int)Math.sqrt((x2-x2)*(x2-x2) + (y2-y1)*(y2-y1));
+					width = (int)Math.sqrt((x1-x2)*(x1-x2) + (y1-y1)*(y1-y1));
+					this.rectangle.setCentre(centre);
+					
+				}
+				// Scenerio 3
+				else if (x1>x2 && y1<y2){
+					Point centre = new Point(x2,y1);
+					height = (int)Math.sqrt((x2-x2)*(x2-x2) + (y2-y1)*(y2-y1));
+					width = (int)Math.sqrt((x1-x2)*(x1-x2) + (y1-y1)*(y1-y1));
+					this.rectangle.setCentre(centre);
+					
+				}
+				// Scenrio 4
+				// condition (x1>x2 && y1>y2)
+				else if (x2>x1 && y2<y1){
+					Point centre = new Point(x1,y2);
+					height = (int)Math.sqrt((x1-x1)*(x1-x1) + (y1-y2)*(y1-y2));
+					width = (int)Math.sqrt((x2-x1)*(x2-x1) + (y2-y2)*(y2-y2));
+					this.rectangle.setCentre(centre);					
+				}
+				
 				this.rectangle.setWidth(width);
 				this.rectangle.setHeight(height);
 				this.model.addRectangle(this.rectangle);
