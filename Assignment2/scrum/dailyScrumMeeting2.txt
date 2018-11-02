@@ -21,9 +21,9 @@ Oct 31, 2018
 	Obstacles : Couldn't test UserStory4 as UserStory3 was not complete
 
 Nov 1, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday : Completed UserStory1, began UserStory4
+	Today     : Began work on UserStory6, met up with group helped with UserStory3
+	Obstacles : Thinking of new ways to organize models/modes
 
 Nov 2, 2018
 	Yesterday :
