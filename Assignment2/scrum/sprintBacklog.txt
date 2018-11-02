@@ -82,7 +82,14 @@ I WANT   : To be able to select the current drawing style (filled or outline), t
            	two outlined rectangles and a squiggle
 SO THAT  : 
 --------------------------------------------------------------------------
-
+--------------------------------------------------------------------------
+TYPE     : BUG 1 : liwill13
+NAME     : Icons instead of text for drawing mode selection
+OWNER    : 
+PRIORITY :
+ESTIMATE : 8 hours
+ISSUE    : Would be nice to have icons instead of "Circle", "Rectangle", ...
+--------------------------------------------------------------------------
 # Sprint 2 Nov 3, 2018
 # Sprint 2 Backlog UserStories go below
 
