@@ -17,10 +17,12 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 	private PaintModel model; // slight departure from MVC, because of the way painting works
 	private View view; // So we can talk to our parent or other components of the view
 
-	private String mode; // modifies how we interpret input (could be better?)
+	private ArrayList<String> modes = new ArrayList<String>(); // modifies how we interpret input (could be better?)
 	private Circle circle; // the circle we are building
 
 	private Canvas canvas;
+	
+	private String style;
 
 	public PaintPanel(PaintModel model, View view) {
 
@@ -32,12 +34,15 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 
 		this.addEventHandler(MouseEvent.ANY, this);
 
-		this.mode = "Circle"; // bad code here?
+		this.modes.add(0, ""); // CHANGED MIGHT BE BAD CODE STILL??
+		this.modes.add(1, "Outline");
 
 		this.model = model;
 		this.model.addObserver(this);
 
 		this.view = view;
+		
+		this.style = "";
 	}
 
 	public void repaint() {
@@ -77,10 +82,11 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 	}
 
 	/**
-	 * Controller aspect of this
+	 * CHANGED THIS Now referes to index as first input
+	 * and mode you want as second
 	 */
-	public void setMode(String mode) {
-		this.mode = mode;
+	public void setMode(int index, String mode) {
+		this.modes.set(index, mode);
 	}
 
 	@Override
@@ -104,18 +110,17 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 	}
 
 	private void mouseMoved(MouseEvent e) {
-		if (this.mode == "Squiggle") {
+		if (modes.get(0) == "Squiggle") {
 
-		} else if (this.mode == "Circle") {
+		} else if (modes.get(0) == "Circle") {
 			
 		}
 	}
 
 	private void mouseDragged(MouseEvent e) {
-		if (this.mode == "Squiggle") {
+		if (this.modes.get(0) == "Squiggle") {
 			this.model.addPoint(new Point((int) e.getX(), (int) e.getY()));
-		} else if (this.mode == "Circle") {
-			//System.out.println("Dragged");
+		} else if (this.modes.get(0) == "Circle") {
 			int radius = (int) Math.sqrt(Math.pow((int) this.circle.getCentre().getX() - (int) e.getX(), 2) + 
 						Math.pow((int) this.circle.getCentre().getY() - (int) e.getY(), 2));
 			this.circle.setRadius(radius);
@@ -125,18 +130,21 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 	}
 
 	private void mouseClicked(MouseEvent e) {
-		if (this.mode == "Squiggle") {
+		if (this.modes.get(0) == "Squiggle") {
 
-		} else if (this.mode == "Circle") {
+		} else if (this.modes.get(0) == "Circle") {
 
 		}
 	}
 
 	private void mousePressed(MouseEvent e) {
-		if (this.mode == "Squiggle") {
+		if (this.modes.get(0) == "Squiggle") {
 
-		} else if (this.mode == "Circle") {
+		} else if (this.modes.get(0) == "Circle") {
 			// Problematic notion of radius and centre!!
+			if(this.modes.get(1) == "Fill") {
+				this.style = "Fill";
+			}
 			Point centre = new Point((int) e.getX(), (int) e.getY());
 			int radius = 0;
 			this.circle = new Circle(centre, radius);
@@ -144,9 +152,9 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 	}
 
 	private void mouseReleased(MouseEvent e) {
-		if (this.mode == "Squiggle") {
+		if (this.modes.get(0) == "Squiggle") {
 
-		} else if (this.mode == "Circle") {
+		} else if (this.modes.get(0) == "Circle") {
 			if (this.circle != null) {
 				// Problematic notion of radius and centre!!
 				int radius = (int) Math.sqrt(Math.pow((int) this.circle.getCentre().getX() - (int) e.getX(), 2) + 
@@ -160,17 +168,17 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 	}
 
 	private void mouseEntered(MouseEvent e) {
-		if (this.mode == "Squiggle") {
+		if (this.modes.get(0) == "Squiggle") {
 
-		} else if (this.mode == "Circle") {
+		} else if (this.modes.get(0) == "Circle") {
 
 		}
 	}
 
 	private void mouseExited(MouseEvent e) {
-		if (this.mode == "Squiggle") {
+		if (this.modes.get(0) == "Squiggle") {
 
-		} else if (this.mode == "Circle") {
+		} else if (this.modes.get(0) == "Circle") {
 
 		}
 	}

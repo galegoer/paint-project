@@ -13,7 +13,7 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 
 		this.view = view;
 
-		String[] buttonLabels = { "Circle", "Rectangle", "Square", "Squiggle", "Polyline" };
+		String[] buttonLabels = { "Circle", "Rectangle", "Square", "Squiggle", "Polyline"};
 
 		int row = 0;
 		for (String label : buttonLabels) {
@@ -28,7 +28,7 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 	@Override
 	public void handle(ActionEvent event) {
 		String command = ((Button) event.getSource()).getText();
-		this.view.getPaintPanel().setMode(command);
+		this.view.getPaintPanel().setMode(0, command);
 		System.out.println(command);
 	}
 }
