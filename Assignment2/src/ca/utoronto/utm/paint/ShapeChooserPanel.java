@@ -57,7 +57,7 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 		}
 		
 		System.out.println(new File(".").getAbsolutePath());
-		FileInputStream inputstream = new FileInputStream("C:\\Users\\William\\repo_a2_TheCentipedeBoys\\Assignment2\\images\\squiggle.png");
+		//FileInputStream inputstream = new FileInputStream("C:\\Users\\William\\repo_a2_TheCentipedeBoys\\Assignment2\\images\\squiggle.png");
 		//Image image = new Image("images/squiggle.png", 50, 50, true, true);
 		//ImageView i = new ImageView(image);
 		//i.setX(100);
