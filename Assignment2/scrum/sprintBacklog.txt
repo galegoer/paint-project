@@ -41,6 +41,12 @@ I WANT   : As a user is specifying a Circle, during the drag, a 'current'
 SO THAT  : I can see the circle I am about to build on release of the mouse
            button.
 --------------------------------------------------------------------------
+TYPE     : BUG 1 : liwill13
+NAME     : Icons instead of text for drawing mode selection
+OWNER    : 
+PRIORITY :
+ESTIMATE : 4 hours
+ISSUE    : Would be nice to have icons instead of "Circle", "Rectangle", ...
 --------------------------------------------------------------------------
 
 # Sprint 2 Nov 3, 2018
