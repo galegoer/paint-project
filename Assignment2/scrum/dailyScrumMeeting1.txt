@@ -1,5 +1,5 @@
 # Fill in, commit and push each day.
-# Group Member: FILL THIS IN
+# Group Member: William Li
 Oct 28, 2018
 	Yesterday :
 	Today     :Formed a group
@@ -21,9 +21,9 @@ Oct 31, 2018
 	Obstacles : Encountered bug in UserStory2 where excess circles were not being removed
 
 Nov 1, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday : Completed Userstory 2
+	Today     : Worked on Bug1, have circle, square and rectangle icons working
+	Obstacles : Having trouble locating an image stored within a folder, cannot finish Bug1 without fixing this issue!
 
 Nov 2, 2018
 	Yesterday :
