@@ -19,7 +19,7 @@ import javafx.scene.shape.SVGPath;
 public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEvent> {
 
 	private View view; // So we can talk to our parent or other components of the view
-
+	
 	public ShapeChooserPanel(View view) {
 
 		this.view = view;
@@ -28,8 +28,6 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 		//Point p = new Point(100,100);
 		
 		Circle c = new Circle();
-		//c.setCenterX(100.0f);
-		//c.setCenterY(100.0f);
 		c.setRadius(10.0f);
 		
 		Rectangle r = new Rectangle();
@@ -56,17 +54,43 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 			button.setOnAction(this);
 		}
 		
-		System.out.println(new File(".").getAbsolutePath());
-		//FileInputStream inputstream = new FileInputStream("C:\\Users\\William\\repo_a2_TheCentipedeBoys\\Assignment2\\images\\squiggle.png");
-		//Image image = new Image("images/squiggle.png", 50, 50, true, true);
-		//ImageView i = new ImageView(image);
-		//i.setX(100);
+		try {
+			Image image = new Image(new FileInputStream("C:\\Users\\William\\repo_a2_TheCentipedeBoys\\Assignment2\\squiggle.png"));
+			ImageView imageView = new ImageView(image);
+			imageView.setFitHeight(20);
+			imageView.setFitWidth(50);
+			Button button5 = new Button();
+			button5.setGraphic(imageView);
+			button5.setMinWidth(100);
+			this.add(button5, 0, row);
+			
+			row++;
+			Image image2 = new Image(new FileInputStream("C:\\Users\\William\\repo_a2_TheCentipedeBoys\\Assignment2\\polyline.png"));
+			ImageView imageView2 = new ImageView(image2);
+			imageView2.setFitHeight(20);
+			imageView2.setFitWidth(50);
+			Button button6 = new Button();
+			button6.setGraphic(imageView2);
+			button6.setMinWidth(100);
+			this.add(button6, 0, row);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//File a = new File("");
+		//System.out.println("abc");
+		//System.out.println(a.getAbsolutePath());
+		//FileInputStream inputstream = new FileInputStream(); 
+		//Image image = new Image(inputstream); 
+		//i.setX(100);	
 		//i.setY(100);
 
-		//Button button = new Button();
-//		button.setGraphic(new ImageView(image));
-//		button.setMinWidth(100);
-//		this.add(button, 0, row);
+//		Image imageDecline = new Image(getClass().getResourceAsStream("squiggle.png"));
+		//Button button5 = new Button();
+		///button5.setGraphic(imageView);
+		//button5.setMinWidth(100);
+		//this.add(button5, 0, row);
 	}
 
 	@Override
