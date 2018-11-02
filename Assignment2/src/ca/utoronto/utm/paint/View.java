@@ -13,9 +13,12 @@ import javafx.stage.Stage;
 public class View implements EventHandler<ActionEvent> {
 
 	private PaintModel model;
-
+	
 	private PaintPanel paintPanel;
 	private ShapeChooserPanel shapeChooserPanel;
+	
+	//ColorChooserPanel
+	private ColorChooserPanel colorChooserPanel;
 
 	public View(PaintModel model, Stage stage) {
 
@@ -28,10 +31,13 @@ public class View implements EventHandler<ActionEvent> {
 		this.paintPanel = new PaintPanel(this.model, this);
 		this.shapeChooserPanel = new ShapeChooserPanel(this);
 
+		this.colorChooserPanel = new ColorChooserPanel(this);
+		
 		BorderPane root = new BorderPane();
 		root.setTop(createMenuBar());
 		root.setCenter(this.paintPanel);
 		root.setLeft(this.shapeChooserPanel);
+		root.setRight(this.colorChooserPanel);
 
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
@@ -45,6 +51,10 @@ public class View implements EventHandler<ActionEvent> {
 
 	public ShapeChooserPanel getShapeChooserPanel() {
 		return shapeChooserPanel;
+	}
+	
+	public ColorChooserPanel getColorchooserPanel() {
+		return colorChooserPanel;
 	}
 
 	private MenuBar createMenuBar() {

@@ -20,6 +20,8 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 	private String mode; // modifies how we interpret input (could be better?)
 	private Circle circle; // the circle we are building
 
+	private String color;
+	
 	private Canvas canvas;
 
 	public PaintPanel(PaintModel model, View view) {
@@ -46,8 +48,16 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 
 		// Clear the canvas
 		g.clearRect(0, 0, this.getWidth(), this.getHeight());
-
-		g.setStroke(Color.WHITE);
+		
+		if (this.color == "Red") {
+			g.setStroke(Color.RED);
+		}
+		else if (this.color == "Green"){
+			g.setStroke(Color.GREEN);
+		}
+		else {
+			g.setStroke(Color.WHITE);}
+		
 		g.strokeText("i=" + i, 50, 75);
 		i = i + 1;
 
@@ -81,6 +91,11 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 	 */
 	public void setMode(String mode) {
 		this.mode = mode;
+	}
+	
+	public void setColor(String color) {
+		this.color = color;
+		
 	}
 
 	@Override

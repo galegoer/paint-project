@@ -1,8 +1,8 @@
 # Fill in, commit and push each day.
-# Group Member: FILL THIS IN
+# Group Member: askarya2
 Oct 28, 2018
 	Yesterday :
-	Today     :
+	Today     :Formed a group
 	Obstacles :
 
 Oct 29, 2018
@@ -17,13 +17,13 @@ Oct 30, 2018
 
 Oct 31, 2018
 	Yesterday :
-	Today     :
+	Today     :Met and assigned UserStorys to group members.
 	Obstacles :
 
 Nov 1, 2018
 	Yesterday :
-	Today     :
-	Obstacles :
+	Today     :Worked on UserStory5, created a new ColorChooserPanel, which allows for the choices of certain colors
+	Obstacles :Maybe I should make a color slider? Maybe I should make smaller buttons with lots of different colors to chose from?
 
 Nov 2, 2018
 	Yesterday :
