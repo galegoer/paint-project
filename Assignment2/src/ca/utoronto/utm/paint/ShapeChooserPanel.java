@@ -1,6 +1,6 @@
 package ca.utoronto.utm.paint;
 
-import java.io.File;
+
 import java.io.FileInputStream;
 
 import javafx.event.ActionEvent;
@@ -24,9 +24,6 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 
 		this.view = view;
 		
-		//String[] buttonLabels = { "Circle", "Rectangle", "Square", "Squiggle", "Polyline" };
-		//Point p = new Point(100,100);
-		
 		Circle c = new Circle();
 		c.setRadius(10.0f);
 		
@@ -38,12 +35,8 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 		t.setHeight(20.0f);
 		t.setWidth(20.0f);
 		
-		SVGPath svg = new SVGPath();
-		
-		
 		Shape[] shapes = {c, r, t};
 		
-			
 		int row = 0;
 		for (Shape s : shapes) {
 			Button button = new Button();
@@ -56,7 +49,6 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 		
 		try {
 			Image image = new Image(new FileInputStream("images/squiggle.png"));
-			//Image image = new Image("C:\\Users\\William\\repo_a2_TheCentipedeBoys\\Assignment2\\images\\polyline.png");
 			ImageView imageView = new ImageView(image);
 			imageView.setFitHeight(20);
 			imageView.setFitWidth(50);
@@ -79,19 +71,6 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 			e.printStackTrace();
 		}
 		
-		//File a = new File("");
-		//System.out.println("abc");
-		//System.out.println(a.getAbsolutePath());
-		//FileInputStream inputstream = new FileInputStream(); 
-		//Image image = new Image(inputstream); 
-		//i.setX(100);	
-		//i.setY(100);
-
-//		Image imageDecline = new Image(getClass().getResourceAsStream("squiggle.png"));
-		//Button button5 = new Button();
-		///button5.setGraphic(imageView);
-		//button5.setMinWidth(100);
-		//this.add(button5, 0, row);
 	}
 
 	@Override
