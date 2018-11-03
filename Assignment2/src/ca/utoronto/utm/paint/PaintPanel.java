@@ -107,6 +107,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 				}else if(r.getScenario() == 4) {
 					g.fillRect(a, b-height , width, height);
 			}}else{
+			g.setStroke(Circle.setPaint(r.rectangleColor));
 			if (r.getScenario() == 1) {
 				g.strokeRect(a, b, width, height);
 			} else if (r.getScenario() == 2) {
@@ -117,10 +118,11 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 				g.strokeRect(a, b - height, width, height);
 			}
 		}
-		}
+}
 		// Draw Squares
 		ArrayList<Square> squares = this.model.getSquares();
 		for (Square r : squares) {
+			g.setStroke(Circle.setPaint(r.sqcolor));
 			int a = r.getCentre().getX();
 			int b = r.getCentre().getY();
 			int side = r.getSideLength();
@@ -135,7 +137,6 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			}
 
 		}
-
 	}
 
 	@Override
@@ -304,7 +305,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			int width = 0;
 			int scenario = 0;
 			int style = 0;
-			this.rectangle = new Rectangle(centre, width, height, scenario, style);
+			this.rectangle = new Rectangle(centre, width, height, scenario, this.color,style);
 			if(this.modes.get(1) == "Fill") {
 				this.rectangle.setStyleR(1);
 			}
@@ -313,7 +314,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			Point centre = new Point((int) e.getX(), (int) e.getY());
 			int side = 0;
 			int scenario = 0;
-			this.square = new Square(centre, side, scenario);
+			this.square = new Square(centre, side, scenario, this.color);
 		}
 	}
 
