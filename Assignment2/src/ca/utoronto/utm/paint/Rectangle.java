@@ -5,11 +5,13 @@ public class Rectangle {
 	private Point centre;
 	public int width;
 	public int height;
+	public int scenario;
 
-	public Rectangle(Point centre, int width, int height) {
+	public Rectangle(Point centre, int width, int height,int scenario) {
 		this.centre = centre;
-		setWidth(width);
-		setHeight(height);
+		this.width = width;
+		this.height = height;
+		this.scenario = scenario;
 	}
 	
 	public Point getCentre() {
@@ -27,7 +29,7 @@ public class Rectangle {
 	 */
 	public void setWidth(int w) {
 		if (w > 0)
-			width = w;
+			this.width = w;
 	}
 	
 	/**
@@ -52,6 +54,20 @@ public class Rectangle {
 	 */
 	public int getHeight() {
 		return height;
+	}
+	/**
+	 * 
+	 * @return Scenario number
+	 */
+	public int getScenario() {
+		return scenario;
+	}
+	
+	/**
+	 * Set the scenario number
+	 */
+	public void setScenario(int s) {
+		scenario = s;
 	}
 
 }

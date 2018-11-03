@@ -35,8 +35,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		this.addEventHandler(MouseEvent.ANY, this);
 
 		
-		//this.mode = "Circle"; // bad code here?
-		this.mode = "Rectangle";
+		this.mode = "Circle"; // bad code here?
 
 		this.model = model;
 		this.model.addObserver(this);
@@ -79,7 +78,16 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			int b = r.getCentre().getY();
 			int height = r.getHeight();
 			int width = r.getWidth();
-			g.strokeRect(a, b , width, height);
+			if(r.getScenario() == 1) {
+				g.strokeRect(a, b, width, height);
+			} else if(r.getScenario() == 2) {
+				g.strokeRect(a-width, b-height , width, height);
+			} else if(r.getScenario() == 3) {
+				g.strokeRect(a-width, b, width, height);
+			} else if(r.getScenario() == 4) {
+				g.strokeRect(a, b-height , width, height);
+			}
+			
 		}
 	}
 
@@ -135,14 +143,43 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			this.circle.setRadius(radius);
 			this.model.addCircle(this.circle);
 			this.model.removeCircle(this.model.getCircles().size()-1);
-		}else if (this.mode == "Rectangle") {
-			// here code for height and width is needed.
-
+		} else if (this.mode == "Rectangle") {
+			// Begin
+			int x1 = this.rectangle.getCentre().getX();
+			int y1 = this.rectangle.getCentre().getY();
+			// mouse release or end
+			int x2 = (int) e.getX();
+			int y2 = (int) e.getY();
+			
+			
+			if (x2>x1 && y2>y1){
+				this.rectangle.setScenario(1);
+				Point centre = new Point(x1,y1);
+				this.rectangle.setHeight(y2-y1);
+				this.rectangle.setWidth(x2-x1);
+				this.rectangle.setCentre(centre);	
+			}
+			//Scenario 2
+			else if (x1>x2 && y2<y1){
+				this.rectangle.setScenario(2);
+				this.rectangle.setHeight(y1-y2);
+				this.rectangle.setWidth(x1-x2);				
+			}
+			// Scenario 3
+			else if (x1>x2 && y1<y2){
+				this.rectangle.setScenario(3);
+				this.rectangle.setHeight(y2-y1);
+				this.rectangle.setWidth(x1-x2);
+			}
+			// Scenario 4
+			else if (x2>x1 && y2<y1){
+				this.rectangle.setScenario(4);
+				this.rectangle.setHeight(y1-y2);
+				this.rectangle.setWidth(x2-x1);
+			}
 			this.model.addRectangle(this.rectangle);
 			this.model.removeRectangle(this.model.getRectangles().size()-1);
-
-		}
-	}
+	}}
 
 	private void mouseClicked(MouseEvent e) {
 		if (this.mode == "Squiggle") {
@@ -164,7 +201,8 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			Point centre = new Point((int) e.getX(), (int) e.getY());
 			int height = 0;
 			int width = 0;
-			this.rectangle = new Rectangle(centre, width, height);
+			int scenario = 0;
+			this.rectangle = new Rectangle(centre, width, height, scenario);
 		}
 	}
 
@@ -181,60 +219,42 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 				this.circle = null;
 			}
 		} else if (this.mode == "Rectangle"){
-
 			if (this.rectangle != null) {
-				int width = 0;
-				int height= 0;
-				//Point centre = new Point((int) e.getX(), (int) e.getY());
-				// Begin
 				int x1 = this.rectangle.getCentre().getX();
 				int y1 = this.rectangle.getCentre().getY();
 				// mouse release or end
 				int x2 = (int) e.getX();
 				int y2 = (int) e.getY();
-				
-				// Scenerio 1
+				//Scenario 1
 				if (x2>x1 && y2>y1){
-					Point centre = new Point(x1,y1);
-					height = (int)Math.sqrt((x1-x1)*(x1-x1) + (y1-y2)*(y1-y2));
-					width = (int)Math.sqrt((x1-x2)*(x1-x2) + (y2-y2)*(y2-y2));
-					this.rectangle.setCentre(centre);	
+					this.rectangle.setScenario(1);
+					this.rectangle.setHeight(y2-y1);
+					this.rectangle.setWidth(x2-x1);	
 				}
-				//Scenerio 2 works perfectly
+				//Scenario 2
 				else if (x1>x2 && y2<y1){
-					Point centre = new Point(x2,y2);
-					height = (int)Math.sqrt((x2-x2)*(x2-x2) + (y2-y1)*(y2-y1));
-					width = (int)Math.sqrt((x1-x2)*(x1-x2) + (y1-y1)*(y1-y1));
-					this.rectangle.setCentre(centre);
-					
+					this.rectangle.setScenario(2);
+					this.rectangle.setHeight(y1-y2);
+					this.rectangle.setWidth(x1-x2);				
 				}
-				// Scenerio 3
+				// Scenario 3
 				else if (x1>x2 && y1<y2){
-					Point centre = new Point(x2,y1);
-					height = (int)Math.sqrt((x2-x2)*(x2-x2) + (y2-y1)*(y2-y1));
-					width = (int)Math.sqrt((x1-x2)*(x1-x2) + (y1-y1)*(y1-y1));
-					this.rectangle.setCentre(centre);
-					
+					this.rectangle.setScenario(3);
+					this.rectangle.setHeight(y2-y1);
+					this.rectangle.setWidth(x1-x2);
 				}
-				// Scenrio 4
-				// condition (x1>x2 && y1>y2)
+				// Scenario 4
 				else if (x2>x1 && y2<y1){
-					Point centre = new Point(x1,y2);
-					height = (int)Math.sqrt((x1-x1)*(x1-x1) + (y1-y2)*(y1-y2));
-					width = (int)Math.sqrt((x2-x1)*(x2-x1) + (y2-y2)*(y2-y2));
-					this.rectangle.setCentre(centre);					
+					this.rectangle.setScenario(4);
+					this.rectangle.setHeight(y1-y2);
+					this.rectangle.setWidth(x2-x1);
 				}
-				
-				this.rectangle.setWidth(width);
-				this.rectangle.setHeight(height);
+				//this.rectangle.setWidth(width);
+				//this.rectangle.setHeight(height);
 				this.model.addRectangle(this.rectangle);
 				this.rectangle = null;
-
-			}
 		}
-
-	}
-
+		}}
 	private void mouseEntered(MouseEvent e) {
 		if (this.mode == "Squiggle") {
 
