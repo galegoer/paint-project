@@ -89,6 +89,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			int b = r.getCentre().getY();
 			int height = r.getHeight();
 			int width = r.getWidth();
+			g.setStroke(Circle.setPaint(r.rectangleColor));
 			if(r.getScenario() == 1) {
 				g.strokeRect(a, b, width, height);
 			} else if(r.getScenario() == 2) {
@@ -98,6 +99,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			} else if(r.getScenario() == 4) {
 				g.strokeRect(a, b-height , width, height);
 			}
+			
 			
 		}
 	}
@@ -218,7 +220,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			int height = 0;
 			int width = 0;
 			int scenario = 0;
-			this.rectangle = new Rectangle(centre, width, height, scenario);
+			this.rectangle = new Rectangle(centre, width, height, scenario, this.color);
 		}
 	}
 

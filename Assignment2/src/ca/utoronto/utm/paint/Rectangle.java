@@ -6,12 +6,14 @@ public class Rectangle {
 	public int width;
 	public int height;
 	public int scenario;
+	public String rectangleColor;
 
-	public Rectangle(Point centre, int width, int height,int scenario) {
+	public Rectangle(Point centre, int width, int height,int scenario, String recColor) {
 		this.centre = centre;
 		this.width = width;
 		this.height = height;
 		this.scenario = scenario;
+		this.rectangleColor = recColor;
 	}
 	
 	public Point getCentre() {
