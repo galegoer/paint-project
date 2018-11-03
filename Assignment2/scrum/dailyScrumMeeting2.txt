@@ -22,21 +22,23 @@ Oct 31, 2018
 
 Nov 1, 2018
 	Yesterday : Completed UserStory1, began UserStory4
-	Today     : Began work on UserStory6, met up with group helped with UserStory3
+	Today     : Began work on UserStory6, met up with group
 	Obstacles : Thinking of new ways to organize models/modes
 
 Nov 2, 2018
 	Yesterday : Began UserStory6, met up with group helped with UserStory3
 	Today     : Continued with UserStory6 thinking of new way to implement it, tried with an ArrayList of modes to keep
 		    track of the shape mode and style mode. Tried to test UserStory4 as UserStory3 was completed but had trouble
-		    with the old code merging with master.
+		    with the old code merging with master
 	Obstacles : Had trouble merging UserStory4 branch to keep up with master code. Had trouble adding the buttons to the left
-		    section of the BorderPane without replacing them so had to leave them at the bottom for now.
+		    section of the BorderPane without replacing them so had to leave them at the bottom for now
 
 Nov 3, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday : Continued with UserStory6 thinking of new way to implement it, tried with an ArrayList of modes to keep
+		    track of the shape mode and style mode. Tried to test UserStory4 as UserStory3 was completed but had trouble
+		    with the old code merging with master
+	Today     : UserStory4 Completed, UserStory6 Completed. Compiled everything together with the colors
+	Obstacles : Many merge errors today as every update changed a lot of the code so had to manually fix the merges
 
 Nov 4, 2018
 	Yesterday :
