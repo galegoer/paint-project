@@ -4,11 +4,13 @@ public class Square extends Shape{
 	
 	private Point centre;
 	private int side;
+	private int scenario;
 	
 
-	public Square(Point centre, int side) {
+	public Square(Point centre, int side, int scenario) {
 		this.centre = centre;
 		this.side = side;
+		this.scenario = scenario;
 	}
 
 	public Point getCentre() {
@@ -25,6 +27,15 @@ public class Square extends Shape{
 
 	public void setSideLength(int side) {
 		this.side = side;
+	}
+	
+	public int getScenario() {
+		return scenario;
+	}
+	//Set the scenario number
+	
+	public void setScenario(int s) {
+		scenario = s;
 	}
 
 	@Override

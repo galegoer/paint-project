@@ -63,4 +63,5 @@ public class PaintModel extends Observable {
 	public ArrayList<Square> getSquares() {
 		return squares;
 	}
+
 }

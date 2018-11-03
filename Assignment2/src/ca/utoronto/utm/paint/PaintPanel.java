@@ -88,7 +88,15 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			int a = r.getCentre().getX();
 			int b = r.getCentre().getY();
 			int side = r.getSideLength();
-			g.strokeRect(a, b, side, side);
+			if(r.getScenario() == 1) {
+				g.strokeRect(a, b, side, side);
+			} else if(r.getScenario() == 2) {
+				g.strokeRect(a-side, b-side , side, side);
+			} else if(r.getScenario() == 3) {
+				g.strokeRect(a-side, b, side, side);
+			} else if(r.getScenario() == 4) {
+				g.strokeRect(a, b-side , side, side);
+			}
 		}
 
 	}
@@ -156,12 +164,47 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 
 		else if (this.mode == "Square")
 		{
-			int x = (int) e.getX() - this.square.getCentre().getX();
-			int y = (int) e.getY() - this.square.getCentre().getY();
-			if (x > y)
-				this.square.setSideLength(x);
-			else
-				this.square.setSideLength(y);
+			
+			int x1 = this.square.getCentre().getX();
+			int y1 = this.square.getCentre().getY();
+			int x2 = (int) e.getX();
+			int y2 = (int) e.getY();
+			if (x2>x1 && y2>y1){
+				if ((x2-x1) > (y2-y1))
+					this.square.setSideLength(x2-x1);
+				else
+					this.square.setSideLength(y2-y1);
+				this.square.setScenario(1);
+				Point centre = new Point(x1,y1);
+				this.square.setCentre(centre);	
+			}
+			//Scenario 2
+			else if (x1>x2 && y2<y1){
+				if ((x1-x2) > (y1-y2))
+					this.square.setSideLength(x1-x2);
+				else
+					this.square.setSideLength(y1-y2);
+				this.square.setScenario(2);
+			
+			}
+			// Scenario 3
+			else if (x1>x2 && y1<y2){
+				if ((x1-x2) > (y2-y1))
+					this.square.setSideLength(x1-x2);
+				else
+					this.square.setSideLength(y2-y1);
+				this.square.setScenario(3);
+			}
+			// Scenario 4
+			else if (x2>x1 && y2<y1){
+				if ((x2-x1) > (y1-y2))
+					this.square.setSideLength(x2-x1);
+				else
+					this.square.setSideLength(y1-y2);
+				this.square.setScenario(4);
+			}
+			
+			
 			this.model.addSquare(this.square);
 			this.model.removeSquare(this.model.getSquares().size() - 1);
 		}
@@ -192,7 +235,8 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		else if (this.mode == "Square") {
 			Point centre = new Point((int) e.getX(), (int) e.getY());
 			int side = 0;
-			this.square = new Square(centre, side);
+			int scenario = 0;
+			this.square = new Square(centre, side, scenario);
 		}
 	}
 
@@ -263,13 +307,46 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		else if (this.mode == "Square") {
 
 			if (this.square != null) {
-				int x = (int) e.getX() - this.square.getCentre().getX();
-				int y = (int) e.getY() - this.square.getCentre().getY();
+				int x1 = this.square.getCentre().getX();
+				int y1 = this.square.getCentre().getY();
+				int x2 = (int) e.getX();
+				int y2 = (int) e.getY();
+				if (x2>x1 && y2>y1){
+					if ((x2-x1) > (y2-y1))
+						this.square.setSideLength(x2-x1);
+					else
+						this.square.setSideLength(y2-y1);
+					this.square.setScenario(1);
+					Point centre = new Point(x1,y1);
+					this.square.setCentre(centre);	
+				}
+				//Scenario 2
+				else if (x1>x2 && y2<y1){
+					if ((x1-x2) > (y1-y2))
+						this.square.setSideLength(x1-x2);
+					else
+						this.square.setSideLength(y1-y2);
+					this.square.setScenario(2);
 				
-				if (x > y)
-					this.square.setSideLength(x);
-				else
-					this.square.setSideLength(y);
+				}
+				// Scenario 3
+				else if (x1>x2 && y1<y2){
+					if ((x1-x2) > (y2-y1))
+						this.square.setSideLength(x1-x2);
+					else
+						this.square.setSideLength(y2-y1);
+					this.square.setScenario(3);
+				}
+				// Scenario 4
+				else if (x2>x1 && y2<y1){
+					if ((x2-x1) > (y1-y2))
+						this.square.setSideLength(x2-x1);
+					else
+						this.square.setSideLength(y1-y2);
+					this.square.setScenario(4);
+				}
+				
+				
 				this.model.addSquare(this.square);
 				this.rectangle = null;
 
