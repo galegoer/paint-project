@@ -21,22 +21,25 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 	private Circle circle; // the circle we are building
 	private Rectangle rectangle;
 
+	private String color;
+
+	private Square square;
+
 	private Canvas canvas;
 	
 	private String style;
 
-	
 	public PaintPanel(PaintModel model, View view) {
 
 		this.canvas = new Canvas(300, 300);
 		this.getChildren().add(this.canvas);
 		// The canvas is transparent, so the background color of the
 		// containing pane serves as the background color of the canvas.
-		this.setStyle("-fx-background-color: blue");
+		this.setStyle("-fx-background-color: white");
 
 		this.addEventHandler(MouseEvent.ANY, this);
 
-		this.modes.add(0, ""); // CHANGED MIGHT BE BAD CODE STILL??
+		this.modes.add(0, "Circle"); // CHANGED MIGHT BE BAD CODE STILL??
 		this.modes.add(1, "Outline");
 
 		this.model = model;
@@ -54,7 +57,8 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		// Clear the canvas
 		g.clearRect(0, 0, this.getWidth(), this.getHeight());
 
-		g.setStroke(Color.WHITE);
+		g.setStroke(Color.BLACK);
+
 		g.strokeText("i=" + i, 50, 75);
 		i = i + 1;
 
@@ -63,6 +67,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		for (int i = 0; i < points.size() - 1; i++) {
 			Point p1 = points.get(i);
 			Point p2 = points.get(i + 1);
+			g.setStroke(Circle.setPaint(this.color));
 			g.strokeLine(p1.getX(), p1.getY(), p2.getX(), p2.getY());
 		}
 
@@ -73,11 +78,15 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			int y = c.getCentre().getY();
 			int radius = c.getRadius();
 			if(c.getStyleC() == 1) {
-				g.setFill(Color.WHITE);
+				g.setFill(Color.BLACK); //FIX WITH WHAT COLOR IS SET
 				g.fillOval(x-radius, y-radius, 2*radius, 2*radius);
 			} else {
 				g.strokeOval(x-radius, y-radius, 2*radius, 2*radius);
 			}
+			g.setStroke(Circle.setPaint(c.getString()));
+			g.strokeOval(x - radius, y - radius, 2 * radius, 2 * radius);
+			g.strokeOval(x - radius, y - radius, 2 * radius, 2 * radius);
+
 		}
 
 		// Draw Rectangles
@@ -88,7 +97,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			int height = r.getHeight();
 			int width = r.getWidth();
 			if(r.getStyleR() == 1) {
-				g.setFill(Color.WHITE);
+				g.setFill(Color.BLACK);
 				if(r.getScenario() == 1) {
 					g.fillRect(a, b, width, height);
 				}else if(r.getScenario() == 2) {
@@ -98,18 +107,36 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 				}else if(r.getScenario() == 4) {
 					g.fillRect(a, b-height , width, height);
 			}}else{
-			if(r.getScenario() == 1) {
+			if (r.getScenario() == 1) {
 				g.strokeRect(a, b, width, height);
-			} else if(r.getScenario() == 2) {
-				g.strokeRect(a-width, b-height , width, height);
-			} else if(r.getScenario() == 3) {
-				g.strokeRect(a-width, b, width, height);
-			} else if(r.getScenario() == 4) {
-				g.strokeRect(a, b-height , width, height);
+			} else if (r.getScenario() == 2) {
+				g.strokeRect(a - width, b - height, width, height);
+			} else if (r.getScenario() == 3) {
+				g.strokeRect(a - width, b, width, height);
+			} else if (r.getScenario() == 4) {
+				g.strokeRect(a, b - height, width, height);
 			}
 		}
+		}
+		// Draw Squares
+		ArrayList<Square> squares = this.model.getSquares();
+		for (Square r : squares) {
+			int a = r.getCentre().getX();
+			int b = r.getCentre().getY();
+			int side = r.getSideLength();
+			if (r.getScenario() == 1) {
+				g.strokeRect(a, b, side, side);
+			} else if (r.getScenario() == 2) {
+				g.strokeRect(a - side, b - side, side, side);
+			} else if (r.getScenario() == 3) {
+				g.strokeRect(a - side, b, side, side);
+			} else if (r.getScenario() == 4) {
+				g.strokeRect(a, b - side, side, side);
+			}
+
+		}
+
 	}
-}
 
 	@Override
 	public void update(Observable o, Object arg) {
@@ -124,6 +151,11 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 	 */
 	public void setMode(int index, String mode) {
 		this.modes.set(index, mode);
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+
 	}
 
 	@Override
@@ -170,36 +202,81 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			// mouse release or end
 			int x2 = (int) e.getX();
 			int y2 = (int) e.getY();
-			
-			
-			if (x2>x1 && y2>y1){
+
+			if (x2 > x1 && y2 > y1) {
 				this.rectangle.setScenario(1);
-				Point centre = new Point(x1,y1);
-				this.rectangle.setHeight(y2-y1);
-				this.rectangle.setWidth(x2-x1);
-				this.rectangle.setCentre(centre);	
+				Point centre = new Point(x1, y1);
+				this.rectangle.setHeight(y2 - y1);
+				this.rectangle.setWidth(x2 - x1);
+				this.rectangle.setCentre(centre);
 			}
-			//Scenario 2
-			else if (x1>x2 && y2<y1){
+			// Scenario 2
+			else if (x1 > x2 && y2 < y1) {
 				this.rectangle.setScenario(2);
-				this.rectangle.setHeight(y1-y2);
-				this.rectangle.setWidth(x1-x2);				
+				this.rectangle.setHeight(y1 - y2);
+				this.rectangle.setWidth(x1 - x2);
 			}
 			// Scenario 3
-			else if (x1>x2 && y1<y2){
+			else if (x1 > x2 && y1 < y2) {
 				this.rectangle.setScenario(3);
-				this.rectangle.setHeight(y2-y1);
-				this.rectangle.setWidth(x1-x2);
+				this.rectangle.setHeight(y2 - y1);
+				this.rectangle.setWidth(x1 - x2);
 			}
 			// Scenario 4
-			else if (x2>x1 && y2<y1){
+			else if (x2 > x1 && y2 < y1) {
 				this.rectangle.setScenario(4);
-				this.rectangle.setHeight(y1-y2);
-				this.rectangle.setWidth(x2-x1);
+				this.rectangle.setHeight(y1 - y2);
+				this.rectangle.setWidth(x2 - x1);
 			}
 			this.model.addRectangle(this.rectangle);
-			this.model.removeRectangle(this.model.getRectangles().size()-1);
-	}}
+			this.model.removeRectangle(this.model.getRectangles().size() - 1);
+		}
+
+		else if (this.modes.get(0) == "Square") {
+
+			int x1 = this.square.getCentre().getX();
+			int y1 = this.square.getCentre().getY();
+			int x2 = (int) e.getX();
+			int y2 = (int) e.getY();
+			if (x2 > x1 && y2 > y1) {
+				if ((x2 - x1) > (y2 - y1))
+					this.square.setSideLength(x2 - x1);
+				else
+					this.square.setSideLength(y2 - y1);
+				this.square.setScenario(1);
+				Point centre = new Point(x1, y1);
+				this.square.setCentre(centre);
+			}
+			// Scenario 2
+			else if (x1 > x2 && y2 < y1) {
+				if ((x1 - x2) > (y1 - y2))
+					this.square.setSideLength(x1 - x2);
+				else
+					this.square.setSideLength(y1 - y2);
+				this.square.setScenario(2);
+
+			}
+			// Scenario 3
+			else if (x1 > x2 && y1 < y2) {
+				if ((x1 - x2) > (y2 - y1))
+					this.square.setSideLength(x1 - x2);
+				else
+					this.square.setSideLength(y2 - y1);
+				this.square.setScenario(3);
+			}
+			// Scenario 4
+			else if (x2 > x1 && y2 < y1) {
+				if ((x2 - x1) > (y1 - y2))
+					this.square.setSideLength(x2 - x1);
+				else
+					this.square.setSideLength(y1 - y2);
+				this.square.setScenario(4);
+			}
+
+			this.model.addSquare(this.square);
+			this.model.removeSquare(this.model.getSquares().size() - 1);
+		}
+	}
 
 	private void mouseClicked(MouseEvent e) {
 		if (this.modes.get(0) == "Squiggle") {
@@ -217,7 +294,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			Point centre = new Point((int) e.getX(), (int) e.getY());
 			int radius = 0;
 			int style = 0;
-			this.circle = new Circle(centre, radius, style);
+			this.circle = new Circle(centre, radius, this.color, style);
 			if(this.modes.get(1) == "Fill") {
 				this.circle.setStyleC(1);
 			}
@@ -231,6 +308,12 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			if(this.modes.get(1) == "Fill") {
 				this.rectangle.setStyleR(1);
 			}
+			
+		} else if (this.modes.get(0) == "Square") {
+			Point centre = new Point((int) e.getX(), (int) e.getY());
+			int side = 0;
+			int scenario = 0;
+			this.square = new Square(centre, side, scenario);
 		}
 	}
 
@@ -240,49 +323,104 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		} else if (this.modes.get(0) == "Circle") {
 			if (this.circle != null) {
 				// Problematic notion of radius and centre!!
-				int radius = (int) Math.sqrt(Math.pow((int) this.circle.getCentre().getX() - (int) e.getX(), 2) + 
-						Math.pow((int) this.circle.getCentre().getY() - (int) e.getY(), 2));
+				int radius = (int) Math.sqrt(Math.pow((int) this.circle.getCentre().getX() - (int) e.getX(), 2)
+						+ Math.pow((int) this.circle.getCentre().getY() - (int) e.getY(), 2));
 				this.circle.setRadius(radius);
 				this.model.addCircle(this.circle);
 				this.circle = null;
 			}
+
 		} else if (this.modes.get(0) == "Rectangle"){
+
+		}
 			if (this.rectangle != null) {
+
+				// Point centre = new Point((int) e.getX(), (int) e.getY());
+				// Begin
+
 				int x1 = this.rectangle.getCentre().getX();
 				int y1 = this.rectangle.getCentre().getY();
 				// mouse release or end
 				int x2 = (int) e.getX();
 				int y2 = (int) e.getY();
-				//Scenario 1
-				if (x2>x1 && y2>y1){
+
+				// Scenario 1
+				if (x2 > x1 && y2 > y1) {
 					this.rectangle.setScenario(1);
-					this.rectangle.setHeight(y2-y1);
-					this.rectangle.setWidth(x2-x1);	
+					this.rectangle.setHeight(y2 - y1);
+					this.rectangle.setWidth(x2 - x1);
 				}
-				//Scenario 2
-				else if (x1>x2 && y2<y1){
+				// Scenario 2
+				else if (x1 > x2 && y2 < y1) {
 					this.rectangle.setScenario(2);
-					this.rectangle.setHeight(y1-y2);
-					this.rectangle.setWidth(x1-x2);				
+					this.rectangle.setHeight(y1 - y2);
+					this.rectangle.setWidth(x1 - x2);
 				}
 				// Scenario 3
-				else if (x1>x2 && y1<y2){
+				else if (x1 > x2 && y1 < y2) {
 					this.rectangle.setScenario(3);
-					this.rectangle.setHeight(y2-y1);
-					this.rectangle.setWidth(x1-x2);
+					this.rectangle.setHeight(y2 - y1);
+					this.rectangle.setWidth(x1 - x2);
 				}
 				// Scenario 4
-				else if (x2>x1 && y2<y1){
+				else if (x2 > x1 && y2 < y1) {
 					this.rectangle.setScenario(4);
-					this.rectangle.setHeight(y1-y2);
-					this.rectangle.setWidth(x2-x1);
+					this.rectangle.setHeight(y1 - y2);
+					this.rectangle.setWidth(x2 - x1);
 				}
-				//this.rectangle.setWidth(width);
-				//this.rectangle.setHeight(height);
+
 				this.model.addRectangle(this.rectangle);
 				this.rectangle = null;
+			}
+		else if (this.modes.get(0) == "Square") {
+
+			if (this.square != null) {
+				int x1 = this.square.getCentre().getX();
+				int y1 = this.square.getCentre().getY();
+				int x2 = (int) e.getX();
+				int y2 = (int) e.getY();
+
+				if (x2 > x1 && y2 > y1) {
+					if ((x2 - x1) > (y2 - y1))
+						this.square.setSideLength(x2 - x1);
+					else
+						this.square.setSideLength(y2 - y1);
+					this.square.setScenario(1);
+					Point centre = new Point(x1, y1);
+					this.square.setCentre(centre);
+				}
+				// Scenario 2
+				else if (x1 > x2 && y2 < y1) {
+					if ((x1 - x2) > (y1 - y2))
+						this.square.setSideLength(x1 - x2);
+					else
+						this.square.setSideLength(y1 - y2);
+					this.square.setScenario(2);
+
+				}
+				// Scenario 3
+				else if (x1 > x2 && y1 < y2) {
+					if ((x1 - x2) > (y2 - y1))
+						this.square.setSideLength(x1 - x2);
+					else
+						this.square.setSideLength(y2 - y1);
+					this.square.setScenario(3);
+				}
+				// Scenario 4
+				else if (x2 > x1 && y2 < y1) {
+					if ((x2 - x1) > (y1 - y2))
+						this.square.setSideLength(x2 - x1);
+					else
+						this.square.setSideLength(y1 - y2);
+					this.square.setScenario(4);
+				}
+
+				this.model.addSquare(this.square);
+				this.rectangle = null;
+			}
 		}
-		}}
+	}
+
 	private void mouseEntered(MouseEvent e) {
 		if (this.modes.get(0) == "Squiggle") {
 

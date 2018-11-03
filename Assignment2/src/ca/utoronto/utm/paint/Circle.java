@@ -1,17 +1,28 @@
 package ca.utoronto.utm.paint;
 import javafx.scene.shape.Shape;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
+
 public class Circle extends Shape{
 	
 	private Point centre;
 	private int radius;
+	private String stringcolor;
 	private int style;
-
-	public Circle(Point centre, int radius, int style) {
+	
+	
+	public Circle(Point centre, int radius, String color, int style) {
 		this.centre = centre;
 		this.radius = radius;
+		this.stringcolor = color;
 		this.style = style;
 	}
-
+	
+	
 	public Point getCentre() {
 		return centre;
 	}
@@ -34,6 +45,24 @@ public class Circle extends Shape{
 	
 	public void setStyleC(int style) {
 		this.style = style;
+	}
+	
+	public String getString() {
+		return this.stringcolor;
+	}
+	public static Color setPaint(String stringcolor) {
+		if (stringcolor == "Red"){
+				return Color.RED;
+		}
+		if (stringcolor == "Green"){
+			return Color.GREEN;
+		}
+		if (stringcolor == "Blue"){
+			return Color.BLUE;
+		}
+		else {
+			return Color.BLACK;
+		}
 	}
 
 	@Override
