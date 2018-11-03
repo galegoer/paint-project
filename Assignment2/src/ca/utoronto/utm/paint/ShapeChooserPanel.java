@@ -22,7 +22,6 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 	public ShapeChooserPanel(View view) {
 
 		this.view = view;
-		
 		Circle c = new Circle();
 		c.setRadius(10.0f);
 		
@@ -34,17 +33,25 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 		t.setHeight(20.0f);
 		t.setWidth(20.0f);
 		
-		Shape[] shapes = {c, r, t};
+		String[] names = {"Circle", "Rectangle", "Square"};
+		Shape[] shapes = {c,r,t};
+//		Shape[] shapes = new Shape[3];
+//		shapes[0] = c;
+//		shapes[1] = r;
+//		shapes[2] = t;
 		
-
+		
 		int row = 0;
-		for (Shape s : shapes) {
+		for (int i =0; i < shapes.length; i++) {
 			Button button = new Button();
-			button.setGraphic(s);
+			button.setText(names[i]);
+			button.setOnAction(this);
+			button.setVisible(false);
+			//button.setText("");
+			button.setGraphic(shapes[i]);
 			button.setMinWidth(100);
 			this.add(button, 0, row);
 			row++;
-			button.setOnAction(this);
 		}
 		
 		try {
@@ -55,6 +62,7 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 			Button button5 = new Button();
 			button5.setGraphic(imageView);
 			button5.setMinWidth(100);
+			//button5.setText("ABC");
 			this.add(button5, 0, row);
 			
 			row++;
@@ -76,7 +84,8 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 	@Override
 	public void handle(ActionEvent event) {
 		String command = ((Button) event.getSource()).getText();
-		this.view.getPaintPanel().setMode(command);
+		this.view.getPaintPanel().setMode("Circle");
 		System.out.println(command);
 	}
+	
 }
