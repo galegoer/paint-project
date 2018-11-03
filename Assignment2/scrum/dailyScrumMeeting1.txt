@@ -26,9 +26,9 @@ Nov 1, 2018
 	Obstacles : Having trouble locating an image stored within a folder, cannot finish Bug1 without fixing this issue!
 
 Nov 2, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday :Worked on Bug1	
+	Today     :Finished adding icons to replace text for Bug1, began on Bug2
+	Obstacles : New bug appeared where the buttle action can no longer find a text and change modes because they are all icons!
 
 Nov 3, 2018
 	Yesterday :
