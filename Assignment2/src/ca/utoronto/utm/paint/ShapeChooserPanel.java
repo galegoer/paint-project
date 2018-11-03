@@ -41,7 +41,6 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 			Button button = new Button();
 			button.setAccessibleText(names[i]);
 			button.setOnAction(this);
-			button.setText("");
 			button.setGraphic(shapes[i]);
 			button.setMinWidth(100);
 			this.add(button, 0, row);
