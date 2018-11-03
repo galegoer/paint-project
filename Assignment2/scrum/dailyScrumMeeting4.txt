@@ -7,12 +7,12 @@ Oct 28, 2018
 
 Oct 29, 2018
 	Yesterday :
-	Today     :
+	Today     :Busy
 	Obstacles :
 
 Oct 30, 2018
 	Yesterday :
-	Today     :
+	Today     :Busy
 	Obstacles :
 
 Oct 31, 2018
@@ -27,13 +27,13 @@ Nov 1, 2018
 
 Nov 2, 2018
 	Yesterday :
-	Today     :
-	Obstacles :
+	Today     :Worked on adding more colors, having the colors change when a new one is selected.
+	Obstacles :All the colors of already established circles changed when a new color was selected, even though we want only the newest to be the new selected color.
 
 Nov 3, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday :Partially working, have to sort out messed up colors. 
+	Today     :Added more functions to the circle class, a static class which allows for a color string to be converted into the color type. The colors now work as expected for circles	Obstacles : still some erros with squiggle, perhaps because of some other bug which keeps the squiggle connected. 
+
 
 Nov 4, 2018
 	Yesterday :
