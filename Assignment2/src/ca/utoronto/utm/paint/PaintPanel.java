@@ -43,22 +43,19 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 
 		this.view = view;
 	}
+	
 
 	public void repaint() {
 
 		GraphicsContext g = this.canvas.getGraphicsContext2D();
 
 		// Clear the canvas
-		g.clearRect(0, 0, this.getWidth(), this.getHeight());
+		g.clearRect(0, 0, this.getWidth(), this.getHeight());	
 		
-		if (this.color == "Red") {
-			g.setStroke(Color.RED);
-		}
-		else if (this.color == "Green"){
-			g.setStroke(Color.GREEN);
-		}
-		else {
-			g.setStroke(Color.BLACK);}
+			
+		
+	
+		g.setStroke(Color.BLACK);
 		
 		g.strokeText("i=" + i, 50, 75);
 		i = i + 1;
@@ -68,6 +65,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		for (int i = 0; i < points.size() - 1; i++) {
 			Point p1 = points.get(i);
 			Point p2 = points.get(i + 1);
+			g.setStroke(Circle.setPaint(this.color));
 			g.strokeLine(p1.getX(), p1.getY(), p2.getX(), p2.getY());
 		}
 
@@ -77,6 +75,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			int x = c.getCentre().getX();
 			int y = c.getCentre().getY();
 			int radius = c.getRadius();
+			g.setStroke(Circle.setPaint(c.getString()));
 			g.strokeOval(x-radius, y-radius, 2*radius, 2*radius);
 		}
 	}
@@ -156,7 +155,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			// Problematic notion of radius and centre!!
 			Point centre = new Point((int) e.getX(), (int) e.getY());
 			int radius = 0;
-			this.circle = new Circle(centre, radius);
+			this.circle = new Circle(centre, radius, this.color);
 		}
 	}
 

@@ -13,7 +13,7 @@ public class ColorChooserPanel extends GridPane implements EventHandler<ActionEv
 		
 		this.view = view;
 		
-		String [] buttonLabels = {"Red", "Green"};
+		String [] buttonLabels = {"Red", "Green", "Blue", "Black"};
 	
 		int row = 0;
 	
