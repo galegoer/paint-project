@@ -46,7 +46,7 @@ TYPE     : USER STORY 5 : askarya2
 NAME     : Color selector
 OWNER    : Genrikh
 PRIORITY :4
-ESTIMATE : 8 hours
+ESTIMATE : 12 hours
 AS A     : user
 I WANT   : To be able to select the current drawing color, to be applied
            to subsequent shapes. Example: 
