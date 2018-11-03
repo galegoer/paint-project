@@ -11,28 +11,28 @@ Oct 29, 2018
 	Obstacles :
 
 Oct 30, 2018
-	Yesterday :
-	Today     :
+	Yesterday : 
+	Today     : Met with the group an divided the work. Also tried to understand how branching works.
 	Obstacles :
 
 Oct 31, 2018
 	Yesterday :
-	Today     :
-	Obstacles :
+	Today     :Started working on the UserStory3.
+	Obstacles :The obstacle I faced was to understand how to get height and width using two points.
 
 Nov 1, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday :Still working on the userStory3. 
+	Today     :Changed the approach of going at the user story. INstead of thinking it as a diagnol I started consider the begin and end point of diagnol.
+	Obstacles :Couldn't get the rectangle to draw properly. Later I realised that I was visualising the canvas wrong because of which the rectangles were not perfect. 
 
 Nov 2, 2018
 	Yesterday :
-	Today     :
-	Obstacles :
+	Today     :Finished working on the Userstory3. Started working on the userStory7. 
+	Obstacles : Took some time to understand how to go about solving the UserStory7.
 
 Nov 3, 2018
-	Yesterday :
-	Today     :
+	Yesterday : working on UserStory7
+	Today     : Still working on the UserStory7.
 	Obstacles :
 
 Nov 4, 2018
