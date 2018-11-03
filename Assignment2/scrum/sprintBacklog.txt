@@ -92,6 +92,17 @@ ISSUE    : Currently ,you can't tell which mode "Circle", "Rectangle", ...
            is currently selected. Is JButton correct, is there a way
            to highlight the currently selected mode?
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 8 : liwill13
+NAME     : Implement Draw Square
+OWNER    : 
+PRIORITY :
+ESTIMATE : 1 Hour
+AS A     : user
+I WANT   : To click the edge of a square, drag, and release to specify
+           a square to be drawn in the current style.
+SO THAT  : I can add squares to my canvas
+--------------------------------------------------------------------------
 # Sprint 2 Nov 3, 2018
 # Sprint 2 Backlog UserStories go below
 

@@ -314,7 +314,17 @@ ISSUE    : When dragging to make a circle each circle is created and added
 to the ArrayList of circles
 
 --------------------------------------------------------------------------
-
+--------------------------------------------------------------------------
+TYPE     : USER STORY 8 : UTORID
+NAME     : Implement Draw Square
+OWNER    : 
+PRIORITY :
+ESTIMATE : 1 Hour
+AS A     : user
+I WANT   : To click the edge of a square, drag, and release to specify
+           a square to be drawn in the current style.
+SO THAT  : I can add squares to my canvas
+--------------------------------------------------------------------------
 
 # COMPLETED USER STORIES/BUGS BELOW ###########################################
 
