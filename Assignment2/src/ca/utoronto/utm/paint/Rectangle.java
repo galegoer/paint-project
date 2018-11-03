@@ -7,7 +7,7 @@ public class Rectangle {
 	private int height;
 	private int scenario;
 	private int style;
-	public String rectangleColor;
+	private String rectangleColor;
 	
 	public Rectangle(Point centre, int width, int height, int scenario, String recColor, int style) {
 		this.centre = centre;
@@ -80,6 +80,10 @@ public class Rectangle {
 
 	public void setStyleR(int style) {
 		this.style = style;
+	}
+	
+	public String getColorR() {
+		return rectangleColor;
 	}
 
 }

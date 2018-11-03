@@ -5,14 +5,16 @@ public class Square extends Shape{
 	private Point centre;
 	private int side;
 	private int scenario;
-	public String sqcolor;
+	private String sqcolor;
+	private int style;
 	
 
-	public Square(Point centre, int side, int scenario, String color) {
+	public Square(Point centre, int side, int scenario, String color, int style) {
 		this.centre = centre;
 		this.side = side;
 		this.scenario = scenario;
 		this.sqcolor = color;
+		this.style = style;
 	}
 
 	public Point getCentre() {
@@ -38,6 +40,18 @@ public class Square extends Shape{
 	
 	public void setScenario(int s) {
 		scenario = s;
+	}
+	
+	public String getColorS() {
+		return sqcolor;
+	}
+	
+	public int getStyleS() {
+		return style;
+	}
+	
+	public void setStyleS(int style) {
+		this.style = style;
 	}
 
 	@Override
