@@ -13,5 +13,5 @@ Name: Gurashish Arneja
 Email: gurashish.arneja@mail.utoronto.ca
 
 Member 4:
-Name:
-Email:
+Name: Genrikh Askaryan
+Email: genrikh.askaryan@mail.utoronto.ca

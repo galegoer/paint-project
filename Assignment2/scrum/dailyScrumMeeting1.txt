@@ -1,8 +1,8 @@
 # Fill in, commit and push each day.
-# Group Member: FILL THIS IN
+# Group Member: William Li
 Oct 28, 2018
 	Yesterday :
-	Today     :
+	Today     :Formed a group
 	Obstacles :
 
 Oct 29, 2018
@@ -16,19 +16,19 @@ Oct 30, 2018
 	Obstacles :
 
 Oct 31, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday : Assigned a few UserStorys to group members
+	Today     : Completed UserStory2 -Circle Feedback, fixed Bug11 associated with UserStory2
+	Obstacles : Encountered bug in UserStory2 where excess circles were not being removed
 
 Nov 1, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday : Completed Userstory 2
+	Today     : Worked on Bug1, have circle, square and rectangle icons working
+	Obstacles : Having trouble locating an image stored within a folder, cannot finish Bug1 without fixing this issue!
 
 Nov 2, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday :Worked on Bug1	
+	Today     :Finished adding icons to replace text for Bug1, began on Bug2
+	Obstacles : New bug appeared where the buttle action can no longer find a text and change modes because they are all icons!
 
 Nov 3, 2018
 	Yesterday :

@@ -1,6 +1,6 @@
 package ca.utoronto.utm.paint;
-
-public class Circle {
+import javafx.scene.shape.Shape;
+public class Circle extends Shape{
 	
 	private Point centre;
 	private int radius;
@@ -24,6 +24,12 @@ public class Circle {
 
 	public void setRadius(int radius) {
 		this.radius = radius;
+	}
+
+	@Override
+	public com.sun.javafx.geom.Shape impl_configShape() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
