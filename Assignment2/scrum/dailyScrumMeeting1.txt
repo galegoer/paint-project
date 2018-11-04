@@ -31,9 +31,9 @@ Nov 2, 2018
 	Obstacles : New bug appeared where the buttle action can no longer find a text and change modes because they are all icons!
 
 Nov 3, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday : Finished adding icons for text in Bug1
+	Today     : Finished Bug2, implemented square function, removed color text for actual colors
+	Obstacles : Code structure is very unorganized, research for a new design structure required
 
 Nov 4, 2018
 	Yesterday :
