@@ -135,9 +135,18 @@ I WANT   : To be able to select the current drawing color, to be applied
            		draw a squiggle
            	results in two red circles and a red rectangle as well as
            	two green rectangles and a green squiggle
-SO THAT  : 
+SO THAT  : The user will be able to select the colour they want.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG UserStory5 : askarya2
+NAME     : Colored Icons instead of text for color selection
+OWNER    : 
+PRIORITY :
+ESTIMATE : 1 hours
+ISSUE    : Would be nice to have colors instead of just words that say the color.
+--------------------------------------------------------------------------
+
 
 
 # Sprint 2 Nov 3, 2018
