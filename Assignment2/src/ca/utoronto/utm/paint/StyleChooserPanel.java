@@ -13,7 +13,7 @@ public class StyleChooserPanel extends GridPane implements EventHandler<ActionEv
 
 			this.view = view;
 
-			String[] buttonLabels = { "Fill", "Outline" };
+			String[] buttonLabels = { "Fill", "Outline", "Clear" };
 
 			int row = 0;
 			for (String label : buttonLabels) {
@@ -28,8 +28,15 @@ public class StyleChooserPanel extends GridPane implements EventHandler<ActionEv
 		@Override
 		public void handle(ActionEvent event) {
 			String command = ((Button) event.getSource()).getText();
+			if (command != "Clear") {
 			this.view.getPaintPanel().setMode(1, command);
 			System.out.println(command);
+			}
+			else {
+				this.view.getPaintPanel().reset();
+				System.out.println(command);
+				
+			}
 		}
 	}
 

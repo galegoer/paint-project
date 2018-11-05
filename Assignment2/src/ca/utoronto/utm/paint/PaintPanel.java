@@ -49,7 +49,15 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		
 		this.style = "";
 	}
-
+	
+	public void reset() {
+		this.model.removeAllCircles();
+		this.model.removeAllRectangles();
+		this.model.removeAllSquares();
+		this.model.removeAllPoints();
+		repaint();
+	}
+	
 	public void repaint() {
 
 		GraphicsContext g = this.canvas.getGraphicsContext2D();

@@ -9,6 +9,11 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.SeparatorMenuItem;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import java.awt.FlowLayout;  
+import java.awt.Panel;  
+import javax.swing.JComboBox;  
+import javax.swing.JFrame;  
+import javax.swing.JSplitPane;  
 
 public class View implements EventHandler<ActionEvent> {
 
@@ -17,7 +22,6 @@ public class View implements EventHandler<ActionEvent> {
 	private PaintPanel paintPanel;
 	private ShapeChooserPanel shapeChooserPanel;
 	private StyleChooserPanel styleChooserPanel;
-	
 	//ColorChooserPanel
 	private ColorChooserPanel colorChooserPanel;
 
@@ -35,6 +39,8 @@ public class View implements EventHandler<ActionEvent> {
 
 		this.colorChooserPanel = new ColorChooserPanel(this);
 		
+		//splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, this.shapeChooserPanel, this.colorChooserPanel);
+		
 		BorderPane root = new BorderPane();
 		root.setTop(createMenuBar());
 		root.setCenter(this.paintPanel);
@@ -47,7 +53,9 @@ public class View implements EventHandler<ActionEvent> {
 		stage.setTitle("Paint");
 		stage.show();
 	}
-
+	
+	
+	
 	public PaintPanel getPaintPanel() {
 		return paintPanel;
 	}

@@ -119,7 +119,7 @@ TYPE     : USER STORY 5 : askarya2
 NAME     : Color selector
 OWNER    : Genrikh
 PRIORITY :4
-ESTIMATE : 12 hours
+ESTIMATE : 10 hours
 AS A     : user
 I WANT   : To be able to select the current drawing color, to be applied
            to subsequent shapes. Example: 
@@ -144,6 +144,17 @@ SO THAT  :
 
 # Sprint 2 Nov 3, 2018
 # Sprint 2 Backlog UserStories go below
+
+TYPE     : USER STORY 9: askarya2
+NAME     : Clear canvas button
+OWNER    : 
+PRIORITY :2
+ESTIMATE : 4 Hour
+AS A     : user
+I WANT   : Have a button that can be pressed to reset the canvas to a blank state.
+SO THAT  : The canvas can be cleared.
+--------------------------------------------------------------------------
+
 
 # Sprint 2 Nov 9, 2018
 # Sprint 2 Backlog UserStories go below

@@ -30,7 +30,19 @@ public class PaintModel extends Observable {
 	public void removeCircle(int i) {
 		this.circles.remove(i);
 	}
-
+	public void removeAllCircles() {
+		this.circles = new ArrayList<Circle>();
+	}
+	public void removeAllSquares() {
+		this.squares = new ArrayList<Square>();
+	}
+	public void removeAllPoints() {
+		this.points = new ArrayList<Point>();
+	}
+	public void removeAllRectangles() {
+		this.rectangles = new ArrayList<Rectangle>();
+	}
+	
 	public ArrayList<Circle> getCircles() {
 		return circles;
 	}
