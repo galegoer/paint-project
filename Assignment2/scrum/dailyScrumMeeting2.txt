@@ -41,9 +41,11 @@ Nov 3, 2018
 	Obstacles : Many merge errors today as every update changed a lot of the code so had to manually fix the merges
 
 Nov 4, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday : Completed UserStory 4 and 6
+	Today     : Did not have much time to code because of other assignments, thought of some general ideas for
+		    a new design pattern
+	Obstacles : Several assignments due and a test to study for did not have enough time to think of a 
+		    good design pattern
 
 Nov 5, 2018
 	Yesterday :

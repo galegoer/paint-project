@@ -23,7 +23,7 @@ OWNER    :
 PRIORITY :
 ESTIMATE : 10 minutes
 ISSUE    : When dragging to make a circle each circle is created and added
-to the ArrayList of circles
+	   to the ArrayList of circles
 
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
@@ -83,7 +83,6 @@ I WANT   : To be able to select the current drawing style (filled or outline), t
 SO THAT  : 
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-<<<<<<< HEAD
 TYPE     : BUG 2 : liwill13
 NAME     : Drawing selection mode not indicated
 OWNER    : 
@@ -139,7 +138,6 @@ I WANT   : To be able to select the current drawing color, to be applied
 SO THAT  : 
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-
 
 
 # Sprint 2 Nov 3, 2018
