@@ -7,12 +7,13 @@ Oct 28, 2018
 
 Oct 29, 2018
 	Yesterday :
-	Today     :Busy
+	Today     :I was busy and didn't have any time to make progress.
 	Obstacles :
 
 Oct 30, 2018
 	Yesterday :
-	Today     :Busy
+	Today     :I was busy and didn't have any time to make progress.
+
 	Obstacles :
 
 Oct 31, 2018
@@ -32,13 +33,14 @@ Nov 2, 2018
 
 Nov 3, 2018
 	Yesterday :Partially working, have to sort out messed up colors. 
-	Today     :Added more functions to the circle class, a static class which allows for a color string to be converted into the color type. The colors now work as expected for circles	Obstacles : still some erros with squiggle, perhaps because of some other bug which keeps the squiggle connected. 
+	Today     :Added more functions to the circle class, a static class which allows for a color string to be converted into the color type. The colors now work as expected for circles. The color selector pannel now displays the colors you want to chose instead of just buttons with words.
+	Obstacles : still some erros with squiggle, perhaps because of some other bug which keeps the squiggle connected. 
 
 
 Nov 4, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday :The team finished up with the first sprint, still work to be done to smooth out the rough edges
+	Today     :UserStory9 completed, I added a clear button which clears window of all created circles, lines, rectangles, squares.
+	Obstacles :Code could maybe be written a bit neater, took a while to make sure that the button worked properly. The formatting could be better, (the button could be placed in a better place)
 
 Nov 5, 2018
 	Yesterday :
