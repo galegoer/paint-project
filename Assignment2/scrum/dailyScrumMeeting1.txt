@@ -36,9 +36,10 @@ Nov 3, 2018
 	Obstacles : Code structure is very unorganized, research for a new design structure required
 
 Nov 4, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday : Finishing up Bugs, and implementing functions
+	Today     : Had to complete 223 assignments and study for 256.
+	Obstacles : Code structure is still poor, we wish to fix this asap as it makes our code hard to read (unorganized)
+		
 
 Nov 5, 2018
 	Yesterday :
