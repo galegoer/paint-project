@@ -155,6 +155,15 @@ I WANT   : Have a button that can be pressed to reset the canvas to a blank stat
 SO THAT  : The canvas can be cleared.
 --------------------------------------------------------------------------
 
+TYPE     : USER STORY 10: askarya2
+NAME     : Backup one step
+OWNER    : 
+PRIORITY :3
+ESTIMATE : 4 Hour
+AS A     : user
+I WANT   : Have a button that can be pressed to remove the last drawn something, if i drew a line I want to be able to remove t, it I made a circle with the click of a button iwant it gone.
+SO THAT  : A user can easily delete a mistake without having to reset and clear the entire canvas.
+--------------------------------------------------------------------------
 
 # Sprint 2 Nov 9, 2018
 # Sprint 2 Backlog UserStories go below
