@@ -43,9 +43,9 @@ Nov 4, 2018
 	Obstacles :Code could maybe be written a bit neater, took a while to make sure that the button worked properly. The formatting could be better, (the button could be placed in a better place)
 
 Nov 5, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday :Finished the clear button.
+	Today     :Began work on the reverse button, drafted some ideas. 
+	Obstacles :Not sure if we change our architecture how my model will work. Should the reverse button work after clearing a window? 
 
 Nov 6, 2018
 	Yesterday :
