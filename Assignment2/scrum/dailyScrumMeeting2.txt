@@ -48,9 +48,9 @@ Nov 4, 2018
 		    good design pattern
 
 Nov 5, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday : Finished other assignments
+	Today     : Studied for stats test
+	Obstacles : Didn't have time to code
 
 Nov 6, 2018
 	Yesterday :
