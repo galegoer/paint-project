@@ -53,9 +53,10 @@ Nov 5, 2018
 	Obstacles : Didn't have time to code
 
 Nov 6, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday : Studied for stats
+	Today     : Reviewed design patterns, thought of some ideas that we could use, possibly an iterator
+		    for the objects (circle, square, etc.). Possibly Strategy Pattern for the PaintPanel.
+	Obstacles : Hard to think of the code for this as it is similar to starting from scratch.
 
 Nov 7, 2018
 	Yesterday :
