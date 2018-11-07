@@ -47,9 +47,9 @@ Nov 5, 2018
 	Obstacles : Still need to fix/improve code structure
 
 Nov 6, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday : Studying
+	Today     : Finishing up the last of my assignments due tomorrow. 
+	Obstacles : Need to implement a new design structure.
 
 Nov 7, 2018
 	Yesterday :
