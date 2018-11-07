@@ -49,8 +49,8 @@ Nov 5, 2018
 
 Nov 6, 2018
 	Yesterday :
-	Today     :
-	Obstacles :
+	Today     :Drafted up some ode for the reverse state button.
+	Obstacles :Still need to ask the team if it resets after clear canvas
 
 Nov 7, 2018
 	Yesterday :
