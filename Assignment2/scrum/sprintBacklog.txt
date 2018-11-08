@@ -161,7 +161,6 @@ AS A     : user
 I WANT   : Have a button that can be pressed to reset the canvas to a blank state.
 SO THAT  : The canvas can be cleared.
 --------------------------------------------------------------------------
-
 TYPE     : USER STORY 10: askarya2
 NAME     : Backup one step
 OWNER    : 
@@ -171,9 +170,8 @@ AS A     : user
 I WANT   : Have a button that can be pressed to remove the last drawn something, if i drew a line I want to be able to remove t, it I made a circle with the click of a button iwant it gone.
 SO THAT  : A user can easily delete a mistake without having to reset and clear the entire canvas.
 --------------------------------------------------------------------------
-
 --------------------------------------------------------------------------
-TYPE     : BUG 9 : UTORID
+TYPE     : BUG 9 : askarya2
 NAME     : Architecture behind choosing drawing mode is poor
 OWNER    : 
 PRIORITY :
@@ -189,6 +187,20 @@ Note that you can associate text with a button, even if you
 display an ImageIcon. The string attached to the button causes the right choice 
 of object creation.
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG 3 : liwill13
+NAME     : Architecture behind choosing selection mode is poor
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+ISSUE    : Code is not modular and is difficult to expand. Need a better
+           architecture behind selecting a drawing mode, and handling
+           the drawing events. Consider some design patterns here.
+           Refactor ShapeChooserPanel and PaintPanel to get rid of the
+           'if' blocks in the PaintPanel mouse event code.
+--------------------------------------------------------------------------
 
-# Sprint 2 Nov 9, 2018
-# Sprint 2 Backlog UserStories go below
+
+
+# Sprint 3 Nov 9, 2018
+# Sprint 3 Backlog UserStories go below
