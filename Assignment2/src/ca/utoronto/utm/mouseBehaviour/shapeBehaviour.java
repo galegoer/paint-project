@@ -2,7 +2,7 @@ package ca.utoronto.utm.mouseBehaviour;
 
 import javafx.scene.input.MouseEvent;
 
-public interface mouseBehaviour {
+public interface shapeBehaviour {
 	public void mouseDragged (MouseEvent e);
 	public void mousePressed (MouseEvent e);
 	public void mouseClicked (MouseEvent e);

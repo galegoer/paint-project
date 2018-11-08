@@ -30,7 +30,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 
 	private Canvas canvas;
 
-	// private String style;
+	context c = new context();
 
 	public PaintPanel(PaintModel model, View view) {
 
@@ -188,27 +188,15 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 
 	@Override
 	public void handle(MouseEvent event) {
+		c.setModel(this.model);
+		c.setColor(this.color);
+		c.setModes(this.modes);
 
-		//if (event.getEventType() == MouseEvent.MOUSE_DRAGGED) {
-		//	mouseDragged(event);
-		// } else if (event.getEventType() == MouseEvent.MOUSE_PRESSED) {
-		// mousePressed(event);
-		// } else if (event.getEventType() == MouseEvent.MOUSE_MOVED) {
-		// mouseMoved(event);
-		// } else if (event.getEventType() == MouseEvent.MOUSE_CLICKED) {
-		// mouseClicked(event);
-		// } else if (event.getEventType() == MouseEvent.MOUSE_RELEASED) {
-		// mouseReleased(event);
-		// } else if (event.getEventType() == MouseEvent.MOUSE_ENTERED) {
-		// mouseEntered(event);
-		// } else if (event.getEventType() == MouseEvent.MOUSE_EXITED) {
-		// mouseExited(event);
-		// }
-
-		context c = new context();
-		c.setBehaviour(new mouseMaster(this.modes, this.model, this.color));
+		
+		//String s = this.modes.get(0) + "Behaviour";
+		c.setBehaviour(this.modes.get(0));
 		c.move(event);
-		///System.out.println("aaa");
+		
 	}
 
 	// private void mouseMoved(MouseEvent e) {
