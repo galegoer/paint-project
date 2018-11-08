@@ -13,10 +13,10 @@ public class mouseMaster implements mouseBehaviour {
 	PaintModel model;
 	ArrayList<String> modes;
 	String color;
-	
-	Circle circle;
-	Rectangle rectangle;
-	Square square;
+
+	static Circle circle;
+	static Rectangle rectangle;
+	static Square square;
 
 	public mouseMaster(ArrayList<String> s, PaintModel model, String color) {
 		this.modes = s;
@@ -25,7 +25,98 @@ public class mouseMaster implements mouseBehaviour {
 	}
 
 	public void mouseDragged(MouseEvent e) {
-		return;
+		if (this.modes.get(0) == "Squiggle") {
+			this.model.addPoint(new Point((int) e.getX(), (int) e.getY()));
+		} else if (this.modes.get(0) == "Circle") {
+			
+			
+			int radius = (int) Math.sqrt(Math.pow((int) this.circle.getCentre().getX() - (int) e.getX(), 2)
+					+ Math.pow((int) this.circle.getCentre().getY() - (int) e.getY(), 2));
+			this.circle.setRadius(radius);
+			this.model.addCircle(this.circle);
+			this.model.removeCircle(this.model.getCircles().size() - 1);
+			
+		} else if (this.modes.get(0) == "Rectangle") {
+			// Begin
+			int x1 = this.rectangle.getCentre().getX();
+			int y1 = this.rectangle.getCentre().getY();
+			// mouse release or end
+			int x2 = (int) e.getX();
+			int y2 = (int) e.getY();
+
+			if (x2 > x1 && y2 > y1) {
+				this.rectangle.setScenario(1);
+				Point centre = new Point(x1, y1);
+				this.rectangle.setHeight(y2 - y1);
+				this.rectangle.setWidth(x2 - x1);
+				this.rectangle.setCentre(centre);
+			}
+			// Scenario 2
+			else if (x1 > x2 && y2 < y1) {
+				this.rectangle.setScenario(2);
+				this.rectangle.setHeight(y1 - y2);
+				this.rectangle.setWidth(x1 - x2);
+			}
+			// Scenario 3
+			else if (x1 > x2 && y1 < y2) {
+				this.rectangle.setScenario(3);
+				this.rectangle.setHeight(y2 - y1);
+				this.rectangle.setWidth(x1 - x2);
+			}
+			// Scenario 4
+			else if (x2 > x1 && y2 < y1) {
+				this.rectangle.setScenario(4);
+				this.rectangle.setHeight(y1 - y2);
+				this.rectangle.setWidth(x2 - x1);
+			}
+			this.model.addRectangle(this.rectangle);
+			this.model.removeRectangle(this.model.getRectangles().size() - 1);
+		}
+
+		else if (this.modes.get(0) == "Square") {
+
+			int x1 = this.square.getCentre().getX();
+			int y1 = this.square.getCentre().getY();
+			int x2 = (int) e.getX();
+			int y2 = (int) e.getY();
+			if (x2 > x1 && y2 > y1) {
+				if ((x2 - x1) > (y2 - y1))
+					this.square.setSideLength(x2 - x1);
+				else
+					this.square.setSideLength(y2 - y1);
+				this.square.setScenario(1);
+				Point centre = new Point(x1, y1);
+				this.square.setCentre(centre);
+			}
+			// Scenario 2
+			else if (x1 > x2 && y2 < y1) {
+				if ((x1 - x2) > (y1 - y2))
+					this.square.setSideLength(x1 - x2);
+				else
+					this.square.setSideLength(y1 - y2);
+				this.square.setScenario(2);
+
+			}
+			// Scenario 3
+			else if (x1 > x2 && y1 < y2) {
+				if ((x1 - x2) > (y2 - y1))
+					this.square.setSideLength(x1 - x2);
+				else
+					this.square.setSideLength(y2 - y1);
+				this.square.setScenario(3);
+			}
+			// Scenario 4
+			else if (x2 > x1 && y2 < y1) {
+				if ((x2 - x1) > (y1 - y2))
+					this.square.setSideLength(x2 - x1);
+				else
+					this.square.setSideLength(y1 - y2);
+				this.square.setScenario(4);
+			}
+
+			this.model.addSquare(this.square);
+			this.model.removeSquare(this.model.getSquares().size() - 1);
+		}
 	}
 
 	public void mousePressed(MouseEvent e) {
@@ -42,7 +133,8 @@ public class mouseMaster implements mouseBehaviour {
 				circle.setStyleC(1);
 			}
 			this.circle = circle;
-		
+			System.out.println("Circle created");
+
 		} else if (this.modes.get(0) == "Rectangle") {
 			Point centre = new Point((int) e.getX(), (int) e.getY());
 			int height = 0;
@@ -66,21 +158,25 @@ public class mouseMaster implements mouseBehaviour {
 			}
 			this.square = square;
 		}
-		
+
 	}
 
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
+		
 		if (this.modes.get(0) == "Squiggle") {
 
 		} else if (this.modes.get(0) == "Circle") {
+			
 			if (this.circle != null) {
+				//System.out.println("released run");
 				// Problematic notion of radius and centre!!
 				int radius = (int) Math.sqrt(Math.pow((int) this.circle.getCentre().getX() - (int) e.getX(), 2)
 						+ Math.pow((int) this.circle.getCentre().getY() - (int) e.getY(), 2));
 				this.circle.setRadius(radius);
 				this.model.addCircle(this.circle);
 				this.circle = null;
+				System.out.println("circle added");
 			}
 
 		} else if (this.modes.get(0) == "Rectangle") {

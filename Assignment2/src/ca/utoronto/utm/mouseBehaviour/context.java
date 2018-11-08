@@ -5,8 +5,8 @@ import javafx.scene.input.MouseEvent;
 
 public class context {
 	mouseBehaviour behaviour;
-	String style, mode;
-	PaintModel model; //temporary? used to give mouseMaster a model so that it can run our code, however this will change depending on a better implication of model
+	//String style, mode;
+	//PaintModel model; //temporary? used to give mouseMaster a model so that it can run our code, however this will change depending on a better implication of model
 	//MouseEvent event;
 	
 	public context() {
@@ -39,6 +39,7 @@ public class context {
 			this.behaviour.mouseClicked(event);
 		} else if (event.getEventType() == MouseEvent.MOUSE_RELEASED) {
 			this.behaviour.mouseReleased(event);
+		
 		} else if (event.getEventType() == MouseEvent.MOUSE_ENTERED) {
 			this.behaviour.mouseEntered(event);
 		} else if (event.getEventType() == MouseEvent.MOUSE_EXITED) {
