@@ -54,7 +54,7 @@ Nov 6, 2018
 
 Nov 7, 2018
 	Yesterday :
-	Today     :
+	Today     :Met with the team, claimed bug9 and began work on redisigning the Archetecture 
 	Obstacles :
 
 Nov 8, 2018

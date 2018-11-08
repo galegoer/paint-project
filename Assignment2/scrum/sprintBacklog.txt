@@ -172,5 +172,23 @@ I WANT   : Have a button that can be pressed to remove the last drawn something,
 SO THAT  : A user can easily delete a mistake without having to reset and clear the entire canvas.
 --------------------------------------------------------------------------
 
+--------------------------------------------------------------------------
+TYPE     : BUG 9 : UTORID
+NAME     : Architecture behind choosing drawing mode is poor
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+ISSUE    : A better architecture behind selecting a drawing mode can be created 
+by implementing the Factory Design Pattern as follows:
+
+The factory design pattern should be used by the paint buttons. 
+The factory is responsible for creating different ShapeManipulatorStrategy 
+instances (see BUG 2.4). That is, when a button is pressed, the appropriate 
+ShapeManipulatorStrategy is created and installed in the PaintPanel. 
+Note that you can associate text with a button, even if you 
+display an ImageIcon. The string attached to the button causes the right choice 
+of object creation.
+--------------------------------------------------------------------------
+
 # Sprint 2 Nov 9, 2018
 # Sprint 2 Backlog UserStories go below

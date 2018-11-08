@@ -1,6 +1,6 @@
 package ca.utoronto.utm.paint;
 
-public class Rectangle {
+public class Rectangle{
 	
 	private Point centre;
 	private int width;
