@@ -33,27 +33,27 @@ Nov 2, 2018
 Nov 3, 2018
 	Yesterday : working on UserStory7
 	Today     : Still working on the UserStory7.
-	Obstacles :
+	Obstacles :Understanding how to implement a slider. 
 
 Nov 4, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday : Trying to implement a slider
+	Today     : Successfully implemented a slider. Now started working on line thickness.
+	Obstacles : Don't know how to communicate with a sliders. 
 
 Nov 5, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday :Implemented a slider.
+	Today     : Still trying to find a way to communicate to a slider. Got some hint regarding to use actionlisteners for it.
+	Obstacles : Major obstacle has been to figure out how to use action listeners. 
 
 Nov 6, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday :Researching how to implement slider successfully.
+	Today     : Made some progress but line thickness still doesn't work properly.
+	Obstacles : Didn't really get much time to work on it because of Stats test. Now major onstacle is to figure out how to adjust line thickness of a circle or other shapes.
 
 Nov 7, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday : Researching how to adjust the line thickness of shapes.
+	Today     : Still working on the code.
+	Obstacles : Haven't been able to connect line thickness to slider. Its turning into a big problem. Thinking of contacting a TA or a professor for some help.
 
 Nov 8, 2018
 	Yesterday :
@@ -89,3 +89,4 @@ Nov 14, 2018
 	Yesterday :
 	Today     :
 	Obstacles :
+
