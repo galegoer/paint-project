@@ -200,6 +200,7 @@ ISSUE    : Code is not modular and is difficult to expand. Need a better
            'if' blocks in the PaintPanel mouse event code.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
+<<<<<<< HEAD
 TYPE     : USER STORY 7 : arnejagu
 NAME     : Line thickness selector
 OWNER    : 
@@ -226,6 +227,15 @@ SO THAT  :
 --------------------------------------------------------------------------
 
 
+=======
+TYPE     : USER STORY 11 : liwill13
+NAME     : Implement Poly Line
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+ISSUE    : YOU FILL THIS ONE IN!!
+--------------------------------------------------------------------------
+>>>>>>> 56989648b991a1a3a2ba6de36fdfad2434e7b252
 
 # Sprint 3 Nov 9, 2018
 # Sprint 3 Backlog UserStories go below

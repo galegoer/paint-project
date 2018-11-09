@@ -55,12 +55,12 @@ Nov 6, 2018
 Nov 7, 2018
 	Yesterday :
 	Today     :Met with the team, claimed bug9 and began work on redisigning the Archetecture 
-	Obstacles :
+	Obstacles : Not sure how factory works, did some research
 
 Nov 8, 2018
 	Yesterday :
-	Today     :
-	Obstacles :
+	Today     :Created the factory and mode class for bug9
+	Obstacles :Not sure how to get it working with the paint panel.
 
 Nov 9, 2018
 	Yesterday :
