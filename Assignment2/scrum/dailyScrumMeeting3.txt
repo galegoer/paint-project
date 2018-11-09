@@ -56,9 +56,9 @@ Nov 7, 2018
 	Obstacles : Haven't been able to connect line thickness to slider. Its turning into a big problem. Thinking of contacting a TA or a professor for some help.
 
 Nov 8, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday : Working on line thickness. UserStory7.
+	Today     : Finished working on UserStory7. This thing took way ore time than it should have.
+	Obstacles : Placement of the linethickness was the only tricy part. But it's done now.
 
 Nov 9, 2018
 	Yesterday :
