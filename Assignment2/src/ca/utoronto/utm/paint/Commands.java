@@ -6,23 +6,33 @@ import javafx.scene.canvas.GraphicsContext;
 
 public class Commands extends Observable implements ShapeCommand {
 	private Object obj;
-	private GraphicsContext g;
 	
 	public Commands(Object obj) {
 		this.obj = obj;
 	}
 	
+	
+	//IDK IF U NEED g?
 	@Override
-	public void execute() {
-		if(this.obj.equals("Circle")) {
-			//this.createCircle(obj, g);
-		} else if(this.obj.equals("Rectangle")) {
-			//this.createRectangle(obj, g);
-		} else if(this.obj.equals("Square")) {
-			//this.obj.createSquare(obj, g);
+	public void execute(GraphicsContext g) {
+		if(obj instanceof Point) {
+			this.createPoint((Point) obj, g);
+		} else if(obj instanceof Circle) {
+			this.createCircle((Circle) obj, g);
+		} else if(obj instanceof Rectangle) {
+			this.createRect((Rectangle) obj, g);
+		} else if(obj instanceof Square) {
+			this.createSquare((Square) obj, g);
 		}
-		this.setChanged();
-		this.notifyObservers();
+		
+	}
+	
+	public void createPoint(Point p, GraphicsContext g) {
+		//Point p1 = points.get(i);
+		//Point p2 = points.get(i + 1);
+		//g.setStroke(Circle.setPaint(this.color));
+		//g.strokeLine(p1.getX(), p1.getY(), p2.getX(), p2.getY());
+		//CURRENTLY NOT WORKING NEED TO FIX FOR SQUIGGLE
 	}
 	
 	public void createCircle(Circle c, GraphicsContext g) {
@@ -39,11 +49,7 @@ public class Commands extends Observable implements ShapeCommand {
 		g.strokeOval(x - radius, y - radius, 2 * radius, 2 * radius);
 		g.strokeOval(x - radius, y - radius, 2 * radius, 2 * radius);
 	}
-	//}
 
-	// Draw Rectangles
-	//ArrayList<Rectangle> rectangles = this.model.getRectangles();
-	//for (Rectangle r : rectangles) {
 	public void createRect(Rectangle r, GraphicsContext g) {	
 		int a = r.getCentre().getX();
 		int b = r.getCentre().getY();
@@ -81,7 +87,6 @@ public class Commands extends Observable implements ShapeCommand {
 		int side = r.getSideLength();
 		if(r.getStyleS() == 1) {
 			g.setFill(Circle.setPaint(r.getColorS()));
-			System.out.println("hi");
 			if (r.getScenario() == 1) {
 				g.fillRect(a, b, side, side);
 			} else if (r.getScenario() == 2) {

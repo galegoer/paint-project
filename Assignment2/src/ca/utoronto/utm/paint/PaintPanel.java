@@ -16,10 +16,12 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 	private int i = 0;
 	private PaintModel model; // slight departure from MVC, because of the way painting works
 	private View view; // So we can talk to our parent or other components of the view
-
+	private Commands commands;
+	
 	private ArrayList<String> modes = new ArrayList<String>(); // modifies how we interpret input (could be better?)
 	private Circle circle; // the circle we are building
 	private Rectangle rectangle;
+	private Point point;
 
 	private String color;
 
@@ -50,17 +52,15 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		this.style = "";
 	}
 	
-	public void reset() {
-		this.model.removeAllCircles();
-		this.model.removeAllRectangles();
-		this.model.removeAllSquares();
-		this.model.removeAllPoints();
-		repaint();
+	public void reset() { //RESET ISNT WORKING
+		//this.model.removeAllCircles();
+		//this.model.removeAllRectangles();
+		//this.model.removeAllSquares();
+		//this.model.removeAllPoints();
+		//repaint();
 	}
 	
 	public void repaint() {
-
-		
 		
 		GraphicsContext g = this.canvas.getGraphicsContext2D();
 
@@ -73,101 +73,8 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		i = i + 1;
 
 		
-		model.operateAll();
+		model.operateAll(g);
 		
-	}
-		// Draw Lines
-		//ArrayList<Point> points = this.model.getPoints();
-		//for (int i = 0; i < points.size() - 1; i++) {
-//		public void createPoint(Point points, GraphicsContext g) {
-//			Point p1 = points.get(i);
-//			Point p2 = points.get(i + 1);
-//			g.setStroke(Circle.setPaint(this.color));
-//			g.strokeLine(p1.getX(), p1.getY(), p2.getX(), p2.getY());
-//		}
-
-		// Draw Circles
-		//ArrayList<Circle> circles = this.model.getCircles();
-		//for (Circle c : circles) {
-		public void createCircle(Circle c, GraphicsContext g) {
-			int x = c.getCentre().getX();
-			int y = c.getCentre().getY();
-			int radius = c.getRadius();
-			if(c.getStyleC() == 1) {
-				g.setFill(Circle.setPaint(c.getString())); //FIX WITH WHAT COLOR IS SET
-				g.fillOval(x-radius, y-radius, 2*radius, 2*radius);
-			} else {
-				g.strokeOval(x-radius, y-radius, 2*radius, 2*radius);
-			}
-			g.setStroke(Circle.setPaint(c.getString()));
-			g.strokeOval(x - radius, y - radius, 2 * radius, 2 * radius);
-			g.strokeOval(x - radius, y - radius, 2 * radius, 2 * radius);
-		}
-		//}
-
-		// Draw Rectangles
-		//ArrayList<Rectangle> rectangles = this.model.getRectangles();
-		//for (Rectangle r : rectangles) {
-		public void createRect(Rectangle r, GraphicsContext g) {	
-			int a = r.getCentre().getX();
-			int b = r.getCentre().getY();
-			int height = r.getHeight();
-			int width = r.getWidth();
-			if(r.getStyleR() == 1) {
-				g.setFill(Circle.setPaint(r.getColorR()));
-				if(r.getScenario() == 1) {
-					g.fillRect(a, b, width, height);
-				}else if(r.getScenario() == 2) {
-					g.fillRect(a-width, b-height , width, height);
-				}else if(r.getScenario() == 3) {
-					g.fillRect(a-width, b, width, height);
-				}else if(r.getScenario() == 4) {
-					g.fillRect(a, b-height , width, height);
-			}}else{
-			g.setStroke(Circle.setPaint(r.getColorR()));
-			if (r.getScenario() == 1) {
-				g.strokeRect(a, b, width, height);
-			} else if (r.getScenario() == 2) {
-				g.strokeRect(a - width, b - height, width, height);
-			} else if (r.getScenario() == 3) {
-				g.strokeRect(a - width, b, width, height);
-			} else if (r.getScenario() == 4) {
-				g.strokeRect(a, b - height, width, height);
-			}
-		}
-}
-		// Draw Squares
-		//ArrayList<Square> squares = this.model.getSquares();
-		//for (Square r : squares) {
-		public void createSquare(Square r, GraphicsContext g) {
-			int a = r.getCentre().getX();
-			int b = r.getCentre().getY();
-			int side = r.getSideLength();
-			if(r.getStyleS() == 1) {
-				g.setFill(Circle.setPaint(r.getColorS()));
-				System.out.println("hi");
-				if (r.getScenario() == 1) {
-					g.fillRect(a, b, side, side);
-				} else if (r.getScenario() == 2) {
-					g.fillRect(a - side, b - side, side, side);
-				} else if (r.getScenario() == 3) {
-					g.fillRect(a - side, b, side, side);
-				} else if (r.getScenario() == 4) {
-					g.fillRect(a, b - side, side, side);
-				}
-			} else {
-			g.setStroke(Circle.setPaint(r.getColorS()));
-			if (r.getScenario() == 1) {
-				g.strokeRect(a, b, side, side);
-			} else if (r.getScenario() == 2) {
-				g.strokeRect(a - side, b - side, side, side);
-			} else if (r.getScenario() == 3) {
-				g.strokeRect(a - side, b, side, side);
-			} else if (r.getScenario() == 4) {
-				g.strokeRect(a, b - side, side, side);
-			}
-
-		}
 	}
 
 	@Override
@@ -178,7 +85,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 	}
 
 	/**
-	 * CHANGED THIS Now referes to index as first input
+	 * CHANGED THIS Now refers to index as first input
 	 * and mode you want as second
 	 */
 	public void setMode(int index, String mode) {
@@ -187,7 +94,6 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 
 	public void setColor(String color) {
 		this.color = color;
-
 	}
 
 	@Override
@@ -220,13 +126,13 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 
 	private void mouseDragged(MouseEvent e) {
 		if (this.modes.get(0) == "Squiggle") {
-			this.model.addPoint(new Point((int) e.getX(), (int) e.getY()));
+			//addPoint(new Point((int) e.getX(), (int) e.getY()));
+			this.model.acceptCommand(new Commands(this.point));
 		} else if (this.modes.get(0) == "Circle") {
 			int radius = (int) Math.sqrt(Math.pow((int) this.circle.getCentre().getX() - (int) e.getX(), 2) + 
 					Math.pow((int) this.circle.getCentre().getY() - (int) e.getY(), 2));
 			this.circle.setRadius(radius);
-			this.model.addCircle(this.circle);
-			this.model.removeCircle(this.model.getCircles().size()-1);
+			this.model.acceptCommand(new Commands(this.circle));
 		} else if (this.modes.get(0) == "Rectangle") {
 			// Begin
 			int x1 = this.rectangle.getCentre().getX();
@@ -260,8 +166,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 				this.rectangle.setHeight(y1 - y2);
 				this.rectangle.setWidth(x2 - x1);
 			}
-			this.model.addRectangle(this.rectangle);
-			this.model.removeRectangle(this.model.getRectangles().size() - 1);
+			this.model.acceptCommand(new Commands(this.rectangle));
 		}
 
 		else if (this.modes.get(0) == "Square") {
@@ -304,9 +209,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 					this.square.setSideLength(y1 - y2);
 				this.square.setScenario(4);
 			}
-
-			this.model.addSquare(this.square);
-			this.model.removeSquare(this.model.getSquares().size() - 1);
+			this.model.acceptCommand(new Commands(this.square));
 		}
 	}
 
@@ -320,9 +223,9 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 
 	private void mousePressed(MouseEvent e) {
 		if (this.modes.get(0) == "Squiggle") {
-
+			this.point = new Point((int) e.getX(), (int) e.getY());
+			//this.point.setColor(this.color);
 		} else if (this.modes.get(0) == "Circle") {
-			// Problematic notion of radius and centre!!
 			Point centre = new Point((int) e.getX(), (int) e.getY());
 			int radius = 0;
 			int style = 0;
@@ -358,11 +261,10 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 
 		} else if (this.modes.get(0) == "Circle") {
 			if (this.circle != null) {
-				// Problematic notion of radius and centre!!
 				int radius = (int) Math.sqrt(Math.pow((int) this.circle.getCentre().getX() - (int) e.getX(), 2)
 						+ Math.pow((int) this.circle.getCentre().getY() - (int) e.getY(), 2));
 				this.circle.setRadius(radius);
-				this.model.addCircle(this.circle);
+				this.model.acceptCommand(new Commands(this.circle));
 				this.circle = null;
 			}
 
@@ -370,10 +272,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 
 		}
 			if (this.rectangle != null) {
-
-				// Point centre = new Point((int) e.getX(), (int) e.getY());
-				// Begin
-
+				
 				int x1 = this.rectangle.getCentre().getX();
 				int y1 = this.rectangle.getCentre().getY();
 				// mouse release or end
@@ -404,8 +303,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 					this.rectangle.setHeight(y1 - y2);
 					this.rectangle.setWidth(x2 - x1);
 				}
-
-				this.model.addRectangle(this.rectangle);
+				this.model.acceptCommand(new Commands(this.rectangle));
 				this.rectangle = null;
 			}
 		else if (this.modes.get(0) == "Square") {
@@ -450,8 +348,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 						this.square.setSideLength(y1 - y2);
 					this.square.setScenario(4);
 				}
-
-				this.model.addSquare(this.square);
+				this.model.acceptCommand(new Commands(this.square));
 				this.rectangle = null;
 			}
 		}
