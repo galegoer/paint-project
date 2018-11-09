@@ -65,9 +65,11 @@ Nov 7, 2018
 	Obstacles : Lots of design patterns to choose from.
 
 Nov 8, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday : Began squiggle bug, thought of design patterns.
+	Today     : Thought of new design pattern, command, noticed that Bug4 somewhat overlaps with
+		    Bug7. Added the command design pattern still under construction.
+	Obstacles : Difficult to implement the design pattern as it requires most of your code to be
+		    in a sense, reset.
 
 Nov 9, 2018
 	Yesterday :
