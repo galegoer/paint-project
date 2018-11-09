@@ -146,7 +146,6 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			g.setLineWidth(r.getThick());
 			if (r.getStyleS() == 1) {
 				g.setFill(Circle.setPaint(r.getColorS()));
-				System.out.println("hi");
 				if (r.getScenario() == 1) {
 					g.fillRect(a, b, side, side);
 				} else if (r.getScenario() == 2) {
