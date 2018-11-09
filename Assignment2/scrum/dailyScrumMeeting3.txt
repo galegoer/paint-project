@@ -57,8 +57,8 @@ Nov 7, 2018
 
 Nov 8, 2018
 	Yesterday : Working on line thickness. UserStory7.
-	Today     : Finished working on UserStory7. This thing took way ore time than it should have.
-	Obstacles : Placement of the line thickness was the only tricy part. But it's done now.
+	Today     : Finished working on UserStory7. This thing took way ore time than it should have. Started working on Bug 8.
+	Obstacles : Placement of the line thickness was the only tricky part. But it's done now.
 
 Nov 9, 2018
 	Yesterday :
