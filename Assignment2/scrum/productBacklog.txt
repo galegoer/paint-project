@@ -4,7 +4,6 @@
 # 1 Color chooser UI (which could be a USER STORY)
 # 2 Implementation of selected color into the drawing stream.
 
-
 --------------------------------------------------------------------------
 TYPE     : BUG 5 : UTORID
 NAME     : Squiggle is broken
@@ -150,10 +149,7 @@ PRIORITY :
 ESTIMATE : 10 minutes
 ISSUE    : When dragging to make a circle each circle is created and added
 to the ArrayList of circles
-
 --------------------------------------------------------------------------
-
-
 TYPE     : USER STORY 9: askarya2
 NAME     : Clear canvas button
 OWNER    : 
@@ -172,17 +168,6 @@ AS A     : user
 I WANT   : Have a button that can be pressed to remove the last drawn something, if i drew a line I want to be able to remove t, it I made a circle with the click of a button iwant it gone.
 SO THAT  : A user can easily delete a mistake without having to reset and clear the entire canvas.
 --------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : BUG 12 : UTORID
-NAME     : Clear canvas does not work
-OWNER    : 
-PRIORITY :
-ESTIMATE : 10 minutes
-ISSUE    : Clearing the canvas is broken as we don't refer to the ArrayLists 
-	   anymore.
-
---------------------------------------------------------------------------
-
 
 
 # COMPLETED USER STORIES/BUGS BELOW ###########################################
@@ -358,6 +343,16 @@ ISSUE    : Having a list of different types of drawable things in the
            so that it is more flexible, and easier to work with.
            Consider some design patterns, or change of responsibility
            here.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG 12 : UTORID
+NAME     : Clear canvas does not work
+OWNER    : 
+PRIORITY :
+ESTIMATE : 1 hour
+ISSUE    : Clearing the canvas is broken as we don't refer to the ArrayLists 
+	   anymore.
+
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 # OMITTED USER STORIES/BUGS BELOW   ###########################################

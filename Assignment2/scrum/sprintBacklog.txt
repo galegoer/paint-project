@@ -307,3 +307,13 @@ ISSUE    : Squiggles are connected to each other by a straight line. Each drag
 		   of the mouse should be a separate squiggle. Possibly
            the issue is with the representation of the squiggles in the Model.
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG 12 : galegoer
+NAME     : Clear canvas does not work
+OWNER    : 
+PRIORITY :
+ESTIMATE : 1 hour
+ISSUE    : Clearing the canvas is broken as we don't refer to the ArrayLists 
+	   anymore.
+--------------------------------------------------------------------------
+
