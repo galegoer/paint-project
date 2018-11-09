@@ -4,6 +4,30 @@ import java.util.ArrayList;
 import java.util.Observable;
 
 public class PaintModel extends Observable {
+	
+	ArrayList<Commands> commandQueue;
+	
+	public PaintModel() {
+		commandQueue = new ArrayList<Commands>();
+	}
+	
+	public void acceptCommand(Commands command) {
+		this.commandQueue.add(command);
+	}
+	
+	//FOR REMOVING LAST MOVE (UNDO)
+	public void deleteCommand(Commands command) {
+		this.commandQueue.remove(commandQueue.size()); //MIGHT NEED TO FIX-1?
+	}
+	
+	void operateAll() {
+		for (Commands command: this.commandQueue) {
+			command.execute();
+		}
+		commandQueue.clear();
+	}
+	
+	
 
 	private ArrayList<Point> points = new ArrayList<Point>();
 	private ArrayList<Circle> circles = new ArrayList<Circle>();

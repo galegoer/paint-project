@@ -60,6 +60,8 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 	
 	public void repaint() {
 
+		
+		
 		GraphicsContext g = this.canvas.getGraphicsContext2D();
 
 		// Clear the canvas
@@ -70,18 +72,24 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		g.strokeText("i=" + i, 50, 75);
 		i = i + 1;
 
+		
+		model.operateAll();
+		
+	}
 		// Draw Lines
-		ArrayList<Point> points = this.model.getPoints();
-		for (int i = 0; i < points.size() - 1; i++) {
-			Point p1 = points.get(i);
-			Point p2 = points.get(i + 1);
-			g.setStroke(Circle.setPaint(this.color));
-			g.strokeLine(p1.getX(), p1.getY(), p2.getX(), p2.getY());
-		}
+		//ArrayList<Point> points = this.model.getPoints();
+		//for (int i = 0; i < points.size() - 1; i++) {
+//		public void createPoint(Point points, GraphicsContext g) {
+//			Point p1 = points.get(i);
+//			Point p2 = points.get(i + 1);
+//			g.setStroke(Circle.setPaint(this.color));
+//			g.strokeLine(p1.getX(), p1.getY(), p2.getX(), p2.getY());
+//		}
 
 		// Draw Circles
-		ArrayList<Circle> circles = this.model.getCircles();
-		for (Circle c : circles) {
+		//ArrayList<Circle> circles = this.model.getCircles();
+		//for (Circle c : circles) {
+		public void createCircle(Circle c, GraphicsContext g) {
 			int x = c.getCentre().getX();
 			int y = c.getCentre().getY();
 			int radius = c.getRadius();
@@ -94,12 +102,13 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			g.setStroke(Circle.setPaint(c.getString()));
 			g.strokeOval(x - radius, y - radius, 2 * radius, 2 * radius);
 			g.strokeOval(x - radius, y - radius, 2 * radius, 2 * radius);
-
 		}
+		//}
 
 		// Draw Rectangles
-		ArrayList<Rectangle> rectangles = this.model.getRectangles();
-		for (Rectangle r : rectangles) {
+		//ArrayList<Rectangle> rectangles = this.model.getRectangles();
+		//for (Rectangle r : rectangles) {
+		public void createRect(Rectangle r, GraphicsContext g) {	
 			int a = r.getCentre().getX();
 			int b = r.getCentre().getY();
 			int height = r.getHeight();
@@ -128,8 +137,9 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		}
 }
 		// Draw Squares
-		ArrayList<Square> squares = this.model.getSquares();
-		for (Square r : squares) {
+		//ArrayList<Square> squares = this.model.getSquares();
+		//for (Square r : squares) {
+		public void createSquare(Square r, GraphicsContext g) {
 			int a = r.getCentre().getX();
 			int b = r.getCentre().getY();
 			int side = r.getSideLength();
@@ -158,7 +168,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			}
 
 		}
-	}}
+	}
 
 	@Override
 	public void update(Observable o, Object arg) {
