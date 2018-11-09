@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.Slider;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.GridPane;
@@ -18,9 +19,9 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
 public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEvent> {
-	
+
 	private View view; // So we can talk to our parent or other components of the view
-	
+
 	public ShapeChooserPanel(View view) {
 
 		final ToggleGroup group = new ToggleGroup();
@@ -28,18 +29,35 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 
 		Circle c = new Circle();
 		c.setRadius(10.0f);
-		
+
 		Rectangle r = new Rectangle();
 		r.setHeight(20.0f);
 		r.setWidth(35.0f);
-		
+
 		Rectangle t = new Rectangle();
 		t.setHeight(20.0f);
 		t.setWidth(20.0f);
+
+
+		// Adding a Slider
+		final Slider slider = new Slider(0, 10, 0.5);
+		slider.setShowTickMarks(true);
+		slider.setShowTickLabels(true);
+		slider.setMajorTickUnit(0.25f);
+		slider.setBlockIncrement(0.1f);
 		
+		this.add(slider, 0 , 20);
+
+		// Implementing a slider so that it can communicate
+		slider.valueProperty().addListener(sl -> { 
+			int slider_num = slider.valueProperty().intValue();
+			this.view.getPaintPanel().setstrokethickness(slider_num);
+		});
+
+
 		String[] names = {"Circle", "Rectangle", "Square"};
 		Shape[] shapes = {c,r,t};
-		
+
 		int row = 0;
 		for (int i =0; i < shapes.length; i++) {
 			ToggleButton button = new ToggleButton();
@@ -51,7 +69,7 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 			this.add(button, 0, row);
 			row++;
 		}
-		
+
 		try {
 			Image image = new Image(new FileInputStream("images/squiggle.png"));
 			ImageView imageView = new ImageView(image);
@@ -64,7 +82,7 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 			button5.setMinWidth(100);
 			button5.setToggleGroup(group);
 			this.add(button5, 0, row);
-			
+
 			row++;
 			Image image2 = new Image(new FileInputStream("images/polyline.png"));
 			ImageView imageView2 = new ImageView(image2);
@@ -81,7 +99,7 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	@Override
@@ -90,5 +108,5 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 		this.view.getPaintPanel().setMode(0, command);
 		System.out.println(command);
 	}
-	
+
 }

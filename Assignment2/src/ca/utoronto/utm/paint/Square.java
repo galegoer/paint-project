@@ -7,14 +7,16 @@ public class Square extends Shape{
 	private int scenario;
 	private String sqcolor;
 	private int style;
+	private int thickness;
 	
 
-	public Square(Point centre, int side, int scenario, String color, int style) {
+	public Square(Point centre, int side, int scenario, String color, int style, int thickness) {
 		this.centre = centre;
 		this.side = side;
 		this.scenario = scenario;
 		this.sqcolor = color;
 		this.style = style;
+		this.thickness = thickness;
 	}
 
 	public Point getCentre() {
@@ -32,6 +34,16 @@ public class Square extends Shape{
 	public void setSideLength(int side) {
 		this.side = side;
 	}
+	
+	// Method to set square thickness.
+	public int getThick() {
+		return thickness;
+	}
+	public void setThick(int thickness) {
+		this.thickness = thickness;
+	}
+	//
+	
 	
 	public int getScenario() {
 		return scenario;

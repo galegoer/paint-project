@@ -39,6 +39,7 @@ public class Commands extends Observable implements ShapeCommand {
 		int x = c.getCentre().getX();
 		int y = c.getCentre().getY();
 		int radius = c.getRadius();
+		g.setLineWidth(c.getThick());
 		if(c.getStyleC() == 1) {
 			g.setFill(Circle.setPaint(c.getString())); //FIX WITH WHAT COLOR IS SET
 			g.fillOval(x-radius, y-radius, 2*radius, 2*radius);
@@ -55,6 +56,7 @@ public class Commands extends Observable implements ShapeCommand {
 		int b = r.getCentre().getY();
 		int height = r.getHeight();
 		int width = r.getWidth();
+		g.setLineWidth(r.getThick());
 		if(r.getStyleR() == 1) {
 			g.setFill(Circle.setPaint(r.getColorR()));
 			if(r.getScenario() == 1) {
@@ -85,6 +87,7 @@ public class Commands extends Observable implements ShapeCommand {
 		int a = r.getCentre().getX();
 		int b = r.getCentre().getY();
 		int side = r.getSideLength();
+		g.setLineWidth(r.getThick());
 		if(r.getStyleS() == 1) {
 			g.setFill(Circle.setPaint(r.getColorS()));
 			if (r.getScenario() == 1) {

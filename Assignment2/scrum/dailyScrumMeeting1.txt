@@ -52,14 +52,16 @@ Nov 6, 2018
 	Obstacles : Need to implement a new design structure.
 
 Nov 7, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday : Finishing up assignments for another class
+	Today     : Did some research on design patterns. Worked on Bug3 by implementing "Strategy" design pattern
+	Obstacles : Had some troubles getting the same code working after implementing the pattern. Shapes were no longer being drawn 
+			nullPointerException error (fixed by using static variables)
+		    
 
 Nov 8, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday : Worked on Bug3 implementation
+	Today     : Finished implementing Bug3 and sucessfully merged with master. Looking at other Bugs to do and will work on the one I decide to claim.
+	Obstacles : Some merge conflicts, but resolved.
 
 Nov 9, 2018
 	Yesterday :

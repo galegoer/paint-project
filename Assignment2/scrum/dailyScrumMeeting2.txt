@@ -59,14 +59,17 @@ Nov 6, 2018
 	Obstacles : Hard to think of the code for this as it is similar to starting from scratch.
 
 Nov 7, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday : Reviewed design patterns, thought of general ideas
+	Today     : Began on squiggle bug, realized it'd be easier to do repainting bug first
+		    thought of factory design pattern as our design pattern.
+	Obstacles : Lots of design patterns to choose from.
 
 Nov 8, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday : Began squiggle bug, thought of design patterns.
+	Today     : Thought of new design pattern, command, noticed that Bug4 somewhat overlaps with
+		    Bug7. Added the command design pattern still under construction.
+	Obstacles : Difficult to implement the design pattern as it requires most of your code to be
+		    in a sense, reset.
 
 Nov 9, 2018
 	Yesterday :
