@@ -4,6 +4,191 @@
 # 1 Color chooser UI (which could be a USER STORY)
 # 2 Implementation of selected color into the drawing stream.
 
+
+--------------------------------------------------------------------------
+TYPE     : BUG 4 : UTORID
+NAME     : Architecture behind Model is poor
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+ISSUE    : Having a list of different types of drawable things in the
+           model is cumbersome. In fact, it is currently incorrect, with
+           Squiggle's not drawing properly. Need to re-architect the Model
+           so that it is more flexible, and easier to work with.
+           Consider some design patterns, or change of responsibility
+           here.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG 5 : UTORID
+NAME     : Squiggle is broken
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+ISSUE    : Squiggles are connected to each other by a straight line. Each drag
+		   of the mouse should be a separate squiggle. Possibly
+           the issue is with the representation of the squiggles in the Model.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG 6 : UTORID
+NAME     : Circle drawing is broken
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+ISSUE    : The first click should specify the center of the circle, with
+           a drag for the radius. This is not the case in the current
+           implementation.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 11 : UTORID
+NAME     : Implement Poly Line
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+ISSUE    : YOU FILL THIS ONE IN!!
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG 7 : UTORID
+NAME     : Architecture for drawing shapes can be improved
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+ISSUE    : The architecture can be improved if we implement the Command Design 
+Pattern to draw shapes as follows:
+
+The PaintModel should use the command design pattern. 
+That is, each shape knows how to draw itself, so there is a single list of 
+DrawingCommands maintained by the PaintModel and used by the PaintPanel.
+repaint() simply asks the PaintModel to ask command to execute(g).
+The simplest way to make this happen is to make each shape implement the 
+DrawingCommand interface which requires execute(g) to be implemented.
+Well sort of.
+
+NOTE: The PaintModel does know how to logically draw itself, so does
+know about strokes and pen colors etc. Depending on how much you want
+to split off the logical from the GUI, it may not have to know how to 
+draw on the screen. This is a subtle difference. For example, the
+following logically describes a scene, without actually knowing
+how to draw it on the screen ...
+
+Color = green
+Fill = off
+Border = on
+BorderWidth = 10
+Circle radius 10 at 12,15
+Color = red
+Fill = on
+FillColor = black
+Border = on
+BorderWidth = 7
+Square width 20 at 100,200
+
+If you want to build a more 'logical' PaintModel, you can consider ...
+
+1) Create a mirror hierarchy for Shape, this mirror hirerachy 
+has things like DrawableCircle which has a Circle. The DrawableCircle
+knows how to draw the instance of Circle it holds. Each Shape will
+still need information about its color, and stroke, one way or another.
+
+OR
+
+2) Lookup and apply the Visitor design pattern to the more logical
+PaintModel.
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG 8 : UTORID
+NAME     : Architecture for handling shape modifiers can be improved 
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+ISSUE    : The architecture can be improved if we implement the Command Design 
+Pattern to handle changes to the graphics contex such as changing drawing 
+color, stroke width etc. You can accomplished this by wrapping the changes
+to the graphics context in a DrawingCommand. This way these changes can be
+added to the Bug 2.1 DrawingCommand list. That is, these new types of 
+DrawingCommands appear on PaintPanel's list right along side 
+the Shape type DrawingCommands.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG 9 : UTORID
+NAME     : Architecture behind choosing drawing mode is poor
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+ISSUE    : A better architecture behind selecting a drawing mode can be created 
+by implementing the Factory Design Pattern as follows:
+
+The factory design pattern should be used by the paint buttons. 
+The factory is responsible for creating different ShapeManipulatorStrategy 
+instances (see BUG 2.4). That is, when a button is pressed, the appropriate 
+ShapeManipulatorStrategy is created and installed in the PaintPanel. 
+Note that you can associate text with a button, even if you 
+display an ImageIcon. The string attached to the button causes the right choice 
+of object creation.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG 10 : UTORID
+NAME     : Architecture behind creating shape instances is poor
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+ISSUE    : A better architecture for creating shape instances so that it is 
+more flexible, and easier to work with can be created using the Strategy Design 
+pattern as follows:
+
+Create class/abstract class/interface  ShapeManipulatorStrategy as well 
+as subclasses/implementators for each type of Shape. Call these the
+concrete ShapeNamipulatorStrategies
+
+The concrete ShapeManipulatorStrategies are responsible for 
+
+1. Creating instances of Shape and putting them on top of 
+   the PaintModel command stack.
+
+2. Understanding how mouse events modify the shape at the top of the 
+   PaintModel command stack.
+
+3. Calling the PaintPanel repaint at appropriate times.
+
+This strategy can be put in place either by having PaintPanel's mouse 
+events forwarded through PaintPanel into the current strategy, or by 
+simply switching the PaintPanel's event handlers as appropriate.
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG 11 : UTORID
+NAME     : Adds circles to list as you drag
+OWNER    : 
+PRIORITY :
+ESTIMATE : 10 minutes
+ISSUE    : When dragging to make a circle each circle is created and added
+to the ArrayList of circles
+
+--------------------------------------------------------------------------
+
+
+TYPE     : USER STORY 9: askarya2
+NAME     : Clear canvas button
+OWNER    : 
+PRIORITY :2
+ESTIMATE : 4 Hour
+AS A     : user
+I WANT   : Have a button that can be pressed to reset the canvas to a blank state.
+SO THAT  : The canvas can be cleared.
+--------------------------------------------------------------------------
+TYPE     : USER STORY 10: askarya2
+NAME     : Backup one step
+OWNER    : 
+PRIORITY :3
+ESTIMATE : 4 Hour
+AS A     : user
+I WANT   : Have a button that can be pressed to remove the last drawn something, if i drew a line I want to be able to remove t, it I made a circle with the click of a button iwant it gone.
+SO THAT  : A user can easily delete a mistake without having to reset and clear the entire canvas.
+--------------------------------------------------------------------------
+
+
+
+# COMPLETED USER STORIES/BUGS BELOW ###########################################
 --------------------------------------------------------------------------
 TYPE     : USER STORY 1 : UTORID
 NAME     : Draw Circle
@@ -155,166 +340,6 @@ ISSUE    : Code is not modular and is difficult to expand. Need a better
            'if' blocks in the PaintPanel mouse event code.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG 4 : UTORID
-NAME     : Architecture behind Model is poor
-OWNER    : 
-PRIORITY :
-ESTIMATE : 
-ISSUE    : Having a list of different types of drawable things in the
-           model is cumbersome. In fact, it is currently incorrect, with
-           Squiggle's not drawing properly. Need to re-architect the Model
-           so that it is more flexible, and easier to work with.
-           Consider some design patterns, or change of responsibility
-           here.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : BUG 5 : UTORID
-NAME     : Squiggle is broken
-OWNER    : 
-PRIORITY :
-ESTIMATE : 
-ISSUE    : Squiggles are connected to each other by a straight line. Each drag
-		   of the mouse should be a separate squiggle. Possibly
-           the issue is with the representation of the squiggles in the Model.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : BUG 6 : UTORID
-NAME     : Circle drawing is broken
-OWNER    : 
-PRIORITY :
-ESTIMATE : 
-ISSUE    : The first click should specify the center of the circle, with
-           a drag for the radius. This is not the case in the current
-           implementation.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : USER STORY 8 : UTORID
-NAME     : Implement Poly Line
-OWNER    : 
-PRIORITY :
-ESTIMATE : 
-ISSUE    : YOU FILL THIS ONE IN!!
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : BUG 7 : UTORID
-NAME     : Architecture for drawing shapes can be improved
-OWNER    : 
-PRIORITY :
-ESTIMATE : 
-ISSUE    : The architecture can be improved if we implement the Command Design 
-Pattern to draw shapes as follows:
-
-The PaintModel should use the command design pattern. 
-That is, each shape knows how to draw itself, so there is a single list of 
-DrawingCommands maintained by the PaintModel and used by the PaintPanel.
-repaint() simply asks the PaintModel to ask command to execute(g).
-The simplest way to make this happen is to make each shape implement the 
-DrawingCommand interface which requires execute(g) to be implemented.
-Well sort of.
-
-NOTE: The PaintModel does know how to logically draw itself, so does
-know about strokes and pen colors etc. Depending on how much you want
-to split off the logical from the GUI, it may not have to know how to 
-draw on the screen. This is a subtle difference. For example, the
-following logically describes a scene, without actually knowing
-how to draw it on the screen ...
-
-Color = green
-Fill = off
-Border = on
-BorderWidth = 10
-Circle radius 10 at 12,15
-Color = red
-Fill = on
-FillColor = black
-Border = on
-BorderWidth = 7
-Square width 20 at 100,200
-
-If you want to build a more 'logical' PaintModel, you can consider ...
-
-1) Create a mirror hierarchy for Shape, this mirror hirerachy 
-has things like DrawableCircle which has a Circle. The DrawableCircle
-knows how to draw the instance of Circle it holds. Each Shape will
-still need information about its color, and stroke, one way or another.
-
-OR
-
-2) Lookup and apply the Visitor design pattern to the more logical
-PaintModel.
-
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : BUG 8 : UTORID
-NAME     : Architecture for handling shape modifiers can be improved 
-OWNER    : 
-PRIORITY :
-ESTIMATE : 
-ISSUE    : The architecture can be improved if we implement the Command Design 
-Pattern to handle changes to the graphics contex such as changing drawing 
-color, stroke width etc. You can accomplished this by wrapping the changes
-to the graphics context in a DrawingCommand. This way these changes can be
-added to the Bug 2.1 DrawingCommand list. That is, these new types of 
-DrawingCommands appear on PaintPanel's list right along side 
-the Shape type DrawingCommands.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : BUG 9 : UTORID
-NAME     : Architecture behind choosing drawing mode is poor
-OWNER    : 
-PRIORITY :
-ESTIMATE : 
-ISSUE    : A better architecture behind selecting a drawing mode can be created 
-by implementing the Factory Design Pattern as follows:
-
-The factory design pattern should be used by the paint buttons. 
-The factory is responsible for creating different ShapeManipulatorStrategy 
-instances (see BUG 2.4). That is, when a button is pressed, the appropriate 
-ShapeManipulatorStrategy is created and installed in the PaintPanel. 
-Note that you can associate text with a button, even if you 
-display an ImageIcon. The string attached to the button causes the right choice 
-of object creation.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : BUG 10 : UTORID
-NAME     : Architecture behind creating shape instances is poor
-OWNER    : 
-PRIORITY :
-ESTIMATE : 
-ISSUE    : A better architecture for creating shape instances so that it is 
-more flexible, and easier to work with can be created using the Strategy Design 
-pattern as follows:
-
-Create class/abstract class/interface  ShapeManipulatorStrategy as well 
-as subclasses/implementators for each type of Shape. Call these the
-concrete ShapeNamipulatorStrategies
-
-The concrete ShapeManipulatorStrategies are responsible for 
-
-1. Creating instances of Shape and putting them on top of 
-   the PaintModel command stack.
-
-2. Understanding how mouse events modify the shape at the top of the 
-   PaintModel command stack.
-
-3. Calling the PaintPanel repaint at appropriate times.
-
-This strategy can be put in place either by having PaintPanel's mouse 
-events forwarded through PaintPanel into the current strategy, or by 
-simply switching the PaintPanel's event handlers as appropriate.
-
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : BUG 11 : UTORID
-NAME     : Adds circles to list as you drag
-OWNER    : 
-PRIORITY :
-ESTIMATE : 10 minutes
-ISSUE    : When dragging to make a circle each circle is created and added
-to the ArrayList of circles
-
---------------------------------------------------------------------------
---------------------------------------------------------------------------
 TYPE     : USER STORY 8 : UTORID
 NAME     : Implement Draw Square
 OWNER    : 
@@ -325,8 +350,5 @@ I WANT   : To click the edge of a square, drag, and release to specify
            a square to be drawn in the current style.
 SO THAT  : I can add squares to my canvas
 --------------------------------------------------------------------------
-
-# COMPLETED USER STORIES/BUGS BELOW ###########################################
-
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
 

@@ -200,14 +200,13 @@ ISSUE    : Code is not modular and is difficult to expand. Need a better
            'if' blocks in the PaintPanel mouse event code.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 8 : liwill13
+TYPE     : USER STORY 11 : liwill13
 NAME     : Implement Poly Line
 OWNER    : 
 PRIORITY :
 ESTIMATE : 
 ISSUE    : YOU FILL THIS ONE IN!!
 --------------------------------------------------------------------------
-
 
 # Sprint 3 Nov 9, 2018
 # Sprint 3 Backlog UserStories go below
