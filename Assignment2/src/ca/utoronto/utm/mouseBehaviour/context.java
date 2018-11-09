@@ -36,17 +36,24 @@ public class context {
 	public void setModes(ArrayList<String> s) {
 		this.modes = s;
 	}
-
+	
+	//Add another if statment when adding a new mode like POLYLINE
 	public void setBehaviour(String s) {
 		if (s == "Circle") 
 			this.behaviour = new circleBehaviour(this.modes, this.model, this.color);
 		else if (s == "Rectangle") 
 			this.behaviour = new rectangleBehaviour(this.modes, this.model, this.color);
+		else if (s == "Square") 
+			this.behaviour = new squareBehaviour(this.modes, this.model, this.color);
+		else if (s == "Squiggle") 
+			this.behaviour = new squiggleBehaviour(this.modes, this.model, this.color);
 	}
 	public shapeBehaviour getBehaviour() {
 		return behaviour;
 	}
-
+	
+	//I dont think there is a need to modify this block unless you can think of a more efficient way
+	//make sure you create new class "newFeatureName" that implements shapeBehaviour!
 	public void move(MouseEvent event) {
 		if (event.getEventType() == MouseEvent.MOUSE_DRAGGED) {
 			this.behaviour.mouseDragged(event);
