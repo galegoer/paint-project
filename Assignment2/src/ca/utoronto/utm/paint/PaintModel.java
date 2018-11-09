@@ -19,7 +19,7 @@ public class PaintModel extends Observable {
 		this.commandQueue.add(command);
 	}
 	
-	//FOR REMOVING LAST MOVE (UNDO)
+	//FOR REMOVING LAST MOVE (UNDO) STILL IN PROGRESS
 	public void deleteCommand() {
 		this.commandQueue.remove(commandQueue.size()-1);
 	}
@@ -28,5 +28,10 @@ public class PaintModel extends Observable {
 		for (Commands command: this.commandQueue) {
 			command.execute(g);
 		}
+	}
+	public void reset() {
+		this.commandQueue.clear();
+		this.setChanged();
+		this.notifyObservers();
 	}
 }

@@ -54,12 +54,13 @@ public class View implements EventHandler<ActionEvent> {
 		stage.show();
 	}
 	
-	
-	
 	public PaintPanel getPaintPanel() {
 		return paintPanel;
 	}
-
+	
+	public PaintModel getPaintModel() {
+		return model;
+	}
 	public ShapeChooserPanel getShapeChooserPanel() {
 		return shapeChooserPanel;
 	}

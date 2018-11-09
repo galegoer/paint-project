@@ -24,6 +24,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 	private Circle circle; // the circle we are building
 	private Rectangle rectangle;
 	private Point point;
+	//SOME OF THESE MIGHT BE UNNECESSARY ^^^
 
 	private String color;
 	
@@ -52,14 +53,6 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 
 		this.view = view;
 
-	}
-	
-	public void reset() { //RESET ISNT WORKING
-		//this.model.removeAllCircles();
-		//this.model.removeAllRectangles();
-		//this.model.removeAllSquares();
-		//this.model.removeAllPoints();
-		//repaint();
 	}
 
 	public void repaint() {
@@ -91,7 +84,6 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 
 	@Override
 	public void update(Observable o, Object arg) {
-
 		// Not exactly how MVC works, but similar.
 		this.repaint();
 	}

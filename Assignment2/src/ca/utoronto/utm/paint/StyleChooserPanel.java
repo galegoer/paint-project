@@ -33,7 +33,7 @@ public class StyleChooserPanel extends GridPane implements EventHandler<ActionEv
 			System.out.println(command);
 			}
 			else {
-				this.view.getPaintPanel().reset();
+				this.view.getPaintModel().reset();
 				System.out.println(command);
 				
 			}
