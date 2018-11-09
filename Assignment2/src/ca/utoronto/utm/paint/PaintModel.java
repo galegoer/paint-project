@@ -4,7 +4,16 @@ import java.util.ArrayList;
 import java.util.Observable;
 
 public class PaintModel extends Observable {
-
+	
+	//Line one pls fix airic
+	private ArrayList<Line> lines = new ArrayList<Line>();
+	
+	public void addLine(Line c) {
+		this.lines.add(c);
+		this.setChanged();
+		this.notifyObservers();
+	}
+	
 	private ArrayList<Point> points = new ArrayList<Point>();
 	private ArrayList<Circle> circles = new ArrayList<Circle>();
 	// This one created for rectangle
@@ -16,6 +25,9 @@ public class PaintModel extends Observable {
 		this.points.add(p);
 		this.setChanged();
 		this.notifyObservers();
+	}
+	public ArrayList<Line> getLines() {
+		return lines;
 	}
 
 	public ArrayList<Point> getPoints() {

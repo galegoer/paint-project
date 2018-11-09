@@ -39,7 +39,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 
 		this.addEventHandler(MouseEvent.ANY, this);
 
-		this.modes.add(0, "Circle"); // CHANGED MIGHT BE BAD CODE STILL??
+		this.modes.add(0, "Line"); // CHANGED MIGHT BE BAD CODE STILL??
 		this.modes.add(1, "Outline");
 
 		this.model = model;
@@ -71,7 +71,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		g.strokeText("i=" + i, 50, 75);
 		i = i + 1;
 		
-
+		
 		// Draw Lines
 		ArrayList<Point> points = this.model.getPoints();
 		for (int i = 0; i < points.size() - 1; i++) {
@@ -80,6 +80,18 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			g.setStroke(Circle.setPaint(this.color));
 			//g.setLineWidth(setB(thick));
 			g.strokeLine(p1.getX(), p1.getY(), p2.getX(), p2.getY());
+		}
+		
+		// Draw Lines
+		ArrayList<Line> lines = this.model.getLines();
+		for (Line c : lines) {
+			int x = c.getCentre().getX();
+			int y = c.getCentre().getY();
+			int x2 = c.getEnd().getX();
+			int y2 = c.getEnd().getY();
+			g.setStroke(Circle.setPaint(c.getColor()));
+			g.setLineWidth(c.getThick());
+			g.strokeLine(x, y,x2,y2);
 		}
 
 		// Draw Circles
@@ -205,29 +217,11 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 	
 	
 	
-	private void mouseMoved(MouseEvent e) {
-		if (modes.get(0) == "Squiggle") {
 
-		} else if (modes.get(0) == "Circle") {
 
-		}
-	}
 
-	private void mouseEntered(MouseEvent e) {
-		if (this.modes.get(0) == "Squiggle") {
 
-		} else if (this.modes.get(0) == "Circle") {
 
-		}
-	}
-
-	private void mouseExited(MouseEvent e) {
-		if (this.modes.get(0) == "Squiggle") {
-
-		} else if (this.modes.get(0) == "Circle") {
-
-		}
-	}
 	// might need to remove
 	public void setstrokethickness(int slider_num) {
 		thick = slider_num;

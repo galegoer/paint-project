@@ -225,9 +225,6 @@ I WANT   : To be able to select the current line thickness, to be applied
            	rectangle as well as two thickly outlined rectangles and a thick squiggle
 SO THAT  : 
 --------------------------------------------------------------------------
-
-
-=======
 TYPE     : USER STORY 11 : liwill13
 NAME     : Implement Poly Line
 OWNER    : 
@@ -235,7 +232,15 @@ PRIORITY :
 ESTIMATE : 
 ISSUE    : YOU FILL THIS ONE IN!!
 --------------------------------------------------------------------------
->>>>>>> 56989648b991a1a3a2ba6de36fdfad2434e7b252
+--------------------------------------------------------------------------
+TYPE     : USER STORY 12 : liwill13
+NAME     : Implement Line
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+ISSUE    : YOU FILL THIS ONE IN!!
+--------------------------------------------------------------------------
+
 
 # Sprint 3 Nov 9, 2018
 # Sprint 3 Backlog UserStories go below

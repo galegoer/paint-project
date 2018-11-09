@@ -73,7 +73,7 @@ public class rectangleBehaviour implements shapeBehaviour {
 		int scenario = 0;
 		int style = 0;
 		int thick1 = thick;
-		Rectangle rectangle2 = new Rectangle(centre, width, height, scenario, this.color, style, thick);
+		Rectangle rectangle2 = new Rectangle(centre, width, height, scenario, this.color, style, thick1);
 		if (this.modes.get(1) == "Fill") {
 			rectangle2.setStyleR(1);
 		}
