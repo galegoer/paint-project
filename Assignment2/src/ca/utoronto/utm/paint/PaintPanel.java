@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
+import ca.utoronto.utm.mouseBehaviour.context;
+
 class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent> {
 
 	private int i = 0;
@@ -18,16 +20,16 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 	private View view; // So we can talk to our parent or other components of the view
 
 	private ArrayList<String> modes = new ArrayList<String>(); // modifies how we interpret input (could be better?)
-	private Circle circle; // the circle we are building
-	private Rectangle rectangle;
-
+	//private Circle circle; // the circle we are building
+	//private Rectangle rectangle;
+	//private Square square;
+	//private String style;
+	
 	private String color;
-
-	private Square square;
-
+	
 	private Canvas canvas;
 
-	private String style;
+	context c = new context();
 
 	public PaintPanel(PaintModel model, View view) {
 
@@ -47,7 +49,8 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 
 		this.view = view;
 
-		this.style = "";
+		// this.style = "";
+
 	}
 
 	public void reset() {
@@ -80,6 +83,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		}
 
 		// Draw Circles
+		//System.out.println("Hilol");
 		ArrayList<Circle> circles = this.model.getCircles();
 		for (Circle c : circles) {
 			int x = c.getCentre().getX();
@@ -157,11 +161,8 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 				} else if (r.getScenario() == 4) {
 					g.strokeRect(a, b - side, side, side);
 				}
-
 			}
-			
 		}
-
 	}
 
 	@Override
@@ -182,286 +183,14 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		this.color = color;
 
 	}
-
+	
 	@Override
 	public void handle(MouseEvent event) {
+		c.setModel(this.model);
+		c.setColor(this.color);
+		c.setModes(this.modes);
+		c.setBehaviour(this.modes.get(0));
+		c.move(event);
 
-		if (event.getEventType() == MouseEvent.MOUSE_DRAGGED) {
-			mouseDragged(event);
-		} else if (event.getEventType() == MouseEvent.MOUSE_PRESSED) {
-			mousePressed(event);
-		} else if (event.getEventType() == MouseEvent.MOUSE_MOVED) {
-			mouseMoved(event);
-		} else if (event.getEventType() == MouseEvent.MOUSE_CLICKED) {
-			mouseClicked(event);
-		} else if (event.getEventType() == MouseEvent.MOUSE_RELEASED) {
-			mouseReleased(event);
-		} else if (event.getEventType() == MouseEvent.MOUSE_ENTERED) {
-			mouseEntered(event);
-		} else if (event.getEventType() == MouseEvent.MOUSE_EXITED) {
-			mouseExited(event);
-		}
-	}
-
-	private void mouseMoved(MouseEvent e) {
-		if (modes.get(0) == "Squiggle") {
-
-		} else if (modes.get(0) == "Circle") {
-
-		}
-	}
-
-	private void mouseDragged(MouseEvent e) {
-		if (this.modes.get(0) == "Squiggle") {
-			this.model.addPoint(new Point((int) e.getX(), (int) e.getY()));
-		} else if (this.modes.get(0) == "Circle") {
-			int radius = (int) Math.sqrt(Math.pow((int) this.circle.getCentre().getX() - (int) e.getX(), 2)
-					+ Math.pow((int) this.circle.getCentre().getY() - (int) e.getY(), 2));
-			this.circle.setRadius(radius);
-			this.model.addCircle(this.circle);
-			this.model.removeCircle(this.model.getCircles().size() - 1);
-		} else if (this.modes.get(0) == "Rectangle") {
-			// Begin
-			int x1 = this.rectangle.getCentre().getX();
-			int y1 = this.rectangle.getCentre().getY();
-			// mouse release or end
-			int x2 = (int) e.getX();
-			int y2 = (int) e.getY();
-
-			if (x2 > x1 && y2 > y1) {
-				this.rectangle.setScenario(1);
-				Point centre = new Point(x1, y1);
-				this.rectangle.setHeight(y2 - y1);
-				this.rectangle.setWidth(x2 - x1);
-				this.rectangle.setCentre(centre);
-			}
-			// Scenario 2
-			else if (x1 > x2 && y2 < y1) {
-				this.rectangle.setScenario(2);
-				this.rectangle.setHeight(y1 - y2);
-				this.rectangle.setWidth(x1 - x2);
-			}
-			// Scenario 3
-			else if (x1 > x2 && y1 < y2) {
-				this.rectangle.setScenario(3);
-				this.rectangle.setHeight(y2 - y1);
-				this.rectangle.setWidth(x1 - x2);
-			}
-			// Scenario 4
-			else if (x2 > x1 && y2 < y1) {
-				this.rectangle.setScenario(4);
-				this.rectangle.setHeight(y1 - y2);
-				this.rectangle.setWidth(x2 - x1);
-			}
-			this.model.addRectangle(this.rectangle);
-			this.model.removeRectangle(this.model.getRectangles().size() - 1);
-		}
-
-		else if (this.modes.get(0) == "Square") {
-
-			int x1 = this.square.getCentre().getX();
-			int y1 = this.square.getCentre().getY();
-			int x2 = (int) e.getX();
-			int y2 = (int) e.getY();
-			if (x2 > x1 && y2 > y1) {
-				if ((x2 - x1) > (y2 - y1))
-					this.square.setSideLength(x2 - x1);
-				else
-					this.square.setSideLength(y2 - y1);
-				this.square.setScenario(1);
-				Point centre = new Point(x1, y1);
-				this.square.setCentre(centre);
-			}
-			// Scenario 2
-			else if (x1 > x2 && y2 < y1) {
-				if ((x1 - x2) > (y1 - y2))
-					this.square.setSideLength(x1 - x2);
-				else
-					this.square.setSideLength(y1 - y2);
-				this.square.setScenario(2);
-
-			}
-			// Scenario 3
-			else if (x1 > x2 && y1 < y2) {
-				if ((x1 - x2) > (y2 - y1))
-					this.square.setSideLength(x1 - x2);
-				else
-					this.square.setSideLength(y2 - y1);
-				this.square.setScenario(3);
-			}
-			// Scenario 4
-			else if (x2 > x1 && y2 < y1) {
-				if ((x2 - x1) > (y1 - y2))
-					this.square.setSideLength(x2 - x1);
-				else
-					this.square.setSideLength(y1 - y2);
-				this.square.setScenario(4);
-			}
-
-			this.model.addSquare(this.square);
-			this.model.removeSquare(this.model.getSquares().size() - 1);
-		}
-	}
-
-	private void mouseClicked(MouseEvent e) {
-		if (this.modes.get(0) == "Squiggle") {
-
-		} else if (this.modes.get(0) == "Circle") {
-
-		}
-	}
-
-	private void mousePressed(MouseEvent e) {
-		if (this.modes.get(0) == "Squiggle") {
-
-		} else if (this.modes.get(0) == "Circle") {
-			// Problematic notion of radius and centre!!
-			Point centre = new Point((int) e.getX(), (int) e.getY());
-			int radius = 0;
-			int style = 0;
-			this.circle = new Circle(centre, radius, this.color, style);
-			if (this.modes.get(1) == "Fill") {
-				this.circle.setStyleC(1);
-			}
-		} else if (this.modes.get(0) == "Rectangle") {
-			Point centre = new Point((int) e.getX(), (int) e.getY());
-			int height = 0;
-			int width = 0;
-			int scenario = 0;
-			int style = 0;
-			this.rectangle = new Rectangle(centre, width, height, scenario, this.color, style);
-			if (this.modes.get(1) == "Fill") {
-				this.rectangle.setStyleR(1);
-			}
-
-		} else if (this.modes.get(0) == "Square") {
-			Point centre = new Point((int) e.getX(), (int) e.getY());
-			int side = 0;
-			int scenario = 0;
-			int style = 0;
-			this.square = new Square(centre, side, scenario, this.color, style);
-			if (this.modes.get(1) == "Fill") {
-				this.square.setStyleS(1);
-			}
-		}
-	}
-
-	private void mouseReleased(MouseEvent e) {
-		if (this.modes.get(0) == "Squiggle") {
-
-		} else if (this.modes.get(0) == "Circle") {
-			if (this.circle != null) {
-				// Problematic notion of radius and centre!!
-				int radius = (int) Math.sqrt(Math.pow((int) this.circle.getCentre().getX() - (int) e.getX(), 2)
-						+ Math.pow((int) this.circle.getCentre().getY() - (int) e.getY(), 2));
-				this.circle.setRadius(radius);
-				this.model.addCircle(this.circle);
-				this.circle = null;
-			}
-
-		} else if (this.modes.get(0) == "Rectangle") {
-
-		}
-		if (this.rectangle != null) {
-
-			// Point centre = new Point((int) e.getX(), (int) e.getY());
-			// Begin
-
-			int x1 = this.rectangle.getCentre().getX();
-			int y1 = this.rectangle.getCentre().getY();
-			// mouse release or end
-			int x2 = (int) e.getX();
-			int y2 = (int) e.getY();
-
-			// Scenario 1
-			if (x2 > x1 && y2 > y1) {
-				this.rectangle.setScenario(1);
-				this.rectangle.setHeight(y2 - y1);
-				this.rectangle.setWidth(x2 - x1);
-			}
-			// Scenario 2
-			else if (x1 > x2 && y2 < y1) {
-				this.rectangle.setScenario(2);
-				this.rectangle.setHeight(y1 - y2);
-				this.rectangle.setWidth(x1 - x2);
-			}
-			// Scenario 3
-			else if (x1 > x2 && y1 < y2) {
-				this.rectangle.setScenario(3);
-				this.rectangle.setHeight(y2 - y1);
-				this.rectangle.setWidth(x1 - x2);
-			}
-			// Scenario 4
-			else if (x2 > x1 && y2 < y1) {
-				this.rectangle.setScenario(4);
-				this.rectangle.setHeight(y1 - y2);
-				this.rectangle.setWidth(x2 - x1);
-			}
-
-			this.model.addRectangle(this.rectangle);
-			this.rectangle = null;
-		} else if (this.modes.get(0) == "Square") {
-
-			if (this.square != null) {
-				int x1 = this.square.getCentre().getX();
-				int y1 = this.square.getCentre().getY();
-				int x2 = (int) e.getX();
-				int y2 = (int) e.getY();
-
-				if (x2 > x1 && y2 > y1) {
-					if ((x2 - x1) > (y2 - y1))
-						this.square.setSideLength(x2 - x1);
-					else
-						this.square.setSideLength(y2 - y1);
-					this.square.setScenario(1);
-					Point centre = new Point(x1, y1);
-					this.square.setCentre(centre);
-				}
-				// Scenario 2
-				else if (x1 > x2 && y2 < y1) {
-					if ((x1 - x2) > (y1 - y2))
-						this.square.setSideLength(x1 - x2);
-					else
-						this.square.setSideLength(y1 - y2);
-					this.square.setScenario(2);
-
-				}
-				// Scenario 3
-				else if (x1 > x2 && y1 < y2) {
-					if ((x1 - x2) > (y2 - y1))
-						this.square.setSideLength(x1 - x2);
-					else
-						this.square.setSideLength(y2 - y1);
-					this.square.setScenario(3);
-				}
-				// Scenario 4
-				else if (x2 > x1 && y2 < y1) {
-					if ((x2 - x1) > (y1 - y2))
-						this.square.setSideLength(x2 - x1);
-					else
-						this.square.setSideLength(y1 - y2);
-					this.square.setScenario(4);
-				}
-
-				this.model.addSquare(this.square);
-				this.rectangle = null;
-			}
-		}
-	}
-
-	private void mouseEntered(MouseEvent e) {
-		if (this.modes.get(0) == "Squiggle") {
-
-		} else if (this.modes.get(0) == "Circle") {
-
-		}
-	}
-
-	private void mouseExited(MouseEvent e) {
-		if (this.modes.get(0) == "Squiggle") {
-
-		} else if (this.modes.get(0) == "Circle") {
-
-		}
 	}
 }
