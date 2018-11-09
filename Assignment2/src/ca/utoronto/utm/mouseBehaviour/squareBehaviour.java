@@ -14,11 +14,13 @@ public class squareBehaviour implements shapeBehaviour {
 	String color;
 
 	static Square square;
+	Integer thick;
 
-	public squareBehaviour(ArrayList<String> s, PaintModel model, String color) {
+	public squareBehaviour(ArrayList<String> s, PaintModel model, String color, Integer thick) {
 		this.modes = s;
 		this.model = model;
 		this.color = color;
+		this.thick = thick;
 	}
 
 	@Override
@@ -76,7 +78,8 @@ public class squareBehaviour implements shapeBehaviour {
 		int side = 0;
 		int scenario = 0;
 		int style = 0;
-		Square square2 = new Square(centre, side, scenario, this.color, style);
+		int thickness =thick;
+		Square square2 = new Square(centre, side, scenario, this.color, style,thickness);
 		if (this.modes.get(1) == "Fill") {
 			square2.setStyleS(1);
 		}
@@ -155,6 +158,10 @@ public class squareBehaviour implements shapeBehaviour {
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
 
+	}
+	public void setstrokethickness(int slider_num) {
+		thick = slider_num;
+	
 	}
 
 }

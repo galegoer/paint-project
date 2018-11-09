@@ -14,11 +14,13 @@ public class rectangleBehaviour implements shapeBehaviour {
 	String color;
 
 	static Rectangle rectangle;
+	Integer thick;
 
-	public rectangleBehaviour(ArrayList<String> s, PaintModel model, String color) {
+	public rectangleBehaviour(ArrayList<String> s, PaintModel model, String color, Integer thick) {
 		this.modes = s;
 		this.model = model;
 		this.color = color;
+		this.thick = thick;
 	}
 
 	@Override
@@ -64,19 +66,20 @@ public class rectangleBehaviour implements shapeBehaviour {
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
-			Point centre = new Point((int) e.getX(), (int) e.getY());
-			int height = 0;
-			int width = 0;
-			int scenario = 0;
-			int style = 0;
-			Rectangle rectangle2 = new Rectangle(centre, width, height, scenario, this.color, style);
-			if (this.modes.get(1) == "Fill") {
-				rectangle2.setStyleR(1);
-			}
-			rectangle = rectangle2;
 
-		
+		Point centre = new Point((int) e.getX(), (int) e.getY());
+		int height = 0;
+		int width = 0;
+		int scenario = 0;
+		int style = 0;
+		int thick1 = thick;
+		Rectangle rectangle2 = new Rectangle(centre, width, height, scenario, this.color, style, thick);
+		if (this.modes.get(1) == "Fill") {
+			rectangle2.setStyleR(1);
+		}
+		rectangle = rectangle2;
+
+
 	}
 
 	@Override
@@ -145,6 +148,10 @@ public class rectangleBehaviour implements shapeBehaviour {
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
+
+	}
+	public void setstrokethickness(int slider_num) {
+		thick = slider_num;
 
 	}
 

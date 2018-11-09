@@ -199,6 +199,31 @@ ISSUE    : Code is not modular and is difficult to expand. Need a better
            Refactor ShapeChooserPanel and PaintPanel to get rid of the
            'if' blocks in the PaintPanel mouse event code.
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 7 : arnejagu
+NAME     : Line thickness selector
+OWNER    : 
+PRIORITY :
+ESTIMATE : 12 hours.
+AS A     : user
+I WANT   : To be able to select the current line thickness, to be applied
+           to subsequent shapes. Example:
+           		select fill style outline 
+           		selects line thickness 1
+           		mode circle
+           		draw a circle
+           		draw a circle
+           		mode rectangle
+           		draw a rectangle
+           		select line thickness 9
+           		draw a rectangle
+           		draw a rectangle
+           		select mode squiggle
+           		draw a squiggle
+           	results in two thinly outlined circles and a thinly outlined 
+           	rectangle as well as two thickly outlined rectangles and a thick squiggle
+SO THAT  : 
+--------------------------------------------------------------------------
 
 
 

@@ -10,6 +10,7 @@ public class context {
 	ArrayList<String> modes;
 	String color;
 	PaintModel model; // temporary? used to give mouseMaster a model so that it can run our code,
+	int thick;
 						// however this will change depending on a better implication of model
 	// MouseEvent event;
 
@@ -17,10 +18,11 @@ public class context {
 		return;
 	}
 
-	public context(ArrayList<String> modes, PaintModel model, String color) {
+	public context(ArrayList<String> modes, PaintModel model, String color, int thick) {
 		this.modes = modes;
 		this.model = model;
 		this.color = color;
+		this.thick = thick;
 		// this.behaviour = new mouseMaster(mode, style, model);
 
 	}
@@ -32,6 +34,9 @@ public class context {
 	public void setColor(String s) {
 		this.color = s;
 	}
+	public void setThick(int s) {
+		this.thick = s;
+	}
 
 	public void setModes(ArrayList<String> s) {
 		this.modes = s;
@@ -40,11 +45,11 @@ public class context {
 	//Add another if statment when adding a new mode like POLYLINE
 	public void setBehaviour(String s) {
 		if (s == "Circle") 
-			this.behaviour = new circleBehaviour(this.modes, this.model, this.color);
+			this.behaviour = new circleBehaviour(this.modes, this.model, this.color, this.thick);
 		else if (s == "Rectangle") 
-			this.behaviour = new rectangleBehaviour(this.modes, this.model, this.color);
+			this.behaviour = new rectangleBehaviour(this.modes, this.model, this.color, this.thick);
 		else if (s == "Square") 
-			this.behaviour = new squareBehaviour(this.modes, this.model, this.color);
+			this.behaviour = new squareBehaviour(this.modes, this.model, this.color, this.thick);
 		else if (s == "Squiggle") 
 			this.behaviour = new squiggleBehaviour(this.modes, this.model, this.color);
 	}

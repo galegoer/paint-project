@@ -13,13 +13,15 @@ public class Circle extends Shape{
 	private int radius;
 	private String stringcolor;
 	private int style;
+	private int thickness;
 	
 	
-	public Circle(Point centre, int radius, String color, int style) {
+	public Circle(Point centre, int radius, String color, int style, int thickness) {
 		this.centre = centre;
 		this.radius = radius;
 		this.stringcolor = color;
 		this.style = style;
+		this.thickness = thickness;
 	}
 	
 	
@@ -38,6 +40,19 @@ public class Circle extends Shape{
 	public void setRadius(int radius) {
 		this.radius = radius;
 	}
+	
+	// Method to set circle thickness.
+	public int getThick() {
+		return thickness;
+	}
+	public void setThick(int thickness) {
+		this.thickness = thickness;
+		//this.setStrokeWidth(thickness);
+	}
+	public int get() {
+		return thickness;
+	}
+	//
 	
 	public int getStyleC() {
 		return style;

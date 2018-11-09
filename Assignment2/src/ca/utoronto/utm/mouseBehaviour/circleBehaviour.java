@@ -15,11 +15,13 @@ public class circleBehaviour implements shapeBehaviour {
 	String color;
 
 	static Circle circle;
+	Integer thick;
 
-	public circleBehaviour(ArrayList<String> s, PaintModel model, String color) {
+	public circleBehaviour(ArrayList<String> s, PaintModel model, String color, Integer thick) {
 		this.modes = s;
 		this.model = model;
 		this.color = color;
+		this.thick = thick;
 	}
 
 	@Override
@@ -42,7 +44,8 @@ public class circleBehaviour implements shapeBehaviour {
 		Point centre = new Point((int) e.getX(), (int) e.getY());
 		int radius = 0;
 		int style = 0;
-		Circle circle2 = new Circle(centre, radius, color, style);
+		int thick1 = this.thick;
+		Circle circle2 = new Circle(centre, radius, color, style, thick1);
 		if (this.modes.get(1) == "Fill") {
 			circle2.setStyleC(1);
 		}
@@ -86,5 +89,11 @@ public class circleBehaviour implements shapeBehaviour {
 		// TODO Auto-generated method stub
 
 	}
+//	public static void setstrokethickness(int slider_num) {
+//		circleBehaviour.setstrokethickness(slider_num);
+//		rectangleBehaviour.setstrokethickness(slider_num);
+//		squareBehaviour.setstrokethickness(slider_num);
+//	
+//	}
 
 }

@@ -20,17 +20,15 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 	private View view; // So we can talk to our parent or other components of the view
 
 	private ArrayList<String> modes = new ArrayList<String>(); // modifies how we interpret input (could be better?)
-	//private Circle circle; // the circle we are building
-	//private Rectangle rectangle;
-	//private Square square;
-	//private String style;
-	
 	private String color;
 	
 	private Canvas canvas;
 
 	context c = new context();
 
+	private String style;
+	private int thick;
+	
 	public PaintPanel(PaintModel model, View view) {
 
 		this.canvas = new Canvas(300, 300);
@@ -48,8 +46,6 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		this.model.addObserver(this);
 
 		this.view = view;
-
-		// this.style = "";
 
 	}
 
@@ -69,9 +65,12 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		g.clearRect(0, 0, this.getWidth(), this.getHeight());
 
 		g.setStroke(Color.BLACK);
-
+		
+		// The position of seWidth line here makes sure that the i value shown on canvas remains readable. 
+		g.setLineWidth(1);
 		g.strokeText("i=" + i, 50, 75);
 		i = i + 1;
+		
 
 		// Draw Lines
 		ArrayList<Point> points = this.model.getPoints();
@@ -79,6 +78,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			Point p1 = points.get(i);
 			Point p2 = points.get(i + 1);
 			g.setStroke(Circle.setPaint(this.color));
+			//g.setLineWidth(setB(thick));
 			g.strokeLine(p1.getX(), p1.getY(), p2.getX(), p2.getY());
 		}
 
@@ -89,15 +89,19 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			int x = c.getCentre().getX();
 			int y = c.getCentre().getY();
 			int radius = c.getRadius();
+			// Sets the thickness of circle.
+			g.setLineWidth(c.getThick());
 			if (c.getStyleC() == 1) {
 				g.setFill(Circle.setPaint(c.getString())); // FIX WITH WHAT COLOR IS SET
 				g.fillOval(x - radius, y - radius, 2 * radius, 2 * radius);
 			} else {
 				g.strokeOval(x - radius, y - radius, 2 * radius, 2 * radius);
 			}
+			
 			g.setStroke(Circle.setPaint(c.getString()));
 			g.strokeOval(x - radius, y - radius, 2 * radius, 2 * radius);
 			g.strokeOval(x - radius, y - radius, 2 * radius, 2 * radius);
+			
 
 		}
 
@@ -108,6 +112,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			int b = r.getCentre().getY();
 			int height = r.getHeight();
 			int width = r.getWidth();
+			g.setLineWidth(r.getThick());
 			if (r.getStyleR() == 1) {
 				g.setFill(Circle.setPaint(r.getColorR()));
 				if (r.getScenario() == 1) {
@@ -138,6 +143,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			int a = r.getCentre().getX();
 			int b = r.getCentre().getY();
 			int side = r.getSideLength();
+			g.setLineWidth(r.getThick());
 			if (r.getStyleS() == 1) {
 				g.setFill(Circle.setPaint(r.getColorS()));
 				System.out.println("hi");
@@ -173,7 +179,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 	}
 
 	/**
-	 * CHANGED THIS Now referes to index as first input and mode you want as second
+	 * CHANGED THIS Now refers to index as first input and mode you want as second
 	 */
 	public void setMode(int index, String mode) {
 		this.modes.set(index, mode);
@@ -183,14 +189,48 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		this.color = color;
 
 	}
+	public void setThick(int thick) {
+		this.thick = thick;
+	}
 	
 	@Override
 	public void handle(MouseEvent event) {
 		c.setModel(this.model);
 		c.setColor(this.color);
 		c.setModes(this.modes);
+		c.setThick(this.thick);
 		c.setBehaviour(this.modes.get(0));
 		c.move(event);
+	}
+	
+	
+	
+	
+	private void mouseMoved(MouseEvent e) {
+		if (modes.get(0) == "Squiggle") {
 
+		} else if (modes.get(0) == "Circle") {
+
+		}
+	}
+
+	private void mouseEntered(MouseEvent e) {
+		if (this.modes.get(0) == "Squiggle") {
+
+		} else if (this.modes.get(0) == "Circle") {
+
+		}
+	}
+
+	private void mouseExited(MouseEvent e) {
+		if (this.modes.get(0) == "Squiggle") {
+
+		} else if (this.modes.get(0) == "Circle") {
+
+		}
+	}
+	// might need to remove
+	public void setstrokethickness(int slider_num) {
+		thick = slider_num;
 	}
 }
