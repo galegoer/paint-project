@@ -59,9 +59,9 @@ Nov 7, 2018
 		    
 
 Nov 8, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday : Worked on Bug3 implementation
+	Today     : Finished implementing Bug3 and sucessfully merged with master. Looking at other Bugs to do and will work on the one I decide to claim.
+	Obstacles : Some merge conflicts, but resolved.
 
 Nov 9, 2018
 	Yesterday :
