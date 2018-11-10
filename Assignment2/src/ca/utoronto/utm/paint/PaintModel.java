@@ -5,6 +5,29 @@ import java.util.Observable;
 
 public class PaintModel extends Observable {
 
+	private ArrayList<Point> polyPoints = new ArrayList<Point>();
+	public void addPolyPoint(Point p) {
+		this.polyPoints.add(p);
+		this.setChanged();
+		this.notifyObservers();
+	}
+	public ArrayList<Point> getPolyPoints() {
+		return polyPoints;
+	}
+	
+	private ArrayList<PolyLine> pLines = new ArrayList<PolyLine>();
+	
+	public void addPolyLine(PolyLine p) {
+		this.pLines.add(p);
+		this.setChanged();
+		this.notifyObservers();
+	}
+	public ArrayList<PolyLine> getPolyLines() {
+		return pLines;
+	}
+	
+	
+	
 	private ArrayList<Point> points = new ArrayList<Point>();
 	private ArrayList<Circle> circles = new ArrayList<Circle>();
 	// This one created for rectangle

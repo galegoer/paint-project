@@ -15,9 +15,9 @@ public class circleBehaviour implements shapeBehaviour {
 	String color;
 
 	static Circle circle;
-	Integer thick;
+	int thick;
 
-	public circleBehaviour(ArrayList<String> s, PaintModel model, String color, Integer thick) {
+	public circleBehaviour(ArrayList<String> s, PaintModel model, String color, int thick) {
 		this.modes = s;
 		this.model = model;
 		this.color = color;
@@ -44,8 +44,7 @@ public class circleBehaviour implements shapeBehaviour {
 		Point centre = new Point((int) e.getX(), (int) e.getY());
 		int radius = 0;
 		int style = 0;
-		int thick1 = this.thick;
-		Circle circle2 = new Circle(centre, radius, color, style, thick1);
+		Circle circle2 = new Circle(centre, radius, color, style, this.thick);
 		if (this.modes.get(1) == "Fill") {
 			circle2.setStyleC(1);
 		}

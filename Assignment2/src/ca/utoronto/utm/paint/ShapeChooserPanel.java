@@ -52,6 +52,7 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 		slider.valueProperty().addListener(sl -> { 
 			int slider_num = slider.valueProperty().intValue();
 			this.view.getPaintPanel().setstrokethickness(slider_num);
+			System.out.println(slider_num);
 		});
 
 
@@ -89,7 +90,7 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 			imageView2.setFitHeight(20);
 			imageView2.setFitWidth(50);
 			ToggleButton button6 = new ToggleButton();
-			button6.setAccessibleText("Polyline");
+			button6.setAccessibleText("PolyLine");
 			button6.setOnAction(this);
 			button6.setGraphic(imageView2);
 			button6.setMinWidth(100);

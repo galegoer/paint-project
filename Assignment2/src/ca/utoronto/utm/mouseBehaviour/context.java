@@ -52,6 +52,8 @@ public class context {
 			this.behaviour = new squareBehaviour(this.modes, this.model, this.color, this.thick);
 		else if (s == "Squiggle") 
 			this.behaviour = new squiggleBehaviour(this.modes, this.model, this.color);
+		else if (s == "PolyLine") 
+			this.behaviour = new polyBehaviour(this.modes, this.model, this.color, this.thick);
 	}
 	public shapeBehaviour getBehaviour() {
 		return behaviour;

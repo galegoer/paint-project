@@ -13,10 +13,10 @@ public class rectangleBehaviour implements shapeBehaviour {
 	ArrayList<String> modes;
 	String color;
 
-	static Rectangle rectangle;
-	Integer thick;
+	Rectangle rectangle;
+	int thick;
 
-	public rectangleBehaviour(ArrayList<String> s, PaintModel model, String color, Integer thick) {
+	public rectangleBehaviour(ArrayList<String> s, PaintModel model, String color, int thick) {
 		this.modes = s;
 		this.model = model;
 		this.color = color;
