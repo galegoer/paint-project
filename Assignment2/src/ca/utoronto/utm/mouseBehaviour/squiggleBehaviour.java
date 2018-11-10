@@ -24,23 +24,20 @@ public class squiggleBehaviour implements shapeBehaviour {
 	}
 	@Override
 	public void mouseDragged(MouseEvent e) {
-		squiggle.addPoint(new Point((int) e.getX(), (int) e.getY()));
+		Point point = new Point((int) e.getX(), (int) e.getY());
+		//squiggle.addPoint(point);
 		this.model.acceptCommand(new Commands(squiggle));
 		System.out.println("dragged");
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		System.out.println("made point?");
-
-		Point start = new Point((int) e.getX(), (int) e.getY());
-		int thickness = thick;
-		squiggle.setStart(start);
-		System.out.println("set start?");
+		Point start = new Point((int) e.getX(), (int) e.getY());		
+		int thickness = this.thick;
+		//squiggle.setStart(start);
 		ArrayList<Point> points = new ArrayList<>();
 		points.add(start);
 		Squiggle squig = new Squiggle(start, points, color, thickness);
-		System.out.println("uhhhhh?");
 		this.model.acceptCommand(new Commands(squiggle));
 		squiggle = squig;
 	}
@@ -53,6 +50,7 @@ public class squiggleBehaviour implements shapeBehaviour {
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
+		squiggle.setEnd(new Point((int) e.getX(), (int) e.getY()));
 		this.model.acceptCommand(new Commands(squiggle));
 		squiggle = null;
 	}
