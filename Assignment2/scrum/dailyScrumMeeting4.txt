@@ -64,8 +64,8 @@ Nov 8, 2018
 
 Nov 9, 2018
 	Yesterday :
-	Today     :
-	Obstacles :
+	Today     :Worked on cleaning up the code that other group members wrote in order to more efficiently implement the factory needed for bug9
+	Obstacles : Ran into a ton of problems, the program wasnt running correcly, had to delete my whole repo and attempt to fix the errors in code.
 
 Nov 10, 2018
 	Yesterday :
