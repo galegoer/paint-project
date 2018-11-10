@@ -26,7 +26,6 @@ public class rectangleBehaviour implements shapeBehaviour {
 
 	@Override
 	public void mouseDragged(MouseEvent e) {
-		// TODO Auto-generated method stub
 
 		// Begin
 		int x1 = rectangle.getCentre().getX();
@@ -66,8 +65,6 @@ public class rectangleBehaviour implements shapeBehaviour {
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-
 		Point centre = new Point((int) e.getX(), (int) e.getY());
 		int height = 0;
 		int width = 0;
@@ -91,8 +88,6 @@ public class rectangleBehaviour implements shapeBehaviour {
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-
 		if (rectangle != null) {
 
 			// Point centre = new Point((int) e.getX(), (int) e.getY());

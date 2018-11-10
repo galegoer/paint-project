@@ -15,8 +15,9 @@ public class Commands extends Observable implements ShapeCommand {
 	//IDK IF U NEED g?
 	@Override
 	public void execute(GraphicsContext g) {
-		if(obj instanceof Point) {
-			this.createPoint((Point) obj, g);
+		if(obj instanceof Squiggle) {
+			System.out.println("ins squig");
+			this.createPoint((Squiggle) obj, g);
 		} else if(obj instanceof Circle) {
 			this.createCircle((Circle) obj, g);
 		} else if(obj instanceof Rectangle) {
@@ -27,11 +28,10 @@ public class Commands extends Observable implements ShapeCommand {
 		
 	}
 	
-	public void createPoint(Point p, GraphicsContext g) {
-		//Point p1 = points.get(i);
-		//Point p2 = points.get(i + 1);
-		//g.setStroke(Circle.setPaint(this.color));
-		//g.strokeLine(p1.getX(), p1.getY(), p2.getX(), p2.getY());
+	public void createPoint(Squiggle squig, GraphicsContext g) {
+		g.setStroke(Circle.setPaint(squig.getString())); //GETS COLOR
+		g.strokeLine(squig.getStart().getX(),squig.getStart().getY(), squig.getEnd().getX(), squig.getEnd().getY());
+		System.out.println("Drew POINT");
 		//CURRENTLY NOT WORKING NEED TO FIX FOR SQUIGGLE
 	}
 	

@@ -39,9 +39,6 @@ public class circleBehaviour implements shapeBehaviour {
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-
-		// Problematic notion of radius and centre!!
 		Point centre = new Point((int) e.getX(), (int) e.getY());
 		int radius = 0;
 		int style = 0;

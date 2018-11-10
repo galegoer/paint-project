@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import ca.utoronto.utm.paint.Commands;
 import ca.utoronto.utm.paint.PaintModel;
 import ca.utoronto.utm.paint.Point;
-import ca.utoronto.utm.paint.Rectangle;
 import ca.utoronto.utm.paint.Square;
 import javafx.scene.input.MouseEvent;
 

@@ -51,7 +51,7 @@ public class context {
 		else if (s == "Square") 
 			this.behaviour = new squareBehaviour(this.modes, this.model, this.color, this.thick);
 		else if (s == "Squiggle") 
-			this.behaviour = new squiggleBehaviour(this.modes, this.model, this.color);
+			this.behaviour = new squiggleBehaviour(this.modes, this.model, this.color, this.thick);
 	}
 	public shapeBehaviour getBehaviour() {
 		return behaviour;
