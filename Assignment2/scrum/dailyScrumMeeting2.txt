@@ -72,9 +72,12 @@ Nov 8, 2018
 		    in a sense, reset.
 
 Nov 9, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday : Added command design pattern, working on command design pattern for Bug4/7
+	Today     : Finished Bug4 and somewhat of Bug7 because of the overlap. Found bug with clear
+		    canvas as we do not refer to it in ArrayLists anymore. Completed that Bug(12).
+		    Began squiggle almost finished.
+	Obstacles : Many merge conflicts because entire architecture changed had to get used to all
+		    the new code. Some errors with Squiggle behaviour won't register a point null?
 
 Nov 10, 2018
 	Yesterday :
