@@ -26,6 +26,9 @@ public class Commands extends Observable implements ShapeCommand {
 		} else if (obj instanceof Line) {
 			this.createLine((Line) obj, g);
 		}
+		else if (obj instanceof PolyLine) {
+			this.createPolyLine((PolyLine) obj, g);
+		}
 
 	}
 
@@ -36,8 +39,25 @@ public class Commands extends Observable implements ShapeCommand {
 		int y2 = c.getEnd().getY();
 		g.setStroke(Circle.setPaint(c.getColor()));
 		g.setLineWidth(c.getThick());
-		g.strokeLine(x, y, x2, y2);
+		if (c.getStyle() == "Dotted") {
+			g.setLineDashes(10d);
+			g.strokeLine(x, y, x2, y2);
+			g.setLineDashes(null);
+		} else {
+			g.strokeLine(x, y, x2, y2);
+		}
+
 	}
+	private void createPolyLine (PolyLine p, GraphicsContext g) {
+			ArrayList<Point> polyLinePoints = p.getList();
+			for (int i = 0; i < polyLinePoints.size() - 1; i++) {
+				Point p1 = polyLinePoints.get(i);
+				Point p2 = polyLinePoints.get(i + 1);
+				g.setStroke(Circle.setPaint(p.getColor()));
+				g.setLineWidth(p.getThick());
+				g.strokeLine(p1.getX(), p1.getY(), p2.getX(), p2.getY());
+			}
+		}
 
 	public void createPoint(Point p, GraphicsContext g) {
 		// Point p1 = points.get(i);

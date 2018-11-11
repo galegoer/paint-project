@@ -2,6 +2,7 @@ package ca.utoronto.utm.mouseBehaviour;
 
 import java.util.ArrayList;
 
+
 import ca.utoronto.utm.paint.Commands;
 import ca.utoronto.utm.paint.Line;
 import ca.utoronto.utm.paint.PaintModel;
@@ -16,25 +17,25 @@ public class lineBehaviour implements shapeBehaviour {
 
 	static Line line;
 	Integer thick;
+	String style;
 
-	public lineBehaviour(ArrayList<String> s, PaintModel model, String color, Integer thick) {
+	public lineBehaviour(ArrayList<String> s, PaintModel model, String color, String style, int thick) {
 		this.modes = s;
 		this.model = model;
 		this.color = color;
 		this.thick = thick;
+		this.style = style;
+
 	}
 
 	@Override
 	public void mouseDragged(MouseEvent e) {
-
-		// mouse release or end
 		int x2 = (int) e.getX();
 		int y2 = (int) e.getY();
 		Point end = new Point(x2, y2);
 		line.setEnd(end);
-
+		
 		this.model.acceptCommand(new Commands(line));
-		//this.model.removeline(this.model.getLines().size() - 1);
 	}
 
 	@Override
@@ -42,8 +43,9 @@ public class lineBehaviour implements shapeBehaviour {
 		// TODO Auto-generated method stub
 
 		Point centre = new Point((int) e.getX(), (int) e.getY());
-		Line line2 = new Line(centre, this.color, thick);
-		line= line2;
+
+		Line line2 = new Line(centre, this.color,this.style, this.thick);
+		line = line2;
 	}
 
 	@Override
@@ -57,7 +59,7 @@ public class lineBehaviour implements shapeBehaviour {
 		// TODO Auto-generated method stub
 
 		if (line!= null) {
-			// mouse release or end
+
 			int x2 = (int) e.getX();
 			int y2 = (int) e.getY();
 			Point end = new Point(x2, y2);

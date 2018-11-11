@@ -49,8 +49,6 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 
 		// Adding a Slider
 		final Slider slider = new Slider(1, 10, 1);
-
-		//slider.setShowTickMarks(true);
 		slider.setShowTickLabels(true);
 		slider.setMajorTickUnit(1f);
 		slider.setBlockIncrement(0.1f);
@@ -98,7 +96,7 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 			imageView2.setFitHeight(20);
 			imageView2.setFitWidth(50);
 			ToggleButton button6 = new ToggleButton();
-			button6.setAccessibleText("Polyline");
+			button6.setAccessibleText("PolyLine");
 			button6.setOnAction(this);
 			button6.setGraphic(imageView2);
 			button6.setMinWidth(100);

@@ -11,6 +11,8 @@ public class context {
 	String color;
 	PaintModel model; // temporary? used to give mouseMaster a model so that it can run our code,
 	int thick;
+	
+	String lineStyle;
 						// however this will change depending on a better implication of model
 	// MouseEvent event;
 
@@ -18,11 +20,12 @@ public class context {
 		return;
 	}
 
-	public context(ArrayList<String> modes, PaintModel model, String color, int thick) {
+	public context(ArrayList<String> modes, PaintModel model, String color, String style, int thick) {
 		this.modes = modes;
 		this.model = model;
 		this.color = color;
 		this.thick = thick;
+		this.lineStyle = style;
 		// this.behaviour = new mouseMaster(mode, style, model);
 
 	}
@@ -52,8 +55,10 @@ public class context {
 			this.behaviour = new squareBehaviour(this.modes, this.model, this.color, this.thick);
 		else if (s == "Squiggle") 
 			this.behaviour = new squiggleBehaviour(this.modes, this.model, this.color);
+		else if (s == "PolyLine") 
+			this.behaviour = new polyBehaviour(this.modes, this.model, this.color, this.thick);
 		else if (s == "Line") 
-			this.behaviour = new lineBehaviour(this.modes, this.model, this.color, this.thick);
+			this.behaviour = new lineBehaviour(this.modes, this.model, this.color, this.lineStyle, this.thick);
 	}
 	public shapeBehaviour getBehaviour() {
 		return behaviour;

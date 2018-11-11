@@ -15,9 +15,9 @@ public class squareBehaviour implements shapeBehaviour {
 	String color;
 
 	static Square square;
-	Integer thick;
+	int thick;
 
-	public squareBehaviour(ArrayList<String> s, PaintModel model, String color, Integer thick) {
+	public squareBehaviour(ArrayList<String> s, PaintModel model, String color, int thick) {
 		this.modes = s;
 		this.model = model;
 		this.color = color;
@@ -79,8 +79,7 @@ public class squareBehaviour implements shapeBehaviour {
 		int side = 0;
 		int scenario = 0;
 		int style = 0;
-		int thickness =thick;
-		Square square2 = new Square(centre, side, scenario, this.color, style,thickness);
+		Square square2 = new Square(centre, side, scenario, this.color, style,this.thick);
 		if (this.modes.get(1) == "Fill") {
 			square2.setStyleS(1);
 		}
