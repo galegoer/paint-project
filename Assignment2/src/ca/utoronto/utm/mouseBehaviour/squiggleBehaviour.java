@@ -24,10 +24,12 @@ public class squiggleBehaviour implements shapeBehaviour {
 	}
 	@Override
 	public void mouseDragged(MouseEvent e) {
+		//CHANGE TO JUST POINT PROB DONT NEED A SQUIGGLE CLASS
 		Point point = new Point((int) e.getX(), (int) e.getY());
+		int thickness = this.thick;
+		Squiggle squig = new Squiggle(point, this.color, thickness);
 		//squiggle.addPoint(point);
-		this.model.acceptCommand(new Commands(squiggle));
-		System.out.println("dragged");
+		this.model.acceptCommand(new Commands(squig));
 	}
 
 	@Override
@@ -35,11 +37,11 @@ public class squiggleBehaviour implements shapeBehaviour {
 		Point start = new Point((int) e.getX(), (int) e.getY());		
 		int thickness = this.thick;
 		//squiggle.setStart(start);
-		ArrayList<Point> points = new ArrayList<>();
-		points.add(start);
-		Squiggle squig = new Squiggle(start, points, color, thickness);
-		this.model.acceptCommand(new Commands(squiggle));
+		//ArrayList<Point> points = new ArrayList<>();
+		//points.add(start);
+		Squiggle squig = new Squiggle(start, this.color, thickness);
 		squiggle = squig;
+		//this.model.acceptCommand(new Commands(squig));
 	}
 
 	@Override
@@ -50,7 +52,7 @@ public class squiggleBehaviour implements shapeBehaviour {
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		squiggle.setEnd(new Point((int) e.getX(), (int) e.getY()));
+		//squiggle.setEnd(new Point((int) e.getX(), (int) e.getY()));
 		this.model.acceptCommand(new Commands(squiggle));
 		squiggle = null;
 	}

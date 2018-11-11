@@ -16,7 +16,6 @@ public class Commands extends Observable implements ShapeCommand {
 	@Override
 	public void execute(GraphicsContext g) {
 		if(obj instanceof Squiggle) {
-			System.out.println("ins squig");
 			this.createPoint((Squiggle) obj, g);
 		} else if(obj instanceof Circle) {
 			this.createCircle((Circle) obj, g);
@@ -30,8 +29,9 @@ public class Commands extends Observable implements ShapeCommand {
 	
 	public void createPoint(Squiggle squig, GraphicsContext g) {
 		g.setStroke(Circle.setPaint(squig.getString())); //GETS COLOR
-		g.stroke(); //(squig.getStart().getX(),squig.getStart().getY(), squig.getEnd().getX(), squig.getEnd().getY());
-		System.out.println("Drew POINT");
+		g.strokeLine(squig.getStart().getX(), squig.getStart().getY(), squig.getStart().getX()+1, squig.getStart().getY());
+		//g.strokeLine(squig.getPoint(i).getX(), squig.getPoint(i).getY(), squig.getPoint(i+1).getX(), squig.getNext().getY());
+		//System.out.println("Drew POINT");
 	}
 	
 	public void createCircle(Circle c, GraphicsContext g) {
