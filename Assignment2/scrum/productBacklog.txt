@@ -33,6 +33,22 @@ ESTIMATE :
 ISSUE    : YOU FILL THIS ONE IN!!
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
+TYPE     : USER STORY 12 : UTORID
+NAME     : Implement Line
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+ISSUE    : YOU FILL THIS ONE IN!!
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 14 : UTORID
+NAME     : Implement PolyLine Feedback
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+ISSUE    : YOU FILL THIS ONE IN!!
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
 TYPE     : BUG 7 : UTORID
 NAME     : Architecture for drawing shapes can be improved
 OWNER    : 
