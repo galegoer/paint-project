@@ -80,9 +80,9 @@ Nov 9, 2018
 		    the new code. Some errors with Squiggle behaviour won't register a point null?
 
 Nov 10, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday : Finished Bug4, some of Bug7. Completed Bug12.
+	Today     : Almost finished squiggle, makes dotted lines like squiggle, aren't connected.
+	Obstacles : Kept making dotted lines instead of a squiggle.
 	
 Nov 11, 2018
 	Yesterday :
