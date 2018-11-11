@@ -151,9 +151,6 @@ public class rectangleBehaviour implements shapeBehaviour {
 		// TODO Auto-generated method stub
 
 	}
-	public void setstrokethickness(int slider_num) {
-		thick = slider_num;
 
-	}
 
 }

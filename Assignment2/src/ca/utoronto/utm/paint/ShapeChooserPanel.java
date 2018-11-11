@@ -40,10 +40,10 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 
 
 		// Adding a Slider
-		final Slider slider = new Slider(0, 10, 0.5);
+		final Slider slider = new Slider(1, 10, 0.5);
 		slider.setShowTickMarks(true);
 		slider.setShowTickLabels(true);
-		slider.setMajorTickUnit(0.25f);
+		slider.setMajorTickUnit(0.5f);
 		slider.setBlockIncrement(0.1f);
 		
 		this.add(slider, 0 , 20);
