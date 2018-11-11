@@ -13,7 +13,7 @@ public class rectangleBehaviour implements shapeBehaviour {
 	ArrayList<String> modes;
 	String color;
 
-	Rectangle rectangle;
+	static Rectangle rectangle;
 	int thick;
 
 	public rectangleBehaviour(ArrayList<String> s, PaintModel model, String color, int thick) {
@@ -72,8 +72,7 @@ public class rectangleBehaviour implements shapeBehaviour {
 		int width = 0;
 		int scenario = 0;
 		int style = 0;
-		int thick1 = thick;
-		Rectangle rectangle2 = new Rectangle(centre, width, height, scenario, this.color, style, thick);
+		Rectangle rectangle2 = new Rectangle(centre, width, height, scenario, this.color, style, this.thick);
 		if (this.modes.get(1) == "Fill") {
 			rectangle2.setStyleR(1);
 		}

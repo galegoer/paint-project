@@ -83,7 +83,10 @@ public class polyBehaviour implements shapeBehaviour {
 	@Override
 	public void mouseMoved(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (polyLine != null) {
+			Point p = new Point((int)e.getX(), (int) e.getY());
+			this.model.addPoint(p);
+		}
 	}
 
 	@Override

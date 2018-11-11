@@ -72,15 +72,15 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		g.strokeText("i=" + i, 50, 75);
 		i = i + 1;
 
-//		// Draw Lines
-//		ArrayList<Point> points = this.model.getPoints();
-//		for (int i = 0; i < points.size() - 1; i++) {
-//			Point p1 = points.get(i);
-//			Point p2 = points.get(i + 1);
-//			g.setStroke(Circle.setPaint(this.color));
-//			g.setLineWidth(this.thick);
-//			g.strokeLine(p1.getX(), p1.getY(), p2.getX(), p2.getY());
-//		}
+		// Draw Lines
+		ArrayList<Point> points = this.model.getPoints();
+		for (int i = 0; i < points.size() - 1; i++) {
+			Point p1 = points.get(i);
+			Point p2 = points.get(i + 1);
+			g.setStroke(Circle.setPaint(this.color));
+			g.setLineWidth(this.thick);
+			g.strokeLine(p1.getX(), p1.getY(), p2.getX(), p2.getY());
+		}
 
 		// Draw PolyLines
 //		ArrayList<Point> polyPoints = this.model.getPolyPoints();
@@ -97,7 +97,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		for (PolyLine p : pLines) {
 
 			ArrayList<Point> polyLinePoints = p.getList();
-			System.out.println(polyLinePoints.size());
+			//System.out.println(polyLinePoints.size());
 			for (int i = 0; i < polyLinePoints.size() - 1; i++) {
 				Point p1 = polyLinePoints.get(i);
 				Point p2 = polyLinePoints.get(i + 1);
@@ -223,6 +223,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		c.setColor(this.color);
 		c.setModes(this.modes);
 		c.setThick(this.thick);
+		//System.out.println(this.thick);
 		c.setBehaviour(this.modes.get(0));
 		c.move(event);
 	}

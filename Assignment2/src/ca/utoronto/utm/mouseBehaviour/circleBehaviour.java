@@ -44,7 +44,9 @@ public class circleBehaviour implements shapeBehaviour {
 		Point centre = new Point((int) e.getX(), (int) e.getY());
 		int radius = 0;
 		int style = 0;
+		
 		Circle circle2 = new Circle(centre, radius, color, style, this.thick);
+		
 		if (this.modes.get(1) == "Fill") {
 			circle2.setStyleC(1);
 		}
@@ -74,7 +76,7 @@ public class circleBehaviour implements shapeBehaviour {
 	@Override
 	public void mouseMoved(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
