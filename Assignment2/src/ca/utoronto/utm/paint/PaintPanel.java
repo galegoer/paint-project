@@ -46,7 +46,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		this.addEventHandler(MouseEvent.ANY, this);
 
 		this.modes.add(0, "Circle"); // CHANGED MIGHT BE BAD CODE STILL??
-		this.modes.add(1, "Outline");
+		this.modes.add(1, "Outline"); //This code sets the default
 
 		this.model = model;
 		this.model.addObserver(this);
