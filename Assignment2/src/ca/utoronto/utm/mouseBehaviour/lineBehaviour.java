@@ -25,11 +25,7 @@ public class lineBehaviour implements shapeBehaviour {
 
 	@Override
 	public void mouseDragged(MouseEvent e) {
-		// TODO Auto-generated method stub
 
-		// Begin
-		int x1 = line.getCentre().getX();
-		int y1 = line.getCentre().getY();
 		// mouse release or end
 		int x2 = (int) e.getX();
 		int y2 = (int) e.getY();
@@ -47,8 +43,6 @@ public class lineBehaviour implements shapeBehaviour {
 		Point centre = new Point((int) e.getX(), (int) e.getY());
 		Line line2 = new Line(centre, this.color, thick);
 		line= line2;
-
-
 	}
 
 	@Override
@@ -62,19 +56,12 @@ public class lineBehaviour implements shapeBehaviour {
 		// TODO Auto-generated method stub
 
 		if (line!= null) {
-
-			// Point centre = new Point((int) e.getX(), (int) e.getY());
-			// Begin
-
-			int x1 = line.getCentre().getX();
-			int y1 = line.getCentre().getY();
 			// mouse release or end
 			int x2 = (int) e.getX();
 			int y2 = (int) e.getY();
 			Point end = new Point(x2, y2);
 			line.setEnd(end);
 			
-
 			this.model.addLine(line);
 			line= null;
 		}
