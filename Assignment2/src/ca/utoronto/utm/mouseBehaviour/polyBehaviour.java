@@ -87,16 +87,6 @@ public class polyBehaviour implements shapeBehaviour {
 	@Override
 	public void mouseMoved(MouseEvent e) {
 		// TODO Auto-generated method stub
-		if (polyLine != null) {
-			l.setCentre(polyLine.getCentre());
-			l.setColor(this.color);
-			l.setThick(this.thick);
-			l.setStyle("Dotted");
-			Point p = new Point((int) e.getX(), (int) e.getY());
-			l.setEnd(p);
-			this.model.addLine(l);
-
-		}
 
 	}
 
