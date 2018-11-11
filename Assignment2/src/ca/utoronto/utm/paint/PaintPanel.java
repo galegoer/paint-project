@@ -45,8 +45,10 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 
 		this.addEventHandler(MouseEvent.ANY, this);
 
+
 		this.modes.add(0, "Circle"); // CHANGED MIGHT BE BAD CODE STILL??
 		this.modes.add(1, "Outline"); //This code sets the default
+
 
 		this.model = model;
 		this.model.addObserver(this);
@@ -70,16 +72,6 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		i = i + 1;
 				
 		model.operateAll(g);
-		
-		// Draw Lines
-//		ArrayList<Point> points = this.model.getPoints();
-//		for (int i = 0; i < points.size() - 1; i++) {
-//			Point p1 = points.get(i);
-//			Point p2 = points.get(i + 1);
-//			g.setStroke(Circle.setPaint(this.color));
-//			//g.setLineWidth(setB(thick));
-//			g.strokeLine(p1.getX(), p1.getY(), p2.getX(), p2.getY());
-//		}
 	}
 
 	@Override

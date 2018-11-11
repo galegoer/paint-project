@@ -3,9 +3,12 @@ package ca.utoronto.utm.paint;
 import java.util.ArrayList;
 import java.util.Observable;
 
+
 import javafx.scene.canvas.GraphicsContext;
 
+
 public class PaintModel extends Observable {
+
 	
 	ArrayList<Commands> commandQueue;
 	
@@ -34,4 +37,7 @@ public class PaintModel extends Observable {
 		this.setChanged();
 		this.notifyObservers();
 	}
+
+	
+	
 }

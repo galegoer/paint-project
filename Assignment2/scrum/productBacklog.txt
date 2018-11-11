@@ -14,27 +14,10 @@ ISSUE    : Squiggles are connected to each other by a straight line. Each drag
 		   of the mouse should be a separate squiggle. Possibly
            the issue is with the representation of the squiggles in the Model.
 --------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : BUG 6 : UTORID
-NAME     : Circle drawing is broken
-OWNER    : 
-PRIORITY :
-ESTIMATE : 
-ISSUE    : The first click should specify the center of the circle, with
-           a drag for the radius. This is not the case in the current
-           implementation.
---------------------------------------------------------------------------
+
 --------------------------------------------------------------------------
 TYPE     : USER STORY 11 : UTORID
 NAME     : Implement Poly Line
-OWNER    : 
-PRIORITY :
-ESTIMATE : 
-ISSUE    : YOU FILL THIS ONE IN!!
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : USER STORY 12 : UTORID
-NAME     : Implement Line
 OWNER    : 
 PRIORITY :
 ESTIMATE : 
@@ -157,14 +140,13 @@ events forwarded through PaintPanel into the current strategy, or by
 simply switching the PaintPanel's event handlers as appropriate.
 
 --------------------------------------------------------------------------
---------------------------------------------------------------------------
 TYPE     : BUG 11 : UTORID
-NAME     : Adds circles to list as you drag
+NAME     : Adds Shapes to list as you drag
 OWNER    : 
 PRIORITY :
-ESTIMATE : 10 minutes
-ISSUE    : When dragging to make a circle each circle is created and added
-to the ArrayList of circles
+ESTIMATE : 2 hours minutes
+ISSUE    : When dragging to make any shape each shape is created and added
+to the ArrayList of shapes/now commands
 --------------------------------------------------------------------------
 TYPE     : USER STORY 9: askarya2
 NAME     : Clear canvas button
@@ -186,7 +168,28 @@ SO THAT  : A user can easily delete a mistake without having to reset and clear 
 --------------------------------------------------------------------------
 
 
+
 # COMPLETED USER STORIES/BUGS BELOW ###########################################
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 12 : UTORID
+NAME     : Implement Line
+OWNER    : 
+PRIORITY :
+ESTIMATE : 1 hour
+AS A     : user
+I WANT   : to be able to select the Line mode and click and drag to specify a line to be drawn on my canvas
+SO THAT  : I can now draw lines on my canvas
+--------------------------------------------------------------------------
+TYPE     : BUG 6 : UTORID
+NAME     : Circle drawing is broken
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+ISSUE    : The first click should specify the center of the circle, with
+           a drag for the radius. This is not the case in the current
+           implementation.
+--------------------------------------------------------------------------
 --------------------------------------------------------------------------
 TYPE     : USER STORY 1 : UTORID
 NAME     : Draw Circle

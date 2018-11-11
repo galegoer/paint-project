@@ -17,6 +17,7 @@ import java.io.FileNotFoundException;
 import javafx.scene.shape.Shape;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.Line;
 
 public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEvent> {
 
@@ -37,13 +38,21 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 		Rectangle t = new Rectangle();
 		t.setHeight(20.0f);
 		t.setWidth(20.0f);
+		
+		Line l = new Line();
+		l.setStartX(0.0f);
+		l.setEndX(30.0f);
+
+		
+
 
 
 		// Adding a Slider
-		final Slider slider = new Slider(1, 10, 0.5);
-		slider.setShowTickMarks(true);
+		final Slider slider = new Slider(1, 10, 1);
+
+		//slider.setShowTickMarks(true);
 		slider.setShowTickLabels(true);
-		slider.setMajorTickUnit(0.5f);
+		slider.setMajorTickUnit(1f);
 		slider.setBlockIncrement(0.1f);
 		
 		this.add(slider, 0 , 20);
@@ -55,8 +64,8 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 		});
 
 
-		String[] names = {"Circle", "Rectangle", "Square"};
-		Shape[] shapes = {c,r,t};
+		String[] names = {"Circle", "Rectangle", "Square", "Line"};
+		Shape[] shapes = {c,r,t,l};
 
 		int row = 0;
 		for (int i =0; i < shapes.length; i++) {

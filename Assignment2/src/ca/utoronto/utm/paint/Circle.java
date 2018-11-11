@@ -49,10 +49,7 @@ public class Circle extends Shape{
 		this.thickness = thickness;
 		//this.setStrokeWidth(thickness);
 	}
-	public int get() {
-		return thickness;
-	}
-	//
+	
 	
 	public int getStyleC() {
 		return style;
