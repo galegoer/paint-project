@@ -1,18 +1,53 @@
 package ca.utoronto.utm.mouseBehaviour;
 
+import java.util.ArrayList;
+
+import ca.utoronto.utm.paint.Line;
+import ca.utoronto.utm.paint.PaintModel;
+import ca.utoronto.utm.paint.Point;
 import javafx.scene.input.MouseEvent;
 
 public class lineBehaviour implements shapeBehaviour {
+
+	PaintModel model;
+	ArrayList<String> modes;
+	String color;
+
+	static Line line;
+	Integer thick;
+	String style;
+
+	public lineBehaviour(ArrayList<String> s, PaintModel model, String color, String style, int thick) {
+		this.modes = s;
+		this.model = model;
+		this.color = color;
+		this.thick = thick;
+		this.style = style;
+	}
 
 	@Override
 	public void mouseDragged(MouseEvent e) {
 		// TODO Auto-generated method stub
 
+		
+		// mouse release or end
+		int x2 = (int) e.getX();
+		int y2 = (int) e.getY();
+		Point end = new Point(x2, y2);
+		line.setEnd(end);
+
+		this.model.addLine(line);
+		//this.model.removeline(this.model.getLines().size() - 1);
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
+
+		Point centre = new Point((int) e.getX(), (int) e.getY());
+		Line line2 = new Line(centre, this.color,this.style, this.thick);
+		line= line2;
+
 
 	}
 
@@ -26,6 +61,19 @@ public class lineBehaviour implements shapeBehaviour {
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
 
+		if (line!= null) {
+
+			// Point centre = new Point((int) e.getX(), (int) e.getY());
+			// Begin
+			int x2 = (int) e.getX();
+			int y2 = (int) e.getY();
+			Point end = new Point(x2, y2);
+			line.setEnd(end);
+			
+
+			this.model.addLine(line);
+			line= null;
+		}
 	}
 
 	@Override
@@ -45,5 +93,10 @@ public class lineBehaviour implements shapeBehaviour {
 		// TODO Auto-generated method stub
 
 	}
+	public void setstrokethickness(int slider_num) {
+		thick = slider_num;
+
+	}
+
 
 }

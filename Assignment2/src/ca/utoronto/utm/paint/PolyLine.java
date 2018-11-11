@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class PolyLine {
 	private Point centre;
-	private Point end;
 	
 	private ArrayList<Point> points = new ArrayList<Point>();
 	private String lineColor;
@@ -24,18 +23,13 @@ public class PolyLine {
 		this.centre = centre;
 	}
 	
-	public void setEnd(Point end) {
-		this.end = end;
-	}
+	
 	
 	public String getColor() {
 		return lineColor;
 	}
 
-	public Point getEnd() {
-		// TODO Auto-generated method stub
-		return end;
-	}
+	
 
 	public int getThick() {
 		// TODO Auto-generated method stub
@@ -44,6 +38,10 @@ public class PolyLine {
 	public void updateThick(int thick) {
 		// TODO Auto-generated method stub
 		thickness =  thick;
+	}
+	public void updateColor(String color) {
+		// TODO Auto-generated method stub
+		this.lineColor =  color;
 	}
 	
 	//for polyline points list

@@ -27,7 +27,8 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 	context c = new context();
 
 	private String style;
-	private int thick = 0;
+	private int thick = 1;
+	private String lineStyle = "Normal";
 
 	public PaintPanel(PaintModel model, View view) {
 
@@ -39,7 +40,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 
 		this.addEventHandler(MouseEvent.ANY, this);
 
-		this.modes.add(0, "Circle"); // CHANGED MIGHT BE BAD CODE STILL??
+		this.modes.add(0, "Line"); // CHANGED MIGHT BE BAD CODE STILL??
 		this.modes.add(1, "Outline");
 
 		this.model = model;
@@ -82,22 +83,31 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			g.strokeLine(p1.getX(), p1.getY(), p2.getX(), p2.getY());
 		}
 
-		// Draw PolyLines
-//		ArrayList<Point> polyPoints = this.model.getPolyPoints();
-//		for (int i = 0; i < polyPoints.size() - 1; i++) {
-//			Point p1 = polyPoints.get(i);
-//			Point p2 = polyPoints.get(i + 1);
-//			g.setStroke(Circle.setPaint(this.color));
-//			g.setLineWidth(this.thick);
-//			g.strokeLine(p1.getX(), p1.getY(), p2.getX(), p2.getY());
-//		}
+		// Draw LINEZZ
+		ArrayList<Line> lines = this.model.getLines();
+		for (Line c : lines) {
+			int x = c.getCentre().getX();
+			int y = c.getCentre().getY();
+			int x2 = c.getEnd().getX();
+			int y2 = c.getEnd().getY();
+			g.setStroke(Circle.setPaint(c.getColor()));
+			g.setLineWidth(c.getThick());
+			if (c.getStyle() == "Dotted") {
+				g.setLineDashes(10d);
+				g.strokeLine(x, y, x2, y2);
+				g.setLineDashes(null);
+			} else {
+				g.strokeLine(x, y, x2, y2);
+			}
+
+		}
 
 		// Draw PolyLine
 		ArrayList<PolyLine> pLines = this.model.getPolyLines();
 		for (PolyLine p : pLines) {
 
 			ArrayList<Point> polyLinePoints = p.getList();
-			//System.out.println(polyLinePoints.size());
+			// System.out.println(polyLinePoints.size());
 			for (int i = 0; i < polyLinePoints.size() - 1; i++) {
 				Point p1 = polyLinePoints.get(i);
 				Point p2 = polyLinePoints.get(i + 1);
@@ -106,13 +116,14 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 				g.strokeLine(p1.getX(), p1.getY(), p2.getX(), p2.getY());
 			}
 		}
-		
+
 		// Draw Circles
 		ArrayList<Circle> circles = this.model.getCircles();
 		for (Circle c : circles) {
 			int x = c.getCentre().getX();
 			int y = c.getCentre().getY();
 			int radius = c.getRadius();
+
 			// Sets the thickness of circle.
 			g.setLineWidth(c.getThick());
 			if (c.getStyleC() == 1) {
@@ -136,6 +147,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 			int height = r.getHeight();
 			int width = r.getWidth();
 			g.setLineWidth(r.getThick());
+
 			if (r.getStyleR() == 1) {
 				g.setFill(Circle.setPaint(r.getColorR()));
 				if (r.getScenario() == 1) {
@@ -218,12 +230,12 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 
 	@Override
 	public void handle(MouseEvent event) {
-		
+
 		c.setModel(this.model);
 		c.setColor(this.color);
 		c.setModes(this.modes);
 		c.setThick(this.thick);
-		//System.out.println(this.thick);
+		// System.out.println(this.thick);
 		c.setBehaviour(this.modes.get(0));
 		c.move(event);
 	}

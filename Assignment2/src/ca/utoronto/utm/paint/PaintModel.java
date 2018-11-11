@@ -26,7 +26,18 @@ public class PaintModel extends Observable {
 		return pLines;
 	}
 	
-	
+	ArrayList<Line> Lines = new ArrayList<Line>();
+	public void addLine(Line l) {
+		this.Lines.add(l);
+		this.setChanged();
+		this.notifyObservers();
+	}
+	public ArrayList<Line> getLines() {
+		return Lines;
+	}
+	public void removeLine(int i) {
+		this.Lines.remove(i);
+	}
 	
 	private ArrayList<Point> points = new ArrayList<Point>();
 	private ArrayList<Circle> circles = new ArrayList<Circle>();
