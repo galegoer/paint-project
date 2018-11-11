@@ -41,7 +41,7 @@ public class squiggleBehaviour implements shapeBehaviour {
 		//points.add(start);
 		Squiggle squig = new Squiggle(start, this.color, thickness);
 		squiggle = squig;
-		//this.model.acceptCommand(new Commands(squig));
+		this.model.acceptCommand(new Commands(squiggle));
 	}
 
 	@Override
