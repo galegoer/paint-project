@@ -5,23 +5,26 @@ import java.util.ArrayList;
 import javafx.scene.paint.Color;
 
 public class Squiggle {
-	private Point start;
 	private String stringcolor;
 	private int thickness;
+	private ArrayList<Point> points;
 	
-	public Squiggle(Point start, String color, int thickness) {
-		this.start = start;
+	public Squiggle(ArrayList<Point> points, String color, int thickness) {
+		this.points = points;
 		this.stringcolor = color;
 		this.thickness = thickness;
-		//this.end = points.get(points.size()-1);
 	}
 
-	public void setStart(Point start) {
-		this.start = start;
+	public void addPoint(Point point) {
+		this.points.add(point);
 	}
 	
-	public Point getStart() {
-		return this.start;
+	public int getPoints(){
+		return this.points.size();
+	}
+	
+	public Point getPoint(int i){
+		return this.points.get(i);
 	}
 
 	public int getThick() {

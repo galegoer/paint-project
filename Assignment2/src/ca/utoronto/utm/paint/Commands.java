@@ -29,12 +29,9 @@ public class Commands extends Observable implements ShapeCommand {
 	
 	public void createPoint(Squiggle squig, GraphicsContext g) {
 		g.setStroke(Circle.setPaint(squig.getString())); //GETS COLOR
-		//g.strokeLine(squig.getStart().getX(), squig.getStart().getY(), squig.getStart().getX()+1, squig.getStart().getY());
-		g.moveTo(squig.getStart().getX(), squig.getStart().getY());
-		g.lineTo(squig.getStart().getX(), squig.getStart().getY());
-		g.stroke();
-		//g.strokeLine(squig.getPoint(i).getX(), squig.getPoint(i).getY(), squig.getPoint(i+1).getX(), squig.getNext().getY());
-		//System.out.println("Drew POINT");
+		g.setLineWidth(squig.getThick());
+		for(int i=0; i<squig.getPoints()-1; i++)
+			g.strokeLine(squig.getPoint(i).getX(), squig.getPoint(i).getY(), squig.getPoint(i+1).getX(), squig.getPoint(i+1).getY());
 	}
 	
 	public void createCircle(Circle c, GraphicsContext g) {
