@@ -50,6 +50,7 @@ public class Circle extends Shape{
 		//this.setStrokeWidth(thickness);
 	}
 	
+	
 	public int getStyleC() {
 		return style;
 	}

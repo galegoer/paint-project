@@ -15,9 +15,9 @@ public class rectangleBehaviour implements shapeBehaviour {
 	String color;
 
 	static Rectangle rectangle;
-	Integer thick;
+	int thick;
 
-	public rectangleBehaviour(ArrayList<String> s, PaintModel model, String color, Integer thick) {
+	public rectangleBehaviour(ArrayList<String> s, PaintModel model, String color, int thick) {
 		this.modes = s;
 		this.model = model;
 		this.color = color;
@@ -70,8 +70,7 @@ public class rectangleBehaviour implements shapeBehaviour {
 		int width = 0;
 		int scenario = 0;
 		int style = 0;
-		int thick1 = thick;
-		Rectangle rectangle2 = new Rectangle(centre, width, height, scenario, this.color, style, thick);
+		Rectangle rectangle2 = new Rectangle(centre, width, height, scenario, this.color, style, this.thick);
 		if (this.modes.get(1) == "Fill") {
 			rectangle2.setStyleR(1);
 		}
@@ -146,9 +145,6 @@ public class rectangleBehaviour implements shapeBehaviour {
 		// TODO Auto-generated method stub
 
 	}
-	public void setstrokethickness(int slider_num) {
-		thick = slider_num;
 
-	}
 
 }

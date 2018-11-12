@@ -64,14 +64,14 @@ Nov 8, 2018
 	Obstacles : Some merge conflicts, but resolved.
 
 Nov 9, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday :Finished bug3 and merged
+	Today     :Claimed UserStory 11 and finished majority of it.
+	Obstacles :Multiple bugs with thickness of polylines created
 
 Nov 10, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday :working on polyline
+	Today     :Wrapping up UserStory11, claimed Userstory and implemented it, also added polyLine feedback. No branches merged.
+	Obstacles :Bug found in polyline feedback where the last feedback line remains after poly line is complete.
 	
 Nov 11, 2018
 	Yesterday :

@@ -229,8 +229,22 @@ NAME     : Implement Poly Line
 OWNER    : 
 PRIORITY :
 ESTIMATE : 
+AS A     : user
+I WANT   : to be able to select the polyLine mode and click to create points to form a polyLine
+SO THAT  : I can draw polyLines on my canvas
+--------------------------------------------------------------------------
+<<<<<<< HEAD
+=======
+--------------------------------------------------------------------------
+TYPE     : USER STORY 12 : liwill13
+NAME     : Implement Line
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
 ISSUE    : YOU FILL THIS ONE IN!!
 --------------------------------------------------------------------------
+
+>>>>>>> UserStory12
 
 # Sprint 3 Nov 9, 2018
 # Sprint 3 Backlog UserStories go below
@@ -316,4 +330,23 @@ ESTIMATE : 1 hour
 ISSUE    : Clearing the canvas is broken as we don't refer to the ArrayLists 
 	   anymore.
 --------------------------------------------------------------------------
-
+--------------------------------------------------------------------------
+TYPE     : USER STORY 12 : liwill13
+NAME     : Implement Line
+OWNER    : 
+PRIORITY :
+ESTIMATE : 1 hour
+AS A     : user
+I WANT   : to be able to select the Line mode and click and drag to specify a line to be drawn on my canvas
+SO THAT  : I can now draw lines on my canvas
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 14 : liwill13
+NAME     : Implement PolyLine Feedback
+OWNER    : 
+PRIORITY :
+ESTIMATE : 4 hours
+AS A     : user
+I WANT   : to have an indicator line after the user creates a point on the polyLine
+SO THAT  : you can see what the next line you are about to add to the polyLine looks like
+--------------------------------------------------------------------------
