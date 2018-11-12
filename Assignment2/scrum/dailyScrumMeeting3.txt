@@ -76,9 +76,9 @@ Nov 11, 2018
 	Obstacles : The major obstacle was finding the relationship between rectangle height and arcHeight, rectangle width and arcWidth. Researching this took most of my time. ALso in the end while commiting and merging my work, for some reason the merge didn't work properly and I had to do UserStory over again.
 	
 Nov 12, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday :Finished working on UserStory13.  Bug8 is still in progress.
+	Today     : Started working on UserStory15. UserStory15 is about the feature to be able to draw rounded squares. Bug8 is also in working.
+	Obstacles :No major obstacles for UserStory15.
 
 Nov 13, 2018
 	Yesterday :

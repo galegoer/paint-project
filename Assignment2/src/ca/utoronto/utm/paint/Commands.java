@@ -51,15 +51,15 @@ public class Commands extends Observable implements ShapeCommand {
 
 	}
 	private void createPolyLine (PolyLine p, GraphicsContext g) {
-			ArrayList<Point> polyLinePoints = p.getList();
-			for (int i = 0; i < polyLinePoints.size() - 1; i++) {
-				Point p1 = polyLinePoints.get(i);
-				Point p2 = polyLinePoints.get(i + 1);
-				g.setStroke(Circle.setPaint(p.getColor()));
-				g.setLineWidth(p.getThick());
-				g.strokeLine(p1.getX(), p1.getY(), p2.getX(), p2.getY());
-			}
+		ArrayList<Point> polyLinePoints = p.getList();
+		for (int i = 0; i < polyLinePoints.size() - 1; i++) {
+			Point p1 = polyLinePoints.get(i);
+			Point p2 = polyLinePoints.get(i + 1);
+			g.setStroke(Circle.setPaint(p.getColor()));
+			g.setLineWidth(p.getThick());
+			g.strokeLine(p1.getX(), p1.getY(), p2.getX(), p2.getY());
 		}
+	}
 
 	public void createSquig(Squiggle squig, GraphicsContext g) {
 		g.setStroke(Circle.setPaint(squig.getString())); //GETS COLOR
@@ -76,7 +76,7 @@ public class Commands extends Observable implements ShapeCommand {
 		if (c.getStyleC() == 1) {
 			g.setFill(Circle.setPaint(c.getString())); // FIX WITH WHAT COLOR IS SET
 			g.fillOval(x - radius, y - radius, 2 * radius, 2 * radius);
-		} else {
+		}else{
 			g.strokeOval(x - radius, y - radius, 2 * radius, 2 * radius);
 		}
 		g.setStroke(Circle.setPaint(c.getString()));
@@ -101,7 +101,7 @@ public class Commands extends Observable implements ShapeCommand {
 			} else if (r.getScenario() == 4) {
 				g.fillRect(a, b - height, width, height);
 			}
-		} else {
+		}else{
 			g.setStroke(Circle.setPaint(r.getColorR()));
 			if (r.getScenario() == 1) {
 				g.strokeRect(a, b, width, height);
@@ -122,30 +122,31 @@ public class Commands extends Observable implements ShapeCommand {
 		int a = r.getCentre().getX();
 		int b = r.getCentre().getY();
 		int side = r.getSideLength();
+		int arch= r.getArcHeight();
+		int arcw = r.getArcWidth();
 		g.setLineWidth(r.getThick());
 		if (r.getStyleS() == 1) {
 			g.setFill(Circle.setPaint(r.getColorS()));
 			if (r.getScenario() == 1) {
-				g.fillRect(a, b, side, side);
+				g.fillRoundRect(a, b, side, side, arch ,arcw);
 			} else if (r.getScenario() == 2) {
-				g.fillRect(a - side, b - side, side, side);
+				g.fillRoundRect(a - side, b - side, side, side, arch ,arcw);
 			} else if (r.getScenario() == 3) {
-				g.fillRect(a - side, b, side, side);
+				g.fillRoundRect(a - side, b, side, side, arch ,arcw);
 			} else if (r.getScenario() == 4) {
-				g.fillRect(a, b - side, side, side);
+				g.fillRoundRect(a, b - side, side, side, arch ,arcw);
 			}
-		} else {
+		}else {
 			g.setStroke(Circle.setPaint(r.getColorS()));
 			if (r.getScenario() == 1) {
-				g.strokeRect(a, b, side, side);
+				g.strokeRoundRect(a, b, side, side, arch ,arcw);
 			} else if (r.getScenario() == 2) {
-				g.strokeRect(a - side, b - side, side, side);
+				g.strokeRoundRect(a - side, b - side, side, side, arch ,arcw);
 			} else if (r.getScenario() == 3) {
-				g.strokeRect(a - side, b, side, side);
+				g.strokeRoundRect(a - side, b, side, side, arch ,arcw);
 			} else if (r.getScenario() == 4) {
-				g.strokeRect(a, b - side, side, side);
+				g.strokeRoundRect(a, b - side, side, side, arch ,arcw);
 			}
-
 		}
 	}
 	public void createRoundedRect(RoundedRectangle p, GraphicsContext g) {	
@@ -166,18 +167,18 @@ public class Commands extends Observable implements ShapeCommand {
 				g.fillRoundRect(a-width, b, width, height, arch, arcw);
 			}else if(p.getScenario() == 4) {
 				g.fillRoundRect(a, b-height , width, height, arch, arcw);
-		}}else{
-		g.setStroke(Circle.setPaint(p.getColorR()));
-		if (p.getScenario() == 1) {
-			g.strokeRoundRect(a, b, width, height, arch, arcw);
-		} else if (p.getScenario() == 2) {
-			g.strokeRoundRect(a - width, b - height, width, height, arch, arcw);
-		} else if (p.getScenario() == 3) {
-			g.strokeRoundRect(a - width, b, width, height, arch, arcw);
-		} else if (p.getScenario() == 4) {
-			g.strokeRoundRect(a, b - height, width, height, arch, arcw);
+			}
+		}else{
+			g.setStroke(Circle.setPaint(p.getColorR()));
+			if (p.getScenario() == 1) {
+				g.strokeRoundRect(a, b, width, height, arch, arcw);
+			} else if (p.getScenario() == 2) {
+				g.strokeRoundRect(a - width, b - height, width, height, arch, arcw);
+			} else if (p.getScenario() == 3) {
+				g.strokeRoundRect(a - width, b, width, height, arch, arcw);
+			} else if (p.getScenario() == 4) {
+				g.strokeRoundRect(a, b - height, width, height, arch, arcw);
+			}
 		}
-	}
-}
-	
+	}	
 }

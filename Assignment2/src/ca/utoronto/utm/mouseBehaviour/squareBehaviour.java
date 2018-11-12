@@ -15,54 +15,101 @@ public class squareBehaviour implements shapeBehaviour {
 
 	static Square square;
 	int thick;
+	private int version;
 
-	public squareBehaviour(ArrayList<String> s, PaintModel model, String color, int thick) {
+	public squareBehaviour(ArrayList<String> s, PaintModel model, String color, int thick, int version) {
 		this.modes = s;
 		this.model = model;
 		this.color = color;
 		this.thick = thick;
+		this.version = version;
 	}
 
+	// VERSION 0 represents regular square and VERSION 1 represents rounded square.
 	@Override
 	public void mouseDragged(MouseEvent e) {
-		// TODO Auto-generated method stub
+		int a;
 
 		int x1 = square.getCentre().getX();
 		int y1 = square.getCentre().getY();
 		int x2 = (int) e.getX();
 		int y2 = (int) e.getY();
 		if (x2 > x1 && y2 > y1) {
-			if ((x2 - x1) > (y2 - y1))
+			if ((x2 - x1) > (y2 - y1)) {
+				a = (x2-x1);
 				square.setSideLength(x2 - x1);
-			else
-				square.setSideLength(y2 - y1);
+			}else {
+				a = (y2 - y1);
+				square.setSideLength(y2 - y1);	
+			}
+
+			if (this.version == 0) {
+				square.setArcHeight(0);
+				square.setArcWidth(0);
+			} else if(this.version == 1) {
+				square.setArcHeight((int)((a)* (double)(0.2)));
+				square.setArcWidth((int)((a)* (double)(0.2)));
+			}
 			square.setScenario(1);
 			Point centre = new Point(x1, y1);
 			square.setCentre(centre);
 		}
 		// Scenario 2
 		else if (x1 > x2 && y2 < y1) {
-			if ((x1 - x2) > (y1 - y2))
+			if ((x1 - x2) > (y1 - y2)) {
+				a = (x1 - x2);
 				square.setSideLength(x1 - x2);
-			else
+			}else {
+				a = (y1 - y2);
 				square.setSideLength(y1 - y2);
+			}
+
+			if (this.version == 0) {
+				square.setArcHeight(0);
+				square.setArcWidth(0);
+			} else if(this.version == 1) {
+				square.setArcHeight((int)((a)* (double)(0.2)));
+				square.setArcWidth((int)((a)* (double)(0.2)));
+			}
 			square.setScenario(2);
 
 		}
 		// Scenario 3
 		else if (x1 > x2 && y1 < y2) {
-			if ((x1 - x2) > (y2 - y1))
+			if ((x1 - x2) > (y2 - y1)) {
+				a = (x1 - x2);
 				square.setSideLength(x1 - x2);
-			else
+			}else {
+				a = (y2 - y1);
 				square.setSideLength(y2 - y1);
+			}
+
+			if (this.version == 0) {
+				square.setArcHeight(0);
+				square.setArcWidth(0);
+			} else if(this.version == 1) {
+				square.setArcHeight((int)((a)* (double)(0.2)));
+				square.setArcWidth((int)((a)* (double)(0.2)));
+			}
 			square.setScenario(3);
 		}
 		// Scenario 4
 		else if (x2 > x1 && y2 < y1) {
-			if ((x2 - x1) > (y1 - y2))
+			if ((x2 - x1) > (y1 - y2)) {
+				a = (x2 - x1);
 				square.setSideLength(x2 - x1);
-			else
+			}else {
+				a = (y1 - y2);
 				square.setSideLength(y1 - y2);
+			}
+
+			if (this.version == 0) {
+				square.setArcHeight(0);
+				square.setArcWidth(0);
+			} else if(this.version == 1) {
+				square.setArcHeight((int)((a)* (double)(0.2)));
+				square.setArcWidth((int)((a)* (double)(0.2)));
+			}
 			square.setScenario(4);
 		}
 
@@ -78,7 +125,9 @@ public class squareBehaviour implements shapeBehaviour {
 		int side = 0;
 		int scenario = 0;
 		int style = 0;
-		Square square2 = new Square(centre, side, scenario, this.color, style,this.thick);
+		int arch = 0;
+		int arcw = 0;
+		Square square2 = new Square(centre, side, scenario, this.color, style,this.thick, arch, arcw);
 		if (this.modes.get(1) == "Fill") {
 			square2.setStyleS(1);
 		}
@@ -95,6 +144,7 @@ public class squareBehaviour implements shapeBehaviour {
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
+		int a;
 
 		if (square != null) {
 			int x1 = square.getCentre().getX();
@@ -103,37 +153,81 @@ public class squareBehaviour implements shapeBehaviour {
 			int y2 = (int) e.getY();
 
 			if (x2 > x1 && y2 > y1) {
-				if ((x2 - x1) > (y2 - y1))
+				if ((x2 - x1) > (y2 - y1)) {
+					a = (x2-x1);
 					square.setSideLength(x2 - x1);
-				else
-					square.setSideLength(y2 - y1);
+				}else {
+					a = (y2 - y1);
+					square.setSideLength(y2 - y1);	
+				}
+
+				if (this.version == 0) {
+					square.setArcHeight(0);
+					square.setArcWidth(0);
+				} else if(this.version == 1) {
+					square.setArcHeight((int)((a)* (double)(0.2)));
+					square.setArcWidth((int)((a)* (double)(0.2)));
+				}
 				square.setScenario(1);
 				Point centre = new Point(x1, y1);
 				square.setCentre(centre);
 			}
 			// Scenario 2
 			else if (x1 > x2 && y2 < y1) {
-				if ((x1 - x2) > (y1 - y2))
+				if ((x1 - x2) > (y1 - y2)) {
+					a = (x1 - x2);
 					square.setSideLength(x1 - x2);
-				else
+				}else {
+					a = (y1 - y2);
 					square.setSideLength(y1 - y2);
+				}
+
+				if (this.version == 0) {
+					square.setArcHeight(0);
+					square.setArcWidth(0);
+				} else if(this.version == 1) {
+					square.setArcHeight((int)((a)* (double)(0.2)));
+					square.setArcWidth((int)((a)* (double)(0.2)));
+				}
 				square.setScenario(2);
 
 			}
 			// Scenario 3
 			else if (x1 > x2 && y1 < y2) {
-				if ((x1 - x2) > (y2 - y1))
+				if ((x1 - x2) > (y2 - y1)) {
+					a = (x1 - x2);
 					square.setSideLength(x1 - x2);
-				else
+				}else {
+					a = (y2 - y1);
 					square.setSideLength(y2 - y1);
+				}
+
+				if (this.version == 0) {
+					square.setArcHeight(0);
+					square.setArcWidth(0);
+				} else if(this.version == 1) {
+					square.setArcHeight((int)((a)* (double)(0.2)));
+					square.setArcWidth((int)((a)* (double)(0.2)));
+				}
 				square.setScenario(3);
 			}
 			// Scenario 4
 			else if (x2 > x1 && y2 < y1) {
-				if ((x2 - x1) > (y1 - y2))
+				if ((x2 - x1) > (y1 - y2)) {
+					a = (x2 - x1);
 					square.setSideLength(x2 - x1);
-				else
+				}else {
+					a = (y1 - y2);
 					square.setSideLength(y1 - y2);
+				}
+
+				if (this.version == 0) {
+					square.setArcHeight(0);
+					square.setArcWidth(0);
+				} else if(this.version == 1) {
+					square.setArcHeight((int)((a)* (double)(0.2)));
+					square.setArcWidth((int)((a)* (double)(0.2)));
+				}
 				square.setScenario(4);
 			}
 
@@ -162,7 +256,7 @@ public class squareBehaviour implements shapeBehaviour {
 	}
 	public void setstrokethickness(int slider_num) {
 		thick = slider_num;
-	
+
 	}
 
 }
