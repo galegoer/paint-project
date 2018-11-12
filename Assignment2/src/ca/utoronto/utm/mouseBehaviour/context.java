@@ -54,7 +54,10 @@ public class context {
 		else if (s == "RoundedRectangle") 
 			this.behaviour = new roundedRectBehaviour(this.modes, this.model, this.color, this.thick);
 		else if (s == "Square") 
-			this.behaviour = new squareBehaviour(this.modes, this.model, this.color, this.thick);
+			this.behaviour = new squareBehaviour(this.modes, this.model, this.color, this.thick, 0);
+		// Rounded Square down
+		else if (s == "RoundedSquare") 
+			this.behaviour = new squareBehaviour(this.modes, this.model, this.color, this.thick, 1);
 		else if (s == "Squiggle") 
 			this.behaviour = new squiggleBehaviour(this.modes, this.model, this.color, this.thick);
 		else if (s == "PolyLine") 
@@ -79,7 +82,6 @@ public class context {
 			this.behaviour.mouseClicked(event);
 		} else if (event.getEventType() == MouseEvent.MOUSE_RELEASED) {
 			this.behaviour.mouseReleased(event);
-
 		} else if (event.getEventType() == MouseEvent.MOUSE_ENTERED) {
 			this.behaviour.mouseEntered(event);
 		} else if (event.getEventType() == MouseEvent.MOUSE_EXITED) {
