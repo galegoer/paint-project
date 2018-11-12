@@ -4,16 +4,7 @@
 # 1 Color chooser UI (which could be a USER STORY)
 # 2 Implementation of selected color into the drawing stream.
 
---------------------------------------------------------------------------
-TYPE     : BUG 5 : UTORID
-NAME     : Squiggle is broken
-OWNER    : 
-PRIORITY :
-ESTIMATE : 
-ISSUE    : Squiggles are connected to each other by a straight line. Each drag
-		   of the mouse should be a separate squiggle. Possibly
-           the issue is with the representation of the squiggles in the Model.
---------------------------------------------------------------------------
+
 
 --------------------------------------------------------------------------
 TYPE     : USER STORY 11 : UTORID
@@ -373,6 +364,15 @@ ISSUE    : Clearing the canvas is broken as we don't refer to the ArrayLists
 	   anymore.
 
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG 5 : UTORID
+NAME     : Squiggle is broken
+OWNER    : 
+PRIORITY :
+ESTIMATE : 4 hours
+ISSUE    : Squiggles are connected to each other by a straight line. Each drag
+		   of the mouse should be a separate squiggle. Possibly
+           the issue is with the representation of the squiggles in the Model.
 --------------------------------------------------------------------------
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
 
