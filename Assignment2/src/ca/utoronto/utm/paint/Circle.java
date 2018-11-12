@@ -1,11 +1,6 @@
 package ca.utoronto.utm.paint;
 import javafx.scene.shape.Shape;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 
 public class Circle extends Shape{
 	

@@ -67,7 +67,7 @@ public class squareBehaviour implements shapeBehaviour {
 		}
 
 		this.model.acceptCommand(new Commands(square));
-		//this.model.removeSquare(this.model.getSquares().size() - 1);
+		this.model.deleteCommands();
 	}
 
 	@Override
@@ -83,6 +83,7 @@ public class squareBehaviour implements shapeBehaviour {
 			square2.setStyleS(1);
 		}
 		square = square2;
+		this.model.acceptCommand(new Commands(square));
 
 	}
 
@@ -137,6 +138,7 @@ public class squareBehaviour implements shapeBehaviour {
 			}
 
 			this.model.acceptCommand(new Commands(square));
+			this.model.deleteCommands();
 			square = null;
 		}
 	}

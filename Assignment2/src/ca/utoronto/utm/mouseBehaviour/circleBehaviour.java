@@ -6,8 +6,6 @@ import ca.utoronto.utm.paint.Circle;
 import ca.utoronto.utm.paint.Commands;
 import ca.utoronto.utm.paint.PaintModel;
 import ca.utoronto.utm.paint.Point;
-import ca.utoronto.utm.paint.Rectangle;
-import ca.utoronto.utm.paint.Square;
 import javafx.scene.input.MouseEvent;
 
 public class circleBehaviour implements shapeBehaviour {
@@ -33,8 +31,7 @@ public class circleBehaviour implements shapeBehaviour {
 				+ Math.pow((int) circle.getCentre().getY() - (int) e.getY(), 2));
 		circle.setRadius(radius);
 		this.model.acceptCommand(new Commands(circle));
-		//this.model.removeCircle(this.model.getCircles().size() - 1);
-
+		this.model.deleteCommands();
 	}
 
 	@Override
@@ -49,6 +46,7 @@ public class circleBehaviour implements shapeBehaviour {
 			circle2.setStyleC(1);
 		}
 		circle = circle2;
+		this.model.acceptCommand(new Commands(circle));
 	}
 
 	@Override
@@ -66,6 +64,7 @@ public class circleBehaviour implements shapeBehaviour {
 					+ Math.pow((int) circle.getCentre().getY() - (int) e.getY(), 2));
 			circle.setRadius(radius);
 			this.model.acceptCommand(new Commands(circle));
+			this.model.deleteCommands();
 			circle = null;
 		}
 

@@ -66,6 +66,7 @@ public class polyBehaviour implements shapeBehaviour {
 			polyLine.addPoint(point);
 			polyLine.setCentre(point);
 			this.model.acceptCommand(new Commands(polyLine));
+			this.model.deleteCommands();
 		}
 
 	}

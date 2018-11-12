@@ -68,6 +68,7 @@ public class roundedRectBehaviour implements shapeBehaviour {
 			roundedrectangle.setArcWidth((int)((x2 - x1)* (double)(0.2)));
 		}
 		this.model.acceptCommand(new Commands(roundedrectangle));
+		this.model.deleteCommands();
 	}
 
 	@Override
@@ -79,12 +80,12 @@ public class roundedRectBehaviour implements shapeBehaviour {
 		int style = 0;
 		int arch = 0;
 		int arcw = 0;
-		int thick1 = thick;
 		RoundedRectangle rectangle3 = new RoundedRectangle(centre, width, height, scenario, this.color, style, thick, arch, arcw);
 		if (this.modes.get(1) == "Fill") {
 			rectangle3.setStyleR(1);
 		}
 		roundedrectangle = rectangle3;
+		this.model.acceptCommand(new Commands(roundedrectangle));
 	}
 
 	@Override
@@ -137,6 +138,7 @@ public class roundedRectBehaviour implements shapeBehaviour {
 				roundedrectangle.setArcWidth((int)((x2 - x1)* (double)(0.2)));
 			}
 			this.model.acceptCommand(new Commands(roundedrectangle));
+			this.model.deleteCommands();
 			roundedrectangle = null;
 		}
 	}

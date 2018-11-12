@@ -34,8 +34,8 @@ public class lineBehaviour implements shapeBehaviour {
 		int y2 = (int) e.getY();
 		Point end = new Point(x2, y2);
 		line.setEnd(end);
-		
 		this.model.acceptCommand(new Commands(line));
+		this.model.deleteCommands();
 	}
 
 	@Override
@@ -43,9 +43,10 @@ public class lineBehaviour implements shapeBehaviour {
 		// TODO Auto-generated method stub
 
 		Point centre = new Point((int) e.getX(), (int) e.getY());
-
 		Line line2 = new Line(centre, this.color,this.style, this.thick);
+		line2.setEnd(centre);
 		line = line2;
+		this.model.acceptCommand(new Commands(line));
 	}
 
 	@Override
@@ -66,6 +67,7 @@ public class lineBehaviour implements shapeBehaviour {
 			line.setEnd(end);
 			
 			this.model.acceptCommand(new Commands(line));
+			this.model.deleteCommands();
 			line= null;
 		}
 	}

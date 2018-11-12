@@ -27,6 +27,7 @@ public class squiggleBehaviour implements shapeBehaviour {
 		Point point = new Point((int) e.getX(), (int) e.getY());
 		squiggle.addPoint(point);
 		this.model.acceptCommand(new Commands(squiggle));
+		this.model.deleteCommands();
 	}
 
 	@Override
@@ -37,6 +38,7 @@ public class squiggleBehaviour implements shapeBehaviour {
 		Squiggle squig = new Squiggle(points, this.color, thick1);
 		squig.addPoint(start);
 		squiggle = squig;
+		this.model.acceptCommand(new Commands(squiggle));
 	}
 
 	@Override
@@ -48,6 +50,7 @@ public class squiggleBehaviour implements shapeBehaviour {
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		this.model.acceptCommand(new Commands(squiggle));
+		this.model.deleteCommands();
 		squiggle = null;
 	}
 

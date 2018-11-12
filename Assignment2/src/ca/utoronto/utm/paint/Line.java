@@ -1,7 +1,5 @@
 package ca.utoronto.utm.paint;
 
-import javafx.scene.input.MouseEvent;
-
 public class Line {
 	private Point centre;
 	private Point end;

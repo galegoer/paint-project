@@ -2,7 +2,6 @@ package ca.utoronto.utm.mouseBehaviour;
 
 import java.util.ArrayList;
 
-import ca.utoronto.utm.paint.Circle;
 import ca.utoronto.utm.paint.Commands;
 import ca.utoronto.utm.paint.PaintModel;
 import ca.utoronto.utm.paint.Point;
@@ -60,7 +59,7 @@ public class rectangleBehaviour implements shapeBehaviour {
 			rectangle.setWidth(x2 - x1);
 		}
 		this.model.acceptCommand(new Commands(rectangle));
-		//this.model.removeRectangle(this.model.getRectangles().size() - 1);
+		this.model.deleteCommands();
 	}
 
 	@Override
@@ -75,8 +74,7 @@ public class rectangleBehaviour implements shapeBehaviour {
 			rectangle2.setStyleR(1);
 		}
 		rectangle = rectangle2;
-
-
+		this.model.acceptCommand(new Commands(rectangle));
 	}
 
 	@Override
@@ -88,8 +86,6 @@ public class rectangleBehaviour implements shapeBehaviour {
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		if (rectangle != null) {
-
-			// Point centre = new Point((int) e.getX(), (int) e.getY());
 			// Begin
 
 			int x1 = rectangle.getCentre().getX();
@@ -124,6 +120,7 @@ public class rectangleBehaviour implements shapeBehaviour {
 			}
 
 			this.model.acceptCommand(new Commands(rectangle));
+			this.model.deleteCommands();
 			rectangle = null;
 		}
 	}
