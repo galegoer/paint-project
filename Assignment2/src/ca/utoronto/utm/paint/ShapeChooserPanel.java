@@ -44,6 +44,12 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 		Line l = new Line();
 		l.setStartX(0.0f);
 		l.setEndX(30.0f);
+		
+		Rectangle o = new Rectangle();
+		o.setHeight(15.0f);
+		o.setWidth(25.0f);
+		o.setArcHeight(10.0f);
+		o.setArcWidth(20.0f);
 
 		// Adding a Slider
 		final Slider slider = new Slider(1, 10, 1);
@@ -60,8 +66,8 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 		});
 
 
-		String[] names = {"Circle", "Rectangle", "Square", "Line"};
-		Shape[] shapes = {c,r,t,l};
+		String[] names = {"Circle", "Rectangle", "Square", "Line", "RoundedRectangle"};
+		Shape[] shapes = {c,r,t,l,o};
 
 		int row = 0;
 		for (int i =0; i < shapes.length; i++) {

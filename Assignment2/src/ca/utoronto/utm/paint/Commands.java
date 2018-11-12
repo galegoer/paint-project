@@ -29,8 +29,9 @@ public class Commands extends Observable implements ShapeCommand {
 			this.createSquig((Squiggle) obj, g);
 		} else if (obj instanceof PolyLine) {
 			this.createPolyLine((PolyLine) obj, g);
+		} else if (obj instanceof RoundedRectangle) {
+			this.createRoundedRect((RoundedRectangle) obj, g);
 		}
-
 	}
 
 	private void createLine(Line c, GraphicsContext g) {
@@ -147,4 +148,36 @@ public class Commands extends Observable implements ShapeCommand {
 
 		}
 	}
+	public void createRoundedRect(RoundedRectangle p, GraphicsContext g) {	
+		int a = p.getCentre().getX();
+		int b = p.getCentre().getY();
+		int height = p.getHeight();
+		int width = p.getWidth();
+		int arch = p.getArcHeight();
+		int arcw = p.getArcWidth();
+		g.setLineWidth(p.getThick());
+		if(p.getStyleR() == 1) {
+			g.setFill(Circle.setPaint(p.getColorR()));
+			if(p.getScenario() == 1) {
+				g.fillRoundRect(a, b, width, height, arch, arcw);
+			}else if(p.getScenario() == 2) {
+				g.fillRoundRect(a-width, b-height , width, height, arch, arcw);
+			}else if(p.getScenario() == 3) {
+				g.fillRoundRect(a-width, b, width, height, arch, arcw);
+			}else if(p.getScenario() == 4) {
+				g.fillRoundRect(a, b-height , width, height, arch, arcw);
+		}}else{
+		g.setStroke(Circle.setPaint(p.getColorR()));
+		if (p.getScenario() == 1) {
+			g.strokeRoundRect(a, b, width, height, arch, arcw);
+		} else if (p.getScenario() == 2) {
+			g.strokeRoundRect(a - width, b - height, width, height, arch, arcw);
+		} else if (p.getScenario() == 3) {
+			g.strokeRoundRect(a - width, b, width, height, arch, arcw);
+		} else if (p.getScenario() == 4) {
+			g.strokeRoundRect(a, b - height, width, height, arch, arcw);
+		}
+	}
+}
+	
 }

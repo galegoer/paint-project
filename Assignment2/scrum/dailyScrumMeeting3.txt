@@ -71,9 +71,9 @@ Nov 10, 2018
 	Obstacles :The major obstacle was mostly not finding the time to do bug 8 properly. Been busy from morning with other courses as well.
 	
 Nov 11, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday : Working on Bug 8.
+	Today     : Stopped working on bug 8 and started working on the UserStory13. UserStory13 is about the feature to be able to draw rounded rectangles. 
+	Obstacles : The major obstacle was finding the relationship between rectangle height and arcHeight, rectangle width and arcWidth. Researching this took most of my time. ALso in the end while commiting and merging my work, for some reason the merge didn't work properly and I had to do UserStory over again.
 	
 Nov 12, 2018
 	Yesterday :

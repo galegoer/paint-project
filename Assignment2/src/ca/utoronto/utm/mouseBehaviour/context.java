@@ -51,6 +51,8 @@ public class context {
 			this.behaviour = new circleBehaviour(this.modes, this.model, this.color, this.thick);
 		else if (s == "Rectangle") 
 			this.behaviour = new rectangleBehaviour(this.modes, this.model, this.color, this.thick);
+		else if (s == "RoundedRectangle") 
+			this.behaviour = new roundedRectBehaviour(this.modes, this.model, this.color, this.thick);
 		else if (s == "Square") 
 			this.behaviour = new squareBehaviour(this.modes, this.model, this.color, this.thick);
 		else if (s == "Squiggle") 

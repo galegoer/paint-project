@@ -350,3 +350,12 @@ AS A     : user
 I WANT   : to have an indicator line after the user creates a point on the polyLine
 SO THAT  : you can see what the next line you are about to add to the polyLine looks like
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 13 : arnejagu
+NAME     : Implement rounded rectangles.
+OWNER    : 
+PRIORITY :
+ESTIMATE : 8 hours
+ISSUE    : To have the feature to be able to draw rounded rectangles.
+--------------------------------------------------------------------------
+
