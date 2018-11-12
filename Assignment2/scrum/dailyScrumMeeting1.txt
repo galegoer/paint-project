@@ -74,9 +74,9 @@ Nov 10, 2018
 	Obstacles :Bug found in polyline feedback where the last feedback line remains after poly line is complete.
 	
 Nov 11, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday :finished up polyline
+	Today     :completed userstory12, merged userstory 11 and 12, fixed some bugs associated with polyline
+	Obstacles :poly line feedback in progress, has a bug due to the indicator not dissapearing
 	
 Nov 12, 2018
 	Yesterday :
