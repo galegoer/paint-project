@@ -43,7 +43,7 @@ public class polyBehaviour implements shapeBehaviour {
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
 		if (polyLine == null) {
-
+			
 			PolyLine polyLine2 = new PolyLine(this.color, this.thick);
 
 			Point center = new Point((int) e.getX(), (int) e.getY());
@@ -90,5 +90,15 @@ public class polyBehaviour implements shapeBehaviour {
 	@Override
 	public void mouseEntered(MouseEvent e) {
 
+	}
+	public void polyReset() {
+		if (polyLine != null)
+			polyLine.getList().clear();
+	}
+	public PolyLine getPolyLine() {
+		return polyLine;
+	}
+	public void setPolyLine() {
+		polyLine = null;
 	}
 }

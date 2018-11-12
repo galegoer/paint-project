@@ -1,5 +1,7 @@
 package ca.utoronto.utm.paint;
 
+import ca.utoronto.utm.mouseBehaviour.context;
+import ca.utoronto.utm.mouseBehaviour.polyBehaviour;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
@@ -34,6 +36,8 @@ public class StyleChooserPanel extends GridPane implements EventHandler<ActionEv
 			}
 			else {
 				this.view.getPaintModel().reset();
+				polyBehaviour p = new polyBehaviour(null, null, "", 0);
+				p.polyReset();
 				System.out.println(command);
 				
 			}

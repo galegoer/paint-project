@@ -13,7 +13,9 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.GridPane;
 import javafx.scene.image.*;
 import java.io.FileInputStream; 
-import java.io.FileNotFoundException; 
+import java.io.FileNotFoundException;
+
+import ca.utoronto.utm.mouseBehaviour.polyBehaviour;
 import javafx.scene.shape.Shape;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
@@ -42,10 +44,6 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 		Line l = new Line();
 		l.setStartX(0.0f);
 		l.setEndX(30.0f);
-
-		
-
-
 
 		// Adding a Slider
 		final Slider slider = new Slider(1, 10, 1);
@@ -113,6 +111,8 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 	public void handle(ActionEvent event) {
 		String command = ((ToggleButton) event.getSource()).getAccessibleText();
 		this.view.getPaintPanel().setMode(0, command);
+		polyBehaviour p = new polyBehaviour(null, null, "", 0);
+		p.setPolyLine();
 		System.out.println(command);
 	}
 

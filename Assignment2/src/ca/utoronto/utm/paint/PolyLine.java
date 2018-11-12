@@ -12,6 +12,8 @@ public class PolyLine {
 	private int thickness;
 	
 	public PolyLine(String lineColor, int thickness) {
+		ArrayList<Point> empty = new ArrayList<Point>();
+		this.points = empty;
 		this.thickness = thickness;
 		this.lineColor = lineColor;
 
