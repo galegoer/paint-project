@@ -68,13 +68,14 @@ public class polyBehaviour implements shapeBehaviour {
 			polyLine.addPoint(point);
 			
 			polyLine.setCentre(point);
-			this.view.getPaintPanel().repaint();
+			
 			//removed, might need if we want to undo in stages
 			//this.model.acceptCommand(new Commands(polyLine));
 			
 			//this.model.deleteCommands();
 			//if (polyLine.getList().size() != 2)
 				//this.model.deleteCommands();
+			this.view.getPaintPanel().repaint();
 		
 		}
 

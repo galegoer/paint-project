@@ -37,26 +37,22 @@ public class StyleChooserPanel extends GridPane implements EventHandler<ActionEv
 			this.view.getPaintPanel().setMode(1, command);
 			System.out.println(command);
 		} else if ((command == "Undo") && (!(commandsQueue.isEmpty()))) {
+			// System.out.println(commandsQueue.size());
+			if (commandsQueue.size() > 1 && commandsQueue.get(commandsQueue.size() - 2).getObj() instanceof PolyLine) {
+				System.out.println("runs again");
+				polyBehaviour p = new polyBehaviour(null, this.view.getPaintModel(), "", 0, this.view);
+				Object x = commandsQueue.get(commandsQueue.size() - 1).getObj();
+				if (x instanceof Line && ((Line) x).getStyle() == "Dotted")
+					p.polyReset();
+			}
+
 			this.view.getPaintModel().deleteCommand();
 			size = this.view.getPaintModel().getSize();
+			System.out.println(commandsQueue.size());
+
 		} else if ((command == "Redo") && (!(redosQueue.isEmpty()))) {
 			if (size == this.view.getPaintModel().getSize()) {
 				Commands x = redosQueue.get(redosQueue.size() - 1);
-				
-				//check if the last command of redoQueue is a "point"
-				//then gets last commandqueue command (which should be a polyLIne cuz I never deleted the actual command
-				//i just removed a point (see paint model)
-				//new poly behaviour, sets the polyline again because I set it to null to fix feedback
-				//then I simply add the point back into the polyline list
-				//redo code: currently broken
-				//----------------------------------------------------------------
-				if (x.getObj() instanceof Point) {
-					Commands last = commandsQueue.get(commandsQueue.size()-1);
-					polyBehaviour p = new polyBehaviour(null, null, null, 0, null);
-					p.setPolyLine(last.getObj());
-					p.getPolyLine().addPoint((Point) x.getObj());
-				}
-				//------------------------------------------------------------------
 				this.view.getPaintModel().delRCommand();
 				this.view.getPaintModel().acceptCommand(x);
 				size = this.view.getPaintModel().getSize();
@@ -65,11 +61,8 @@ public class StyleChooserPanel extends GridPane implements EventHandler<ActionEv
 			}
 
 		} else if (command == "Clear") {
-			polyBehaviour p = new polyBehaviour(null, this.view.getPaintModel(), "", 0, this.view);
-			p.polyReset();
-			this.view.getPaintModel().reset();
 
-			
+			this.view.getPaintModel().reset();
 
 		}
 

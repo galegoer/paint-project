@@ -25,27 +25,8 @@ public class PaintModel extends Observable {
 	// FOR REMOVING LAST MOVE (UNDO) STILL IN PROGRESS
 	public void deleteCommand() {
 		Commands x = commandQueue.get(commandQueue.size() - 1);
-		//checks if last command was a polyline
-		//new polybehaviour created so i can use the class
-		//first gets the polyline object from x, then sets polyline again cuz i set it to null when u end a polyline
-		//gets point from polyline list, stores it in a variable, "point"
-		//removes the point
-		//adds the point as a command to redoqueue (see stylechoose panel for broken redo code)
-		//ALSO THERES A BUG WHERE IF U PRESS UNDO AND MOVE UR MOUSE BACK INTO THE CANVAS, THE INDICATOR WILL SHOW UP AGAIN
-		//THIS IS BECAUSE THE INDICATOR ALWAYS SHOWS UP IN THE POLYLINE ISNT NULL AND I HAD TO SET THE POLY TO NOT NULL 
-		//SO THAT THE CODE BELOW COULD WORK. this is only the case if you dont "end" polyline.
-		if (x.getObj() instanceof PolyLine) {
-			p = new polyBehaviour(null, null, null, 0, null);
-			p.setPolyLine(x.getObj());
-			Point point = p.getPolyLine().getList().get(p.getPolyLine().getList().size()-1);
-			p.getPolyLine().getList().remove(p.getPolyLine().getList().size() - 1);
-			this.redoQueue.add(new Commands(point));
-		//-------------------------------------------------------------------------------------
-		} else {
-			this.commandQueue.remove(commandQueue.size() - 1);
-			this.redoQueue.add(x);
-		}
-		
+		this.commandQueue.remove(commandQueue.size() - 1);
+		this.redoQueue.add(x);
 		this.setChanged();
 		this.notifyObservers();
 	}
