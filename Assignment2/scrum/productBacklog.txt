@@ -374,5 +374,21 @@ ISSUE    : Squiggles are connected to each other by a straight line. Each drag
 		   of the mouse should be a separate squiggle. Possibly
            the issue is with the representation of the squiggles in the Model.
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 13 : UTORID
+NAME     : Implement rounded rectangles.
+OWNER    : 
+PRIORITY :
+ESTIMATE : 8 hours
+ISSUE    : To have the feature to be able to draw rounded rectangles.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 15 : UTORID
+NAME     : Implement rounded rectangles.
+OWNER    : 
+PRIORITY :
+ESTIMATE : 2 hours
+ISSUE    : To have the feature to be able to draw rounded squares.
+--------------------------------------------------------------------------
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
 

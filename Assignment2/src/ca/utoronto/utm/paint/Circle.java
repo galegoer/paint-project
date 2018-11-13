@@ -1,6 +1,5 @@
 package ca.utoronto.utm.paint;
 import javafx.scene.shape.Shape;
-import javafx.scene.paint.Color;
 
 public class Circle extends Shape{
 	
@@ -57,20 +56,7 @@ public class Circle extends Shape{
 	public String getString() {
 		return this.stringcolor;
 	}
-	public static Color setPaint(String stringcolor) {
-		if (stringcolor == "Red"){
-				return Color.RED;
-		}
-		if (stringcolor == "Green"){
-			return Color.GREEN;
-		}
-		if (stringcolor == "Blue"){
-			return Color.BLUE;
-		}
-		else {
-			return Color.BLACK;
-		}
-	}
+	
 
 	@Override
 	public com.sun.javafx.geom.Shape impl_configShape() {

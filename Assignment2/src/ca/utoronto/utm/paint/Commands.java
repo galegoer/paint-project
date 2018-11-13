@@ -44,7 +44,7 @@ public class Commands extends Observable implements ShapeCommand {
 		int y = c.getCentre().getY();
 		int x2 = c.getEnd().getX();
 		int y2 = c.getEnd().getY();
-		g.setStroke(Circle.setPaint(c.getColor()));
+		g.setStroke(ShapeColor.setPaint(c.getColor()));
 		g.setLineWidth(c.getThick());
 		if (c.getStyle() == "Dotted") {
 			g.setLineDashes(10d);
@@ -53,21 +53,21 @@ public class Commands extends Observable implements ShapeCommand {
 		} else {
 			g.strokeLine(x, y, x2, y2);
 		}
-
 	}
+	
 	private void createPolyLine (PolyLine p, GraphicsContext g) {
 		ArrayList<Point> polyLinePoints = p.getList();
 		for (int i = 0; i < polyLinePoints.size() - 1; i++) {
 			Point p1 = polyLinePoints.get(i);
 			Point p2 = polyLinePoints.get(i + 1);
-			g.setStroke(Circle.setPaint(p.getColor()));
+			g.setStroke(ShapeColor.setPaint(p.getColor()));
 			g.setLineWidth(p.getThick());
 			g.strokeLine(p1.getX(), p1.getY(), p2.getX(), p2.getY());
 		}
 	}
 
 	public void createSquig(Squiggle squig, GraphicsContext g) {
-		g.setStroke(Circle.setPaint(squig.getString())); //GETS COLOR
+		g.setStroke(ShapeColor.setPaint(squig.getString())); //GETS COLOR
 		g.setLineWidth(squig.getThick());
 		for(int i=0; i<squig.getPoints()-1; i++)
 			g.strokeLine(squig.getPoint(i).getX(), squig.getPoint(i).getY(), squig.getPoint(i+1).getX(), squig.getPoint(i+1).getY());
@@ -79,12 +79,12 @@ public class Commands extends Observable implements ShapeCommand {
 		int radius = c.getRadius();
 		g.setLineWidth(c.getThick());
 		if (c.getStyleC() == 1) {
-			g.setFill(Circle.setPaint(c.getString())); // FIX WITH WHAT COLOR IS SET
+			g.setFill(ShapeColor.setPaint(c.getString())); // FIX WITH WHAT COLOR IS SET
 			g.fillOval(x - radius, y - radius, 2 * radius, 2 * radius);
 		}else{
 			g.strokeOval(x - radius, y - radius, 2 * radius, 2 * radius);
 		}
-		g.setStroke(Circle.setPaint(c.getString()));
+		g.setStroke(ShapeColor.setPaint(c.getString()));
 		g.strokeOval(x - radius, y - radius, 2 * radius, 2 * radius);
 		g.strokeOval(x - radius, y - radius, 2 * radius, 2 * radius);
 	}
@@ -96,7 +96,7 @@ public class Commands extends Observable implements ShapeCommand {
 		int width = r.getWidth();
 		g.setLineWidth(r.getThick());
 		if (r.getStyleR() == 1) {
-			g.setFill(Circle.setPaint(r.getColorR()));
+			g.setFill(ShapeColor.setPaint(r.getColorR()));
 			if (r.getScenario() == 1) {
 				g.fillRect(a, b, width, height);
 			} else if (r.getScenario() == 2) {
@@ -107,7 +107,7 @@ public class Commands extends Observable implements ShapeCommand {
 				g.fillRect(a, b - height, width, height);
 			}
 		}else{
-			g.setStroke(Circle.setPaint(r.getColorR()));
+			g.setStroke(ShapeColor.setPaint(r.getColorR()));
 			if (r.getScenario() == 1) {
 				g.strokeRect(a, b, width, height);
 			} else if (r.getScenario() == 2) {
@@ -131,7 +131,7 @@ public class Commands extends Observable implements ShapeCommand {
 		int arcw = r.getArcWidth();
 		g.setLineWidth(r.getThick());
 		if (r.getStyleS() == 1) {
-			g.setFill(Circle.setPaint(r.getColorS()));
+			g.setFill(ShapeColor.setPaint(r.getColorS()));
 			if (r.getScenario() == 1) {
 				g.fillRoundRect(a, b, side, side, arch ,arcw);
 			} else if (r.getScenario() == 2) {
@@ -142,7 +142,7 @@ public class Commands extends Observable implements ShapeCommand {
 				g.fillRoundRect(a, b - side, side, side, arch ,arcw);
 			}
 		}else {
-			g.setStroke(Circle.setPaint(r.getColorS()));
+			g.setStroke(ShapeColor.setPaint(r.getColorS()));
 			if (r.getScenario() == 1) {
 				g.strokeRoundRect(a, b, side, side, arch ,arcw);
 			} else if (r.getScenario() == 2) {
@@ -163,7 +163,7 @@ public class Commands extends Observable implements ShapeCommand {
 		int arcw = p.getArcWidth();
 		g.setLineWidth(p.getThick());
 		if(p.getStyleR() == 1) {
-			g.setFill(Circle.setPaint(p.getColorR()));
+			g.setFill(ShapeColor.setPaint(p.getColorR()));
 			if(p.getScenario() == 1) {
 				g.fillRoundRect(a, b, width, height, arch, arcw);
 			}else if(p.getScenario() == 2) {
@@ -174,7 +174,7 @@ public class Commands extends Observable implements ShapeCommand {
 				g.fillRoundRect(a, b-height , width, height, arch, arcw);
 			}
 		}else{
-			g.setStroke(Circle.setPaint(p.getColorR()));
+			g.setStroke(ShapeColor.setPaint(p.getColorR()));
 			if (p.getScenario() == 1) {
 				g.strokeRoundRect(a, b, width, height, arch, arcw);
 			} else if (p.getScenario() == 2) {
