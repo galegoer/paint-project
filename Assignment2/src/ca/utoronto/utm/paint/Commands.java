@@ -14,6 +14,7 @@ public class Commands extends Observable implements ShapeCommand {
 
 	// IDK IF U NEED g?
 	@Override
+
 	public void execute(GraphicsContext g) {
 		if (obj instanceof Point) {
 			//this.createPoint((Point) obj, g);
@@ -32,6 +33,10 @@ public class Commands extends Observable implements ShapeCommand {
 		} else if (obj instanceof RoundedRectangle) {
 			this.createRoundedRect((RoundedRectangle) obj, g);
 		}
+	}
+	
+	public Object getObj() {
+		return this.obj;
 	}
 
 	private void createLine(Line c, GraphicsContext g) {

@@ -34,6 +34,10 @@ public class PaintModel extends Observable {
 		this.commandQueue.remove(commandQueue.size()-2);
 	}
 	
+	
+	public void delQCommand() {
+		this.commandQueue.remove(commandQueue.size()-1);
+	}
 	/**
 	 * Deletes last redo command
 	 */
@@ -59,6 +63,10 @@ public class PaintModel extends Observable {
 	
 	public void resetR() {
 		this.redoQueue.clear();
+	}
+	
+	public ArrayList<Commands> getQueue() {
+		return this.commandQueue;
 	}
 
 }
