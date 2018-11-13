@@ -14,22 +14,6 @@ ISSUE    : When undoing or redoing a move polyline occasionaly runs into errors,
 	   whether it be an index error or the feedback or undo not working at all.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 11 : UTORID
-NAME     : Implement Poly Line
-OWNER    : 
-PRIORITY :
-ESTIMATE : 
-ISSUE    : YOU FILL THIS ONE IN!!
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : USER STORY 14 : UTORID
-NAME     : Implement PolyLine Feedback
-OWNER    : 
-PRIORITY :
-ESTIMATE : 
-ISSUE    : YOU FILL THIS ONE IN!!
---------------------------------------------------------------------------
---------------------------------------------------------------------------
 TYPE     : BUG 8 : UTORID
 NAME     : Architecture for handling shape modifiers can be improved 
 OWNER    : 
@@ -88,16 +72,14 @@ This strategy can be put in place either by having PaintPanel's mouse
 events forwarded through PaintPanel into the current strategy, or by 
 simply switching the PaintPanel's event handlers as appropriate.
 
+
+
+
+
+
+# COMPLETED USER STORIES/BUGS BELOW ###########################################
 --------------------------------------------------------------------------
-TYPE     : BUG 11 : UTORID
-NAME     : Adds Shapes to list as you drag
-OWNER    : 
-PRIORITY :
-ESTIMATE : 2 hours minutes
-ISSUE    : When dragging to make any shape each shape is created and added
-to the ArrayList of shapes/now commands
---------------------------------------------------------------------------
-TYPE     : USER STORY 9: askarya2
+TYPE     : USER STORY 9: UTORID
 NAME     : Clear canvas button
 OWNER    : 
 PRIORITY :2
@@ -105,10 +87,31 @@ ESTIMATE : 4 Hour
 AS A     : user
 I WANT   : Have a button that can be pressed to reset the canvas to a blank state.
 SO THAT  : The canvas can be cleared.
+--------------------------------------------------------------------------
+TYPE     : BUG 11 : UTORID
+NAME     : Adds Shapes to list as you drag
+OWNER    : 
+PRIORITY :
+ESTIMATE : 2 hours
+ISSUE    : When dragging to make any shape each shape is created and added
+to the ArrayList of shapes/now commands (was a problem when we didnt change do command design)
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 11 : UTORID
+NAME     : Implement Poly Line
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+ISSUE    : YOU FILL THIS ONE IN!!
+--------------------------------------------------------------------------
 
-
-
-# COMPLETED USER STORIES/BUGS BELOW ###########################################
+--------------------------------------------------------------------------
+TYPE     : USER STORY 14 : UTORID
+NAME     : Implement PolyLine Feedback
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+ISSUE    : YOU FILL THIS ONE IN!!
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 TYPE     : USER STORY 12 : UTORID
