@@ -3,6 +3,8 @@ package ca.utoronto.utm.mouseBehaviour;
 import java.util.ArrayList;
 
 import ca.utoronto.utm.paint.PaintModel;
+import ca.utoronto.utm.paint.View;
+import ca.utoronto.utm.paint.polyBehaviour;
 import javafx.scene.input.MouseEvent;
 
 public class context {
@@ -11,6 +13,7 @@ public class context {
 	String color;
 	PaintModel model; // temporary? used to give mouseMaster a model so that it can run our code,
 	int thick;
+	View view;
 	
 	String lineStyle;
 						// however this will change depending on a better implication of model
@@ -20,12 +23,13 @@ public class context {
 		return;
 	}
 
-	public context(ArrayList<String> modes, PaintModel model, String color, String style, int thick) {
+	public context(ArrayList<String> modes, PaintModel model, String color, String style, int thick, View view) {
 		this.modes = modes;
 		this.model = model;
 		this.color = color;
 		this.thick = thick;
 		this.lineStyle = style;
+		this.view = view;
 		// this.behaviour = new mouseMaster(mode, style, model);
 
 	}
@@ -61,7 +65,7 @@ public class context {
 		else if (s == "Squiggle") 
 			this.behaviour = new squiggleBehaviour(this.modes, this.model, this.color, this.thick);
 		else if (s == "PolyLine") 
-			this.behaviour = new polyBehaviour(this.modes, this.model, this.color, this.thick);
+			this.behaviour = new polyBehaviour(this.modes, this.model, this.color, this.thick, this.view);
 		else if (s == "Line") 
 			this.behaviour = new lineBehaviour(this.modes, this.model, this.color, this.lineStyle, this.thick);
 	}
@@ -87,6 +91,11 @@ public class context {
 		} else if (event.getEventType() == MouseEvent.MOUSE_EXITED) {
 			this.behaviour.mouseExited(event);
 		}
+	}
+
+	public void setView(View view2) {
+		this.view = view2;
+		
 	}
 
 }

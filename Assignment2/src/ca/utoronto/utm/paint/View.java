@@ -29,6 +29,7 @@ public class View implements EventHandler<ActionEvent> {
 
 		this.model = model;
 		initUI(stage);
+		
 	}
 
 	private void initUI(Stage stage) {
