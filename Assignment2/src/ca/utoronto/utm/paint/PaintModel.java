@@ -31,6 +31,9 @@ public class PaintModel extends Observable {
 		//gets point from polyline list, stores it in a variable, "point"
 		//removes the point
 		//adds the point as a command to redoqueue (see stylechoose panel for broken redo code)
+		//ALSO THERES A BUG WHERE IF U PRESS UNDO AND MOVE UR MOUSE BACK INTO THE CANVAS, THE INDICATOR WILL SHOW UP AGAIN
+		//THIS IS BECAUSE THE INDICATOR ALWAYS SHOWS UP IN THE POLYLINE ISNT NULL AND I HAD TO SET THE POLY TO NOT NULL 
+		//SO THAT THE CODE BELOW COULD WORK. this is only the case if you dont "end" polyline.
 		if (x.getObj() instanceof PolyLine) {
 			p = new polyBehaviour(null, null, null, 0, null);
 			p.setPolyLine(x.getObj());

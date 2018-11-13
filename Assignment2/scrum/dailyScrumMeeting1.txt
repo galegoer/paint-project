@@ -79,9 +79,10 @@ Nov 11, 2018
 	Obstacles :poly line feedback in progress, has a bug due to the indicator not dissapearing
 	
 Nov 12, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday :finished implementing polyline
+	Today     :Finished Polyline feedback, merged with mastercode, helped out with some undo/redo function code, also decided to
+			split Bug 10 and claim part of it.
+	Obstacles :A lot of bugs occured with feedback, fixed most of them but there could still be more.
 
 Nov 13, 2018
 	Yesterday :
