@@ -85,9 +85,9 @@ Nov 12, 2018
 	Obstacles :A lot of bugs occured with feedback, fixed most of them but there could still be more.
 
 Nov 13, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday :Finished polyline feedback
+	Today     :Fixed small bug with polyline and redo and undo, will work on Bug 10 after I fail the 236 test :(
+	Obstacles :Not passing 236 ;_;
 
 Nov 14, 2018
 	Yesterday :
