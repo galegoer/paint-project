@@ -48,7 +48,7 @@ public class StyleChooserPanel extends GridPane implements EventHandler<ActionEv
 
 			this.view.getPaintModel().deleteCommand();
 			size = this.view.getPaintModel().getSize();
-			System.out.println(commandsQueue.size());
+			//System.out.println(commandsQueue.size());
 
 		} else if ((command == "Redo") && (!(redosQueue.isEmpty()))) {
 			if (size == this.view.getPaintModel().getSize()) {
