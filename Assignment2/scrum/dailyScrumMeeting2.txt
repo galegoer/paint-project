@@ -91,15 +91,15 @@ Nov 11, 2018
 	
 Nov 12, 2018
 	Yesterday : Finished squiggle. Completed other assignments.
-	Today     : Added undo and redo functions. Bug7 is complete. Began work on Bug12
+	Today     : Added undo and redo functions. Bug7 is complete. Began work on Bug13
 		    polyline undo and redo.
 	Obstacles : Polyline is a unique implementation so it has some
 		    errors when undoing/redoing.
 
 Nov 13, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday : Added undo and redo functions. Began work on Bug13
+	Today     : Studied for CSC236, looked at possible implementation for Bug10
+	Obstacles : CSC236
 
 Nov 14, 2018
 	Yesterday :

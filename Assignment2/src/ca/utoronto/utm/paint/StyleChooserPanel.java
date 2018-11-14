@@ -37,7 +37,6 @@ public class StyleChooserPanel extends GridPane implements EventHandler<ActionEv
 			this.view.getPaintPanel().setMode(1, command);
 			System.out.println(command);
 		} else if ((command == "Undo") && (!(commandsQueue.isEmpty()))) {
-			// System.out.println(commandsQueue.size());
 			if (commandsQueue.size() > 1 && commandsQueue.get(commandsQueue.size() - 2).getObj() instanceof PolyLine) {
 				System.out.println("runs again");
 				polyBehaviour p = new polyBehaviour(null, this.view.getPaintModel(), "", 0, this.view);

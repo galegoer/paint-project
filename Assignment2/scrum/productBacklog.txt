@@ -5,15 +5,6 @@
 # 2 Implementation of selected color into the drawing stream.
 
 --------------------------------------------------------------------------
-TYPE     : BUG 13 : UTORID
-NAME     : Poly Line undo and redo features do not work
-OWNER    : 
-PRIORITY :
-ESTIMATE : 
-ISSUE    : When undoing or redoing a move polyline occasionaly runs into errors,
-	   whether it be an index error or the feedback or undo not working at all.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
 TYPE     : BUG 8 : UTORID
 NAME     : Architecture for handling shape modifiers can be improved 
 OWNER    : 
@@ -385,4 +376,12 @@ I WANT   : Have a button that can be pressed to remove the last drawn something,
 SO THAT  : A user can easily delete a mistake without having to reset and clear the entire canvas.
 --------------------------------------------------------------------------
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
-
+--------------------------------------------------------------------------
+TYPE     : BUG 13 : UTORID
+NAME     : Poly Line undo line by line
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+ISSUE    : When undoing or redoing a move we delete the whole thing. Implement
+	   so that it is line by line.
+--------------------------------------------------------------------------
