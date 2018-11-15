@@ -26,9 +26,9 @@ public class Commands extends Observable implements ShapeCommand {
 		} else if (obj instanceof Square) {
 			this.createSquare((Square) obj, g);
 		} else if (obj instanceof Line) {
+			operator.acceptCommand(new SetColor((Line) obj, g));
 			this.createLine((Line) obj, g);
-			//operator.acceptCommand(new SetColor((Line) obj, g));
-			operator.acceptCommand(new SetThickness((Line) obj, g));
+			//operator.acceptCommand(new SetThickness((Line) obj, g));
 		} else if(obj instanceof Squiggle) {
 			this.createSquig((Squiggle) obj, g);
 		} else if (obj instanceof PolyLine) {
@@ -37,7 +37,7 @@ public class Commands extends Observable implements ShapeCommand {
 			this.createRoundedRect((RoundedRectangle) obj, g);
 		}
 	}
-	
+
 	public Object getObj() {
 		return this.obj;
 	}
@@ -48,11 +48,11 @@ public class Commands extends Observable implements ShapeCommand {
 		int x2 = c.getEnd().getX();
 		int y2 = c.getEnd().getY();
 		operator.acceptCommand(new SetColor(c, g));
-		// experimental
-		//operator.acceptCommand(new SetColor(Line c , g));
-//		operator.acceptCommand(new SetThickness(Line c , g));
-//		g.setStroke(ShapeColor.setPaint(c.getColor()));
-//		g.setLineWidth(c.getThick());
+//		// experimental
+//		operator.acceptCommand(new SetColor(c , g));
+		//		operator.acceptCommand(new SetThickness(Line c , g));
+		//g.setStroke(ShapeColor.setPaint(c.getColor()));
+		g.setLineWidth(c.getThick());
 		if (c.getStyle() == "Dotted") {
 			g.setLineDashes(10d);
 			g.strokeLine(x, y, x2, y2);
@@ -61,7 +61,7 @@ public class Commands extends Observable implements ShapeCommand {
 			g.strokeLine(x, y, x2, y2);
 		}
 	}
-	
+
 	private void createPolyLine (PolyLine p, GraphicsContext g) {
 		ArrayList<Point> polyLinePoints = p.getList();
 		for (int i = 0; i < polyLinePoints.size() - 1; i++) {

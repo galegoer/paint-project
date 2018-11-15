@@ -5,7 +5,7 @@ import javafx.scene.canvas.GraphicsContext;
 
 
 public interface DrawInterface {
-	public void execute(GraphicsContext g);
+	public void execute();
 
 
 }

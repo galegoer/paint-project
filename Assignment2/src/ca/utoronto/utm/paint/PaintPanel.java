@@ -71,8 +71,6 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		// remains readable.
 		g.setLineWidth(1);
 		Text t = new Text();
-		//remove this when get time.
-		g.strokeText("show me the goods", 0, 100,100);
 		g.strokeText("i=" + i, 50, 75);
 		i = i + 1;
 
