@@ -102,6 +102,11 @@ Nov 13, 2018
 	Obstacles : CSC236
 
 Nov 14, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday : Studied 236, looked at possible implementation for Bug10.
+	Today     : Failed 236. Split up Bug10 began work on it.
+	Obstacles : CSC236, not enough time.
+
+Nov 15, 2018
+	Yesterday : 
+	Today     : 
+	Obstacles : 

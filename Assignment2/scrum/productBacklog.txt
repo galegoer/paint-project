@@ -54,16 +54,37 @@ The concrete ShapeManipulatorStrategies are responsible for
 1. Creating instances of Shape and putting them on top of 
    the PaintModel command stack.
 
-2. Understanding how mouse events modify the shape at the top of the 
-   PaintModel command stack.
-
-3. Calling the PaintPanel repaint at appropriate times.
+2. Calling the PaintPanel repaint at appropriate times.
 
 This strategy can be put in place either by having PaintPanel's mouse 
 events forwarded through PaintPanel into the current strategy, or by 
 simply switching the PaintPanel's event handlers as appropriate.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG 14 : UTORID
+NAME     : Architecture behind creating shape instances is poor
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+ISSUE    : A better architecture for creating shape instances so that it is 
+more flexible, and easier to work with can be created using the Strategy Design 
+pattern as follows:
 
+Create class/abstract class/interface  ShapeManipulatorStrategy as well 
+as subclasses/implementators for each type of Shape. Call these the
+concrete ShapeNamipulatorStrategies
 
+The concrete ShapeManipulatorStrategies are responsible for 
+
+1. Understanding how mouse events modify the shape at the top of the 
+   PaintModel command stack.
+
+This strategy can be put in place either by having PaintPanel's mouse 
+events forwarded through PaintPanel into the current strategy, or by 
+simply switching the PaintPanel's event handlers as appropriate. 
+THIS IS BUG 10 SECOND PART
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
 
 
 
