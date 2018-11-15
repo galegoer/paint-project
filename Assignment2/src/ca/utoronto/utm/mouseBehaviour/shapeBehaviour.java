@@ -6,7 +6,7 @@ import javafx.scene.input.MouseEvent;
  * The shapeBehaviour the main strategy that should be implemented by the concrete shapeBehaviour strategies 
  * which are circleBehaviour, squareBehaviour, rectangleBehaviour etc.
  * Methods to be implemented include how the shape should be altered when a mouse input is given
- * @author William
+ * @author TheCentipedeBoys
  *
  */
 public interface shapeBehaviour {
