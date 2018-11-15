@@ -38,7 +38,18 @@ DESIGN PATTERNS USED
 	discuss it below. Only add design patterns if they simplify and improve
 	the code. I see at least two that would greatly improve code. 
 		
-	Strategy:
+	Strategy: 
+	liwill13: The strategy design pattern was used to remove the if block for mouse events and the methods associated to those mouse events
+	orignally located in the paint panel. 
+	First of all, the shapeBehaviour interface was created, and for each shape, a concrete shapebehaviour strategy was created 
+	implementing the interface.
+	Then, a context class was created containing a shapeBehaviour attribute. 
+	When a mouse input is processed in the paint panel handle loop, a context object will have all its attributes set and 
+	have a specific shapeBehaviour strategy installed. The specific shapeBehaviour strategy understands what will happen to the
+	specific shape when a specific mouse input from paint panel is given (dragged, pressed etc.)
+	Overall, this strategy allows use to add new shapes of our own by creating a new concrete shapeBehaviour strategy. This also
+	keeps code simple because we do not need to scroll through blocks of code to find a specific block associated to a specific shape.
+	We can simply fix/modify any bugs associated to a shape by fixing code within its own behaviour strategy.
 	Command: 
 	Singleton:
 	Composite:
