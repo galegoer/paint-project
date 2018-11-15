@@ -81,12 +81,12 @@ Nov 12, 2018
 	Obstacles :No major obstacles for UserStory15.
 
 Nov 13, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday :Started working on the Userstory15.
+	Today     :Finished working on UserStory15. Also resumed working on Bug8.
+	Obstacles :Had to study for csc236 test that is on 14(tomorrow) for most of the day.
 
 Nov 14, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday :Worked on Bug8.
+	Today     :Worked on Bug8 a bit. Hopefully I'll finish it by the end of tom.
+	Obstacles :Had a csc test today at 8pm. So spent most of the time preparing for it and didn't get much time for Bug8.
 
