@@ -7,6 +7,7 @@ import javafx.scene.canvas.GraphicsContext;
 
 public class Commands extends Observable implements ShapeCommand {
 	private Object obj;
+	DrawingOperator operator = new DrawingOperator();
 
 	public Commands(Object obj) {
 		this.obj = obj;
@@ -26,6 +27,8 @@ public class Commands extends Observable implements ShapeCommand {
 			this.createSquare((Square) obj, g);
 		} else if (obj instanceof Line) {
 			this.createLine((Line) obj, g);
+			//operator.acceptCommand(new SetColor((Line) obj, g));
+			operator.acceptCommand(new SetThickness((Line) obj, g));
 		} else if(obj instanceof Squiggle) {
 			this.createSquig((Squiggle) obj, g);
 		} else if (obj instanceof PolyLine) {
@@ -44,8 +47,12 @@ public class Commands extends Observable implements ShapeCommand {
 		int y = c.getCentre().getY();
 		int x2 = c.getEnd().getX();
 		int y2 = c.getEnd().getY();
-		g.setStroke(ShapeColor.setPaint(c.getColor()));
-		g.setLineWidth(c.getThick());
+		operator.acceptCommand(new SetColor(c, g));
+		// experimental
+		//operator.acceptCommand(new SetColor(Line c , g));
+//		operator.acceptCommand(new SetThickness(Line c , g));
+//		g.setStroke(ShapeColor.setPaint(c.getColor()));
+//		g.setLineWidth(c.getThick());
 		if (c.getStyle() == "Dotted") {
 			g.setLineDashes(10d);
 			g.strokeLine(x, y, x2, y2);

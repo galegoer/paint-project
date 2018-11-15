@@ -6,6 +6,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 
 import java.util.ArrayList;
 import java.util.Observable;
@@ -43,6 +44,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		// The canvas is transparent, so the background color of the
 		// containing pane serves as the background color of the canvas.
 		this.setStyle("-fx-background-color: white");
+	
 
 		this.addEventHandler(MouseEvent.ANY, this);
 
@@ -68,6 +70,9 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		// The position of seWidth line here makes sure that the i value shown on canvas
 		// remains readable.
 		g.setLineWidth(1);
+		Text t = new Text();
+		//remove this when get time.
+		g.strokeText("show me the goods", 0, 100,100);
 		g.strokeText("i=" + i, 50, 75);
 		i = i + 1;
 
