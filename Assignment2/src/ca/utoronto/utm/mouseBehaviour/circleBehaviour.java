@@ -8,6 +8,13 @@ import ca.utoronto.utm.paint.PaintModel;
 import ca.utoronto.utm.paint.Point;
 import javafx.scene.input.MouseEvent;
 
+/**
+ * circleBehaviour is a concrete shapeBehaviour strategy for the circle object. circleBehaviour knows
+ * what a mouse input would do given that the mode selected is a circle.
+ * 
+ * @author TheCentipedeBoys
+ *
+ */
 public class circleBehaviour implements shapeBehaviour {
 	PaintModel model;
 	ArrayList<String> modes;
@@ -15,7 +22,14 @@ public class circleBehaviour implements shapeBehaviour {
 
 	static Circle circle;
 	int thick;
-
+	
+	/**
+	 * Creates a new circleBehaviour strategy
+	 * @param s An arrayList of strings representing the current mode(s)
+	 * @param model the PaintModel 
+	 * @param color	the color associated with the circle
+	 * @param thick thickness of the circle
+	 */
 	public circleBehaviour(ArrayList<String> s, PaintModel model, String color, int thick) {
 		this.modes = s;
 		this.model = model;
@@ -24,6 +38,10 @@ public class circleBehaviour implements shapeBehaviour {
 	}
 
 	@Override
+	/**
+	 * Calculates the radius of the circle as the mouse is dragged and updates the radius of the current circle on
+	 * the canvas allowing the user to see the circle as they draw
+	 */
 	public void mouseDragged(MouseEvent e) {
 		// TODO Auto-generated method stub
 
@@ -35,6 +53,10 @@ public class circleBehaviour implements shapeBehaviour {
 	}
 
 	@Override
+	/**
+	 * Creates a new circle object as the mouse is pressed and and adds the command to draw this new circle to 
+	 * the commandQueue
+	 */
 	public void mousePressed(MouseEvent e) {
 		Point centre = new Point((int) e.getX(), (int) e.getY());
 		int radius = 0;
@@ -51,10 +73,11 @@ public class circleBehaviour implements shapeBehaviour {
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
-
 	}
-
+	
+	/**
+	 * Calculate the final radius of the circle as it is released and adds the final circle to the command stack.
+	 */
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
@@ -72,26 +95,15 @@ public class circleBehaviour implements shapeBehaviour {
 
 	@Override
 	public void mouseMoved(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-
 	}
-//	public static void setstrokethickness(int slider_num) {
-//		circleBehaviour.setstrokethickness(slider_num);
-//		rectangleBehaviour.setstrokethickness(slider_num);
-//		squareBehaviour.setstrokethickness(slider_num);
-//	
-//	}
+
 
 }

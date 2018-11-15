@@ -1,5 +1,12 @@
 package ca.utoronto.utm.paint;
 import javafx.scene.shape.Shape;
+
+/**
+ * Model a square. The square object is associated with a starting point, side length, color, style
+ * thickness, and arc length
+ * @author William
+ *
+ */
 public class Square extends Shape{
 	
 	private Point centre;
@@ -24,55 +31,92 @@ public class Square extends Shape{
 		this.arcHeight = arcH;
 		this.arcWidth = arcW;
 	}
-
+	
+	/**
+	 * Returns starting point of square object
+	 * @return starting point
+	 */
 	public Point getCentre() {
 		return centre;
 	}
-
+	
+	/**
+	 * Sets starting point of square to new point
+	 * @param centre the new point
+	 */
 	public void setCentre(Point centre) {
 		this.centre = centre;
 	}
 	
+	/**
+	 * Return the side length of the square
+	 * @return side length of square
+	 */
 	public int getSideLength() {
 		return side;
 	}
-
+	
+	/**
+	 * Sets the side length of square to a new length
+	 * @param side the new side length
+	 */
 	public void setSideLength(int side) {
 		this.side = side;
 	}
 	
-	// Method to set square thickness.
+	/**
+	 * Returns the current thickness value of the square
+	 * @return squares thickness
+	 */
 	public int getThick() {
 		return thickness;
 	}
+	
+	/**
+	 * Sets the thickness to a new thickness value
+	 * @param thickness the new thickness value
+	 */
 	public void setThick(int thickness) {
 		this.thickness = thickness;
 	}
-	//
 	
-	
+	/**
+	 * Returns the scenario number for square
+	 * @return scenario number
+	 */
 	public int getScenario() {
 		return scenario;
 	}
-	//Set the scenario number
 	
+	/**
+	 * Sets scenario number of square to specified value
+	 * @param s new scenario number
+	 */
 	public void setScenario(int s) {
 		scenario = s;
 	}
 	
+	/**
+	 * Returns square color
+	 * @return color of square
+	 */
 	public String getColorS() {
 		return sqcolor;
 	}
-	
+	/**
+	 * Returns style of the square
+	 * @return square style
+	 */
 	public int getStyleS() {
 		return style;
 	}
-	
+	/**
+	 * Sets the style of square to a new style
+	 * @param style new style
+	 */
 	public void setStyleS(int style) {
 		this.style = style;
 	}
-	// Methods for rounded rectangle 
-	// copy of rectangle class methods end here.
 	
 		/**
 		 * Set the width of the arc of the rounded rectangle , tell our observer that we have changed

@@ -8,6 +8,13 @@ import ca.utoronto.utm.paint.Point;
 import ca.utoronto.utm.paint.Squiggle;
 import javafx.scene.input.MouseEvent;
 
+/**
+ * squiggleBehaviour is a concrete shapeBehaviour strategy for the squiggle object. squiggleBehaviour knows
+ * what a mouse input would do given that the mode selected is a squiggle.
+ * 
+ * @author TheCentipedeBoys
+ *
+ */
 public class squiggleBehaviour implements shapeBehaviour {
 	PaintModel model;
 	ArrayList<String> modes;
@@ -16,6 +23,13 @@ public class squiggleBehaviour implements shapeBehaviour {
 
 	static Squiggle squiggle;
 	
+	/**
+	 * Creates a new squiggleBehaviour strategy
+	 * @param s An arrayList of strings representing the current mode(s)
+	 * @param model the PaintModel 
+	 * @param color	the color associated with the squiggle
+	 * @param thick thickness of the squiggle
+	 */
 	public squiggleBehaviour(ArrayList<String> s, PaintModel model, String color, Integer thick) {
 		this.modes = s;
 		this.model = model;
@@ -23,6 +37,9 @@ public class squiggleBehaviour implements shapeBehaviour {
 		this.thick = thick;
 	}
 	@Override
+	/**
+	 * adds points to the squiggle list associated to the squiggle object as the mouse is dragged
+	 */
 	public void mouseDragged(MouseEvent e) {
 		Point point = new Point((int) e.getX(), (int) e.getY());
 		squiggle.addPoint(point);
@@ -31,6 +48,9 @@ public class squiggleBehaviour implements shapeBehaviour {
 	}
 
 	@Override
+	/**
+	 * Creates a new squiggle object and adds it into the command stack
+	 */
 	public void mousePressed(MouseEvent e) {
 		Point start = new Point((int) e.getX(), (int) e.getY());		
 		int thick1 = this.thick;
@@ -43,11 +63,13 @@ public class squiggleBehaviour implements shapeBehaviour {
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
+	/**
+	 * Adds an new command to draw the final squiggle upon mouse release while deleting older commands from
+	 * squiggle feedback
+	 */
 	public void mouseReleased(MouseEvent e) {
 		this.model.acceptCommand(new Commands(squiggle));
 		this.model.deleteCommands();

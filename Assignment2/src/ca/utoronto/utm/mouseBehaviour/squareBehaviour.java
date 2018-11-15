@@ -7,7 +7,13 @@ import ca.utoronto.utm.paint.PaintModel;
 import ca.utoronto.utm.paint.Point;
 import ca.utoronto.utm.paint.Square;
 import javafx.scene.input.MouseEvent;
-
+/**
+ * squareBehaviour is a concrete shapeBehaviour strategy for the square object. squareBehaviour knows
+ * what a mouse input would do given that the mode selected is a square.
+ * 
+ * @author TheCentipedeBoys
+ *
+ */
 public class squareBehaviour implements shapeBehaviour {
 	PaintModel model;
 	ArrayList<String> modes;
@@ -16,7 +22,14 @@ public class squareBehaviour implements shapeBehaviour {
 	static Square square;
 	int thick;
 	private int version;
-
+	
+	/**
+	 * Creates a new squareBehaviour strategy
+	 * @param s An arrayList of strings representing the current mode(s)
+	 * @param model the PaintModel 
+	 * @param color	the color associated with the square
+	 * @param thick thickness of the square
+	 */
 	public squareBehaviour(ArrayList<String> s, PaintModel model, String color, int thick, int version) {
 		this.modes = s;
 		this.model = model;
@@ -25,8 +38,13 @@ public class squareBehaviour implements shapeBehaviour {
 		this.version = version;
 	}
 
-	// VERSION 0 represents regular square and VERSION 1 represents rounded square.
 	@Override
+	/**
+	 *Updates the square width and height as the mouse is dragged and adds a command to draw the 
+	 *square to the command stack
+	 *Allows for square feedback
+	 *
+	 */
 	public void mouseDragged(MouseEvent e) {
 		int a;
 
@@ -118,6 +136,9 @@ public class squareBehaviour implements shapeBehaviour {
 	}
 
 	@Override
+	/**
+	 * Creates a new square and adds it as a command to the command stack as the mouse is pressed
+	 */
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
 
@@ -138,11 +159,13 @@ public class squareBehaviour implements shapeBehaviour {
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
+	/**
+	 * Updates the height and width of the square upon mouse release and adds a command to draw the 
+	 * square object while deleting older commands made from feedback
+	 */
 	public void mouseReleased(MouseEvent e) {
 		int a;
 
@@ -239,24 +262,15 @@ public class squareBehaviour implements shapeBehaviour {
 
 	@Override
 	public void mouseMoved(MouseEvent e) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-
 	}
-	public void setstrokethickness(int slider_num) {
-		thick = slider_num;
-
-	}
+	
 
 }

@@ -8,6 +8,13 @@ import ca.utoronto.utm.paint.Point;
 import ca.utoronto.utm.paint.Rectangle;
 import javafx.scene.input.MouseEvent;
 
+/**
+ * rectangleBehaviour is a concrete shapeBehaviour strategy for the rectangle object. rectangleBehaviour knows
+ * what a mouse input would do given that the mode selected is a rectangle.
+ * 
+ * @author TheCentipedeBoys
+ *
+ */
 public class rectangleBehaviour implements shapeBehaviour {
 	PaintModel model;
 	ArrayList<String> modes;
@@ -16,6 +23,13 @@ public class rectangleBehaviour implements shapeBehaviour {
 	static Rectangle rectangle;
 	int thick;
 
+	/**
+	 * Creates a new rectangleBehaviour strategy
+	 * @param s An arrayList of strings representing the current mode(s)
+	 * @param model the PaintModel 
+	 * @param color	the color associated with the rectangle
+	 * @param thick thickness of the rectangle
+	 */
 	public rectangleBehaviour(ArrayList<String> s, PaintModel model, String color, int thick) {
 		this.modes = s;
 		this.model = model;
@@ -24,6 +38,11 @@ public class rectangleBehaviour implements shapeBehaviour {
 	}
 
 	@Override
+	/**
+	 *Updates the rectangle width and height as the mouse is dragged and adds a command to draw the 
+	 *rectangle to the command stack
+	 *Allows for rectangle feedback
+	 */
 	public void mouseDragged(MouseEvent e) {
 
 		// Begin
@@ -63,6 +82,9 @@ public class rectangleBehaviour implements shapeBehaviour {
 	}
 
 	@Override
+	/**
+	 * Creates a new rectangle and adds it as a command to the command stack as the mouse is pressed
+	 */
 	public void mousePressed(MouseEvent e) {
 		Point centre = new Point((int) e.getX(), (int) e.getY());
 		int height = 0;
@@ -79,11 +101,13 @@ public class rectangleBehaviour implements shapeBehaviour {
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
+	/**
+	 * Updates the height and width of the rectangle upon mouse release and adds a command to draw the rectangle object
+	 * while deleting older commands made from feedback
+	 */
 	public void mouseReleased(MouseEvent e) {
 		if (rectangle != null) {
 			// Begin
