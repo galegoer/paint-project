@@ -90,6 +90,6 @@ Nov 13, 2018
 	Obstacles :Not passing 236 ;_;
 
 Nov 14, 2018
-	Yesterday :
-	Today     :
-	Obstacles :
+	Yesterday : Tried to study for 236.
+	Today     : Failed 236. Will begin working on Bug10
+	Obstacles : Might not pass 236. RIP

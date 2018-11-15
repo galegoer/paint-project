@@ -124,7 +124,6 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 		this.view.getPaintPanel().setMode(0, command);
 		
 		polyBehaviour p = new polyBehaviour(null, this.view.getPaintModel(), "", 0, this.view);
-		System.out.println(polyBehaviour.polyLine);
 		if (polyBehaviour.polyLine != null)
 			p.polyReset();
 
