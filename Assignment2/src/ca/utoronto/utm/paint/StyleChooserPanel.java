@@ -11,7 +11,6 @@ import javafx.scene.layout.GridPane;
  * Implements a Panel at the bottom left of the canvas with Undo, Redo,
  * Fill, Outline, and Clear buttons.
  * @author TheCentipedeBoys
- *
  */
 
 public class StyleChooserPanel extends GridPane implements EventHandler<ActionEvent> {
@@ -43,8 +42,7 @@ public class StyleChooserPanel extends GridPane implements EventHandler<ActionEv
 
 	/**
 	 * Handles an event to either set the Fill Mode or Undo, 
-	 * Redo, or Clear
-	 * @param event ActionEvent of what has been clicked
+	 * Redo, or Clear the canvas.
 	 */
 	
 	@Override
