@@ -51,6 +51,7 @@ public class polyBehaviour implements shapeBehaviour {
 			polyLine.addPoint(center);
 			polyLine.setCentre(center);
 			this.model.acceptCommand(new Commands(polyLine));
+			this.view.getPaintPanel().repaint();
 
 
 		} else if (e.getButton() == MouseButton.SECONDARY) {
@@ -96,9 +97,10 @@ public class polyBehaviour implements shapeBehaviour {
 			l.setStyle("Dotted");
 			Point p = new Point((int) e.getX(), (int) e.getY());
 			l.setEnd(p);
-			this.model.acceptCommand(new Commands(l));
-			if (!(this.model.getQueue().get(this.model.getSize() - 2).getObj() instanceof PolyLine))
-				this.model.deleteCommands();
+			//this.model.acceptCommand(new Commands(l));
+			this.view.getPaintPanel().repaint();
+			//if (!(this.model.getQueue().get(this.model.getSize() - 2).getObj() instanceof PolyLine))
+				//this.model.deleteCommands();
 		}
 	}
 

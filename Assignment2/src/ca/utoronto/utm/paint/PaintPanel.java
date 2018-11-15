@@ -106,6 +106,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		c.setThick(this.thick);
 		c.setView(this.view);
 		c.setBehaviour(this.modes.get(0));
+		
 		c.move(event);
 	}
 
