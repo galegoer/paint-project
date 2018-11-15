@@ -84,16 +84,16 @@ public class Commands extends Observable implements ShapeCommand {
 		int x = c.getCentre().getX();
 		int y = c.getCentre().getY();
 		int radius = c.getRadius();
-		g.setLineWidth(c.getThick());
+		g.setLineWidth(c.getThick());g.setStroke(ShapeColor.setPaint(c.getString()));
 		if (c.getStyleC() == 1) {
 			g.setFill(ShapeColor.setPaint(c.getString())); // FIX WITH WHAT COLOR IS SET
 			g.fillOval(x - radius, y - radius, 2 * radius, 2 * radius);
 		}else{
 			g.strokeOval(x - radius, y - radius, 2 * radius, 2 * radius);
 		}
-		g.setStroke(ShapeColor.setPaint(c.getString()));
-		g.strokeOval(x - radius, y - radius, 2 * radius, 2 * radius);
-		g.strokeOval(x - radius, y - radius, 2 * radius, 2 * radius);
+		
+		//g.strokeOval(x - radius, y - radius, 2 * radius, 2 * radius);
+		//g.strokeOval(x - radius, y - radius, 2 * radius, 2 * radius);
 	}
 
 	public void createRect(Rectangle r, GraphicsContext g) {
