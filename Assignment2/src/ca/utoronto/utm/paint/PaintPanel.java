@@ -21,10 +21,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 	private Commands commands;
 
 	private ArrayList<String> modes = new ArrayList<String>(); // modifies how we interpret input (could be better?)
-	private Circle circle; // the circle we are building
-	private Rectangle rectangle;
-	private Point point;
-	// SOME OF THESE MIGHT BE UNNECESSARY ^^^
+
 
 	private String color;
 

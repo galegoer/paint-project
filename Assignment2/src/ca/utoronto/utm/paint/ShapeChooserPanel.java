@@ -14,16 +14,28 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.image.*;
 import java.io.FileInputStream; 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 
 import javafx.scene.shape.Shape;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Line;
 
+/**
+ * The ShapeChoosePanel allows the user to specify the shape that they wish to draw on the canvas.
+ * Pressing a button on this panel will modify the mode (shape) and allow different shapeBehvaiours to be
+ * installed through the context object located in paint panel.
+ * @author TheCentipedeBoys
+ *
+ */
 public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEvent> {
 
 	private View view; // So we can talk to our parent or other components of the view
 
+	/**
+	 * Adds toggle buttons with pictures of shapes to the view and adds a slider to modify the thickness
+	 * @param view the view to add new buttons and sliders to
+	 */
 	public ShapeChooserPanel(View view) {
 
 		final ToggleGroup group = new ToggleGroup();
@@ -71,7 +83,7 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 		});
 
 
-		String[] names = {"Circle", "Rectangle", "Square", "Line", "RoundedRectangle", "RoundedSquare"};
+		String[] names = {"Circle", "Rectangle", "Square", "Line", "RoundedRectangle", "RoundedSquare", "Squiggle", "PolyLine"};
 		Shape[] shapes = {c,r,t,l,o,n};
 
 		int row = 0;
@@ -87,30 +99,26 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 		}
 
 		try {
-			Image image = new Image(new FileInputStream("images/squiggle.png"));
-			ImageView imageView = new ImageView(image);
-			imageView.setFitHeight(20);
-			imageView.setFitWidth(50);
-			ToggleButton button5 = new ToggleButton();
-			button5.setAccessibleText("Squiggle");
-			button5.setOnAction(this);
-			button5.setGraphic(imageView);
-			button5.setMinWidth(100);
-			button5.setToggleGroup(group);
-			this.add(button5, 0, row);
+			String[] files = new String[2];
+			files[0] = ("images/squiggle.png");
+			files[1] = ("images/polyline.png");
+			int i = 6;
+			for (String s: files) {
+				Image image = new Image(new FileInputStream(s));
+				ImageView imageView = new ImageView(image);
+				imageView.setFitHeight(20);
+				imageView.setFitWidth(50);
+				ToggleButton button = new ToggleButton();
+				button.setAccessibleText(names[i]);
+				button.setOnAction(this);
+				button.setGraphic(imageView);
+				button.setMinWidth(100);
+				button.setToggleGroup(group);
+				this.add(button, 0, row);
+				i++;
+				row++;
+			}
 
-			row++;
-			Image image2 = new Image(new FileInputStream("images/polyline.png"));
-			ImageView imageView2 = new ImageView(image2);
-			imageView2.setFitHeight(20);
-			imageView2.setFitWidth(50);
-			ToggleButton button6 = new ToggleButton();
-			button6.setAccessibleText("PolyLine");
-			button6.setOnAction(this);
-			button6.setGraphic(imageView2);
-			button6.setMinWidth(100);
-			button6.setToggleGroup(group);
-			this.add(button6, 0, row);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -119,6 +127,11 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 	}
 
 	@Override
+	/**
+	 * Changes the mode (shape) to be drawn when the user presses a button. Also, if the user doesn't end the polyline
+	 * object then changing modes will end it for them.
+	 * This function will retrieve the specified shape as a text and forward it to paint panel
+	 */
 	public void handle(ActionEvent event) {
 		String command = ((ToggleButton) event.getSource()).getAccessibleText();
 		this.view.getPaintPanel().setMode(0, command);
@@ -126,9 +139,6 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 		polyBehaviour p = new polyBehaviour(null, this.view.getPaintModel(), "", 0, this.view);
 		if (polyBehaviour.polyLine != null)
 			p.polyReset();
-
-			
-		System.out.println(command);
 	}
 
 }

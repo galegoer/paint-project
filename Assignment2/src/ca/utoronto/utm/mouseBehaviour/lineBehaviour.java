@@ -9,6 +9,13 @@ import ca.utoronto.utm.paint.PaintModel;
 import ca.utoronto.utm.paint.Point;
 import javafx.scene.input.MouseEvent;
 
+/**
+ * lineBehaviour is a concrete lineBehaviour strategy for the line object. lineBehaviour knows
+ * what a mouse input would do given that the mode selected is a line.
+ * 
+ * @author TheCentipedeBoys
+ *
+ */
 public class lineBehaviour implements shapeBehaviour {
 
 	PaintModel model;
@@ -19,6 +26,13 @@ public class lineBehaviour implements shapeBehaviour {
 	Integer thick;
 	String style;
 
+	/**
+	 * Creates a new lineBehaviour strategy
+	 * @param s An arrayList of strings representing the current mode(s)
+	 * @param model the PaintModel 
+	 * @param color	the color associated with the line
+	 * @param thick thickness of the line
+	 */
 	public lineBehaviour(ArrayList<String> s, PaintModel model, String color, String style, int thick) {
 		this.modes = s;
 		this.model = model;
@@ -29,6 +43,10 @@ public class lineBehaviour implements shapeBehaviour {
 	}
 
 	@Override
+	/**
+	 * Updates the end of the line object (represented by a point) as the mouse is dragged
+	 * Allows for line feedback
+	 */
 	public void mouseDragged(MouseEvent e) {
 		int x2 = (int) e.getX();
 		int y2 = (int) e.getY();
@@ -39,6 +57,9 @@ public class lineBehaviour implements shapeBehaviour {
 	}
 
 	@Override
+	/**
+	 * Creates a new Command to draw a line object as the mouse is pressed
+	 */
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
 
@@ -51,11 +72,13 @@ public class lineBehaviour implements shapeBehaviour {
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
+	/**
+	 * Calculate the end point of the line and add it into the command stack while removing older line commands 
+	 * made from mouse dragged
+	 */
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
 
@@ -74,25 +97,14 @@ public class lineBehaviour implements shapeBehaviour {
 
 	@Override
 	public void mouseMoved(MouseEvent e) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-
 	}
-	public void setstrokethickness(int slider_num) {
-		thick = slider_num;
-
-	}
-
-
+	
 }

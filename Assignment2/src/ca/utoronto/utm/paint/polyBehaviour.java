@@ -6,6 +6,14 @@ import ca.utoronto.utm.mouseBehaviour.shapeBehaviour;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 
+/**
+ * polyBehaviour is a concrete shapeBehaviour strategy for the polyLine object. polyBehaviour knows
+ * what a mouse input would do given that the mode selected is a polyLine. The polyline object can be
+ * ended by a right click.
+ * 
+ * @author TheCentipedeBoys
+ *
+ */
 public class polyBehaviour implements shapeBehaviour {
 	PaintModel model;
 	ArrayList<String> modes;
@@ -15,7 +23,14 @@ public class polyBehaviour implements shapeBehaviour {
 	static PolyLine polyLine;
 	int thick;
 	static Line l = new Line();
-
+	
+	/**
+	 * Creates a new polyLineBehaviour strategy
+	 * @param s An arrayList of strings representing the current mode(s)
+	 * @param model the PaintModel 
+	 * @param color	the color associated with the polyLine
+	 * @param thick thickness of the polyLine
+	 */
 	public polyBehaviour(ArrayList<String> s, PaintModel model, String color, int thick, View view) {
 		this.modes = s;
 		this.model = model;
@@ -37,6 +52,11 @@ public class polyBehaviour implements shapeBehaviour {
 	}
 
 	@Override
+	/**
+	 * Create a new polyLine object and add it into the Command stack if the polyline does not exist.
+	 * If the input is a RIGHT CLICK, the polyLine object will end and the user can now create a new polyLine object
+	 * Any other clicks after the initializing of the object will add points to the list associated to the polyLine object
+	 */
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
 		if (polyLine == null) {
@@ -56,8 +76,6 @@ public class polyBehaviour implements shapeBehaviour {
 		} else if (e.getButton() == MouseButton.SECONDARY) {
 			
 			this.model.delQCommand();
-			//if (polyLine.getList().size() != 1)
-				//this.model.deleteCommands();
 			polyLine = null;
 			this.view.getPaintPanel().repaint();
 
@@ -66,15 +84,7 @@ public class polyBehaviour implements shapeBehaviour {
 			polyLine.updateColor(this.color);
 			Point point = new Point((int) e.getX(), (int) e.getY());
 			polyLine.addPoint(point);
-			
 			polyLine.setCentre(point);
-			
-			//removed, might need if we want to undo in stages
-			//this.model.acceptCommand(new Commands(polyLine));
-			
-			//this.model.deleteCommands();
-			//if (polyLine.getList().size() != 2)
-				//this.model.deleteCommands();
 			this.view.getPaintPanel().repaint();
 		
 		}
@@ -83,9 +93,12 @@ public class polyBehaviour implements shapeBehaviour {
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-
 	}
-
+	
+	/**
+	 * As the mouse is moved, the static line variable is modified and given end point equivalent to the current
+	 * mouse location. It is then added to the command stack. This allows the user to see polyLine feedback.
+	 */
 	@Override
 	public void mouseMoved(MouseEvent e) {
 		// TODO Auto-generated method stub
@@ -104,29 +117,28 @@ public class polyBehaviour implements shapeBehaviour {
 
 	@Override
 	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
-
 	}
-
+	
+	/**
+	 * Deletes the previous command in the command stack (which will be the feedback dotted line) so that the line
+	 * disappears when the mode changes.
+	 */
 	public void polyReset() {
 		this.model.delQCommand();
-		//had this code here when i was adding polyLine objects
-		//if (polyLine.getList().size() != 1)
-			//this.model.deleteCommands();
 		polyLine = null;
 		this.view.getPaintPanel().repaint();
 		}
-
+	
+	/**
+	 * Returns the static polyLine object associated with this behavior strategy
+	 * @return polyline object associated with class
+	 */
 	public PolyLine getPolyLine() {
 		return polyLine;
 	}
-
-	public void setPolyLine(Object a) {
-		polyLine = (PolyLine) a;
-	}
+	
 }

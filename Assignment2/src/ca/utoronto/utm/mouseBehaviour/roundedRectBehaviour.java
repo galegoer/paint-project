@@ -7,7 +7,13 @@ import ca.utoronto.utm.paint.PaintModel;
 import ca.utoronto.utm.paint.Point;
 import ca.utoronto.utm.paint.RoundedRectangle;
 import javafx.scene.input.MouseEvent;
-
+/**
+ * RoundedrectBehaviour is a concrete shapeBehaviour strategy for the Rounded rectangle object. RoundedrectBehaviour knows
+ * what a mouse input would do given that the mode selected is a Rounded rectangle.
+ * 
+ * @author TheCentipedeBoys
+ *
+ */
 public class roundedRectBehaviour implements shapeBehaviour {
 	PaintModel model;
 	ArrayList<String> modes;
@@ -15,7 +21,14 @@ public class roundedRectBehaviour implements shapeBehaviour {
 
 	static RoundedRectangle roundedrectangle;
 	Integer thick;
-
+	
+	/**
+	 * Creates a new roundedrectBehaviour strategy
+	 * @param s An arrayList of strings representing the current mode(s)
+	 * @param model the PaintModel 
+	 * @param color	the color associated with the rounded rectangle
+	 * @param thick thickness of the rounded rectangle
+	 */
 	public roundedRectBehaviour(ArrayList<String> s, PaintModel model, String color, Integer thick) {
 		this.modes = s;
 		this.model = model;
@@ -24,6 +37,11 @@ public class roundedRectBehaviour implements shapeBehaviour {
 	}
 
 	@Override
+	/**
+	 *Updates the rounded rectangle width and height as the mouse is dragged and adds a command to draw the 
+	 *rounded rectangle to the command stack
+	 *Allows for rounded rectangle feedback
+	 */
 	public void mouseDragged(MouseEvent e) {
 		// Begin
 		int x1 = roundedrectangle.getCentre().getX();
@@ -72,6 +90,9 @@ public class roundedRectBehaviour implements shapeBehaviour {
 	}
 
 	@Override
+	/**
+	 * Creates a new rounded rectangle and adds it as a command to the command stack as the mouse is pressed
+	 */
 	public void mousePressed(MouseEvent e) {
 		Point centre = new Point((int) e.getX(), (int) e.getY());
 		int height = 0;
@@ -95,6 +116,10 @@ public class roundedRectBehaviour implements shapeBehaviour {
 	}
 
 	@Override
+	/**
+	 * Updates the height and width of the rounded rectangle upon mouse release and adds a command to draw the 
+	 * rounded rectangle object while deleting older commands made from feedback
+	 */
 	public void mouseReleased(MouseEvent e) {
 		if (roundedrectangle != null) {
 

@@ -7,49 +7,60 @@ import ca.utoronto.utm.paint.View;
 import ca.utoronto.utm.paint.polyBehaviour;
 import javafx.scene.input.MouseEvent;
 
+/**
+ * A context object contains a shapeBehaviour strategy that is created given the specified mode.
+ * The context object understands how a mouse input will effect the shape. The context object also knows about
+ * the corresponding mode, style, color, etc so that it may be forwarded to the shapeBehaviour strategy.
+ * @author TheCentipedeBoys
+ *
+ */
 public class context {
 	shapeBehaviour behaviour;
 	ArrayList<String> modes;
 	String color;
-	PaintModel model; // temporary? used to give mouseMaster a model so that it can run our code,
+	PaintModel model;
 	int thick;
 	View view;
-	
 	String lineStyle;
-						// however this will change depending on a better implication of model
-	// MouseEvent event;
-
+	
+	/**Creates a new context object
+	 * 
+	 */
 	public context() {
 		return;
 	}
 
-	public context(ArrayList<String> modes, PaintModel model, String color, String style, int thick, View view) {
-		this.modes = modes;
-		this.model = model;
-		this.color = color;
-		this.thick = thick;
-		this.lineStyle = style;
-		this.view = view;
-		// this.behaviour = new mouseMaster(mode, style, model);
-
-	}
-
+	
+	/**Sets the context model to the given paint model
+	 * @param s the given paint model
+	 */
 	public void setModel(PaintModel s) {
 		this.model = s;
 	}
-
+	/**sets the context color to the given color
+	 * @param s the given color
+	 */
 	public void setColor(String s) {
 		this.color = s;
 	}
+	/**
+	 * sets the context thickness to the given thickness	
+	 * @param s the given thickness
+	 */
 	public void setThick(int s) {
 		this.thick = s;
 	}
-
+	/**sets the modes to an arraylist containing the current mode
+	 * @param s the arraylist modes should be set to
+	 */
 	public void setModes(ArrayList<String> s) {
 		this.modes = s;
 	}
 	
-	//Add another if statment when adding a new mode like POLYLINE
+	/**Creates the correct shapebehaviour strategy corresponding to the given mode, represented by the string s.
+	 * 
+	 * @param s the mode that the user is currently on
+	 */
 	public void setBehaviour(String s) {
 		if (s == "Circle") 
 			this.behaviour = new circleBehaviour(this.modes, this.model, this.color, this.thick);
@@ -59,7 +70,6 @@ public class context {
 			this.behaviour = new roundedRectBehaviour(this.modes, this.model, this.color, this.thick);
 		else if (s == "Square") 
 			this.behaviour = new squareBehaviour(this.modes, this.model, this.color, this.thick, 0);
-		// Rounded Square down
 		else if (s == "RoundedSquare") 
 			this.behaviour = new squareBehaviour(this.modes, this.model, this.color, this.thick, 1);
 		else if (s == "Squiggle") 
@@ -69,12 +79,20 @@ public class context {
 		else if (s == "Line") 
 			this.behaviour = new lineBehaviour(this.modes, this.model, this.color, this.lineStyle, this.thick);
 	}
+	
+	/**
+	 * Returns the shapeBehaviour strategy that is currently associated with the context object
+	 * @return the current shapebehaviour strategy installed in the context object
+	 */
 	public shapeBehaviour getBehaviour() {
 		return behaviour;
 	}
 	
-	//I dont think there is a need to modify this block unless you can think of a more efficient way
-	//make sure you create new class "newFeatureName" that implements shapeBehaviour!
+	/**
+	 * given the mouse event, "event", move will change the shape accordlingly by calling the methods associated
+	 * to the current shapeBehaviour strategy installed
+	 * @param event mouse input by user
+	 */
 	public void move(MouseEvent event) {
 		if (event.getEventType() == MouseEvent.MOUSE_DRAGGED) {
 			this.behaviour.mouseDragged(event);
@@ -92,7 +110,11 @@ public class context {
 			this.behaviour.mouseExited(event);
 		}
 	}
-
+	
+	/**sets the view of the context object to the given view
+	 * 
+	 * @param view2 the given view
+	 */
 	public void setView(View view2) {
 		this.view = view2;
 		
