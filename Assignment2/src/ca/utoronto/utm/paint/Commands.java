@@ -5,14 +5,29 @@ import java.util.Observable;
 
 import javafx.scene.canvas.GraphicsContext;
 
+/**
+ * 
+ * @author TheCentipedeBoys
+ *
+ */
+
 public class Commands extends Observable implements ShapeCommand {
 	private Object obj;
 
+	
+	/**
+	 * Constructs a Commands that takes in an object
+	 * @param obj
+	 */
 	public Commands(Object obj) {
 		this.obj = obj;
 	}
 
-	// IDK IF U NEED g?
+
+	/**
+	 * Executes the command to create the object
+	 * @param g graphics context to use when creating object
+	 */
 	@Override
 
 	public void execute(GraphicsContext g) {
@@ -35,10 +50,22 @@ public class Commands extends Observable implements ShapeCommand {
 		}
 	}
 	
+	/**
+	 * 
+	 * @return the object assigned to Commands
+	 */
+	
 	public Object getObj() {
 		return this.obj;
 	}
 
+	/**
+	 * Strokes a Line given the Line object and graphics
+	 * context
+	 * @param c Line object to be drawn
+	 * @param g Graphics context to stroke the object
+	 */
+	
 	private void createLine(Line c, GraphicsContext g) {
 		int x = c.getCentre().getX();
 		int y = c.getCentre().getY();
@@ -55,6 +82,12 @@ public class Commands extends Observable implements ShapeCommand {
 		}
 
 	}
+	
+	/**
+	 * Strokes a Polyline object
+	 * @param p Polyline object to be drawn
+	 * @param g Graphics context to stroke the object
+	 */
 	private void createPolyLine (PolyLine p, GraphicsContext g) {
 		ArrayList<Point> polyLinePoints = p.getList();
 		for (int i = 0; i < polyLinePoints.size() - 1; i++) {
@@ -66,6 +99,12 @@ public class Commands extends Observable implements ShapeCommand {
 		}
 	}
 
+	/**
+	 * Strokes a Squiggle object
+	 * @param squig Squiggle object to be drawn
+	 * @param g Graphics context to draw the object
+	 */
+	
 	public void createSquig(Squiggle squig, GraphicsContext g) {
 		g.setStroke(Circle.setPaint(squig.getString())); //GETS COLOR
 		g.setLineWidth(squig.getThick());
@@ -73,6 +112,12 @@ public class Commands extends Observable implements ShapeCommand {
 			g.strokeLine(squig.getPoint(i).getX(), squig.getPoint(i).getY(), squig.getPoint(i+1).getX(), squig.getPoint(i+1).getY());
 	}
 
+	/**
+	 * Strokes a Circle object
+	 * @param c Circle object to be drawn
+	 * @param g Graphics context to draw the object
+	 */
+	
 	public void createCircle(Circle c, GraphicsContext g) {
 		int x = c.getCentre().getX();
 		int y = c.getCentre().getY();
@@ -89,6 +134,12 @@ public class Commands extends Observable implements ShapeCommand {
 		g.strokeOval(x - radius, y - radius, 2 * radius, 2 * radius);
 	}
 
+	/**
+	 * Strokes a Rectangle object
+	 * @param r Rectangle object to be drawn
+	 * @param g Graphics context to draw the object
+	 */
+	
 	public void createRect(Rectangle r, GraphicsContext g) {
 		int a = r.getCentre().getX();
 		int b = r.getCentre().getY();
@@ -120,9 +171,11 @@ public class Commands extends Observable implements ShapeCommand {
 		}
 	}
 
-	// Draw Squares
-	// ArrayList<Square> squares = this.model.getSquares();
-	// for (Square r : squares) {
+	/**
+	 * Strokes a rounded Square object or Square object
+	 * @param r Square to be drawn
+	 * @param g Graphics context to draw the object
+	 */
 	public void createSquare(Square r, GraphicsContext g) {
 		int a = r.getCentre().getX();
 		int b = r.getCentre().getY();
@@ -154,6 +207,13 @@ public class Commands extends Observable implements ShapeCommand {
 			}
 		}
 	}
+	
+	/**
+	 * Strokes a rounded Rectangle
+	 * @param p Rounded Rectangle object to be drawn
+	 * @param g Graphics context  to draw the object
+	 */
+	
 	public void createRoundedRect(RoundedRectangle p, GraphicsContext g) {	
 		int a = p.getCentre().getX();
 		int b = p.getCentre().getY();

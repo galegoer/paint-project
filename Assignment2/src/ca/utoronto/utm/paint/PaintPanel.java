@@ -18,13 +18,8 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 	private int i = 0;
 	private PaintModel model; // slight departure from MVC, because of the way painting works
 	private View view; // So we can talk to our parent or other components of the view
-	private Commands commands;
 
 	private ArrayList<String> modes = new ArrayList<String>(); // modifies how we interpret input (could be better?)
-	private Circle circle; // the circle we are building
-	private Rectangle rectangle;
-	private Point point;
-	// SOME OF THESE MIGHT BE UNNECESSARY ^^^
 
 	private String color;
 
@@ -32,9 +27,7 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 
 	context c = new context();
 
-	private String style;
 	private int thick = 1;
-	private String lineStyle = "Normal";
 
 	public PaintPanel(PaintModel model, View view) {
 
@@ -81,13 +74,16 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 	}
 
 	/**
-	 * CHANGED THIS Now refers to index as first input and mode you want as second
+	 * Sets the mode for the PaintPanel.
+	 * 
+	 * @param index an integer identifying the mode (0 being shape,
+	 * 1 being fill or outline)
+	 * @param mode a string representing the modes name
 	 */
 	public void setMode(int index, String mode) {
 		this.modes.set(index, mode);
 	}
 	
-
 
 	public void setColor(String color) {
 		this.color = color;
