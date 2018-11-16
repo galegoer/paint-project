@@ -117,6 +117,12 @@ public class Circle extends Shape{
 		if (stringcolor == "Brown"){
 			return Color.BROWN;
 		}
+		if (stringcolor == "Grey"){
+			return Color.GREY;
+		}
+		if (stringcolor == "Purple"){
+			return Color.PURPLE;
+		}
 		else {
 			return Color.BLACK;
 		}
