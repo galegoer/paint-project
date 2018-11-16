@@ -6,14 +6,14 @@ import java.util.Observable;
 import javafx.scene.canvas.GraphicsContext;
 
 /**
- * 
+ * This class is used to implement the commands to draw the shapes
+ * asked for by a mouse event.
  * @author TheCentipedeBoys
  *
  */
 
 public class Commands extends Observable implements ShapeCommand {
 	private Object obj;
-
 	
 	/**
 	 * Constructs a Commands that takes in an object

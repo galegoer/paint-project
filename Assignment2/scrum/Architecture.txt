@@ -39,7 +39,11 @@ DESIGN PATTERNS USED
 	the code. I see at least two that would greatly improve code. 
 		
 	Strategy:
-	Command: 
+	Command: Introduced this pattern to complete Bug7. The method behind it is 
+	repaint calls the operateAll method which executes all the commands in the 
+	commandqueue located in the PaintModel class. The execute command is called 
+	from the Commands class (implemented from ShapeCommand) which finds out which
+	instance the object is so it can then be drawn to the canvas.
 	Singleton:
 	Composite:
 	Factory:

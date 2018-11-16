@@ -8,8 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 
 /**
- * Implements a Panel at the bottom left of the canvas with Undo, Redo,
- * Fill, Outline, and Clear buttons.
+ * A class that when constructed implements a Panel at the bottom left of the canvas 
+ * with Undo, Redo, Fill, Outline, and Clear buttons.
  * @author TheCentipedeBoys
  */
 
