@@ -6,10 +6,21 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.GridPane;
 
+/**
+ * ColorChooserPanel is a panel that allows the choice of colors. It initializes a variety of color choices and sets actions
+ * for what color a new object will use.
+ * @author TheCentipedeBoys
+ *
+ */
+
 public class ColorChooserPanel extends GridPane implements EventHandler<ActionEvent> {
 	
 	private View view;
-	
+/**
+ * Initializes the ColorChooserPanel, in the constructor. The view is created and the buttons
+ * are added as a variety of choices, the string buttons are placed on the right side and the constructor references an actionevent.
+ * @param view for the buttons.
+ */
 	public ColorChooserPanel(View view) {
 		final ToggleGroup group = new ToggleGroup();
 		this.view = view;
@@ -29,6 +40,9 @@ public class ColorChooserPanel extends GridPane implements EventHandler<ActionEv
 			button.setOnAction(this);
 		}
 	}
+/**
+ * handles what the action of selecting a button does, which in this case sets the color
+ */
 	@Override
 	public void handle(ActionEvent event) {
 		String command = ((ToggleButton) event.getSource()).getAccessibleText();
