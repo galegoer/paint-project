@@ -107,6 +107,6 @@ Nov 14, 2018
 	Obstacles : CSC236, not enough time.
 
 Nov 15, 2018
-	Yesterday : 
-	Today     : 
-	Obstacles : 
+	Yesterday : Failed 236, split up bug10 began work on it.
+	Today     : Tried to help with Bug8. Added Javadoc for my clases and functions.
+	Obstacles : Couldn't complete the bugs.

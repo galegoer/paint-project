@@ -4,90 +4,6 @@
 # 1 Color chooser UI (which could be a USER STORY)
 # 2 Implementation of selected color into the drawing stream.
 
---------------------------------------------------------------------------
-TYPE     : BUG 8 : UTORID
-NAME     : Architecture for handling shape modifiers can be improved 
-OWNER    : 
-PRIORITY :
-ESTIMATE : 
-ISSUE    : The architecture can be improved if we implement the Command Design 
-Pattern to handle changes to the graphics contex such as changing drawing 
-color, stroke width etc. You can accomplished this by wrapping the changes
-to the graphics context in a DrawingCommand. This way these changes can be
-added to the Bug 2.1 DrawingCommand list. That is, these new types of 
-DrawingCommands appear on PaintPanel's list right along side 
-the Shape type DrawingCommands.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : BUG 9 : UTORID
-NAME     : Architecture behind choosing drawing mode is poor
-OWNER    : 
-PRIORITY :
-ESTIMATE : 
-ISSUE    : A better architecture behind selecting a drawing mode can be created 
-by implementing the Factory Design Pattern as follows:
-
-The factory design pattern should be used by the paint buttons. 
-The factory is responsible for creating different ShapeManipulatorStrategy 
-instances (see BUG 2.4). That is, when a button is pressed, the appropriate 
-ShapeManipulatorStrategy is created and installed in the PaintPanel. 
-Note that you can associate text with a button, even if you 
-display an ImageIcon. The string attached to the button causes the right choice 
-of object creation.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : BUG 10 : UTORID
-NAME     : Architecture behind creating shape instances is poor
-OWNER    : 
-PRIORITY :
-ESTIMATE : 
-ISSUE    : A better architecture for creating shape instances so that it is 
-more flexible, and easier to work with can be created using the Strategy Design 
-pattern as follows:
-
-Create class/abstract class/interface  ShapeManipulatorStrategy as well 
-as subclasses/implementators for each type of Shape. Call these the
-concrete ShapeNamipulatorStrategies
-
-The concrete ShapeManipulatorStrategies are responsible for 
-
-1. Creating instances of Shape and putting them on top of 
-   the PaintModel command stack.
-
-2. Calling the PaintPanel repaint at appropriate times.
-
-This strategy can be put in place either by having PaintPanel's mouse 
-events forwarded through PaintPanel into the current strategy, or by 
-simply switching the PaintPanel's event handlers as appropriate.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : BUG 14 : UTORID
-NAME     : Architecture behind creating shape instances is poor
-OWNER    : 
-PRIORITY :
-ESTIMATE : 
-ISSUE    : A better architecture for creating shape instances so that it is 
-more flexible, and easier to work with can be created using the Strategy Design 
-pattern as follows:
-
-Create class/abstract class/interface  ShapeManipulatorStrategy as well 
-as subclasses/implementators for each type of Shape. Call these the
-concrete ShapeNamipulatorStrategies
-
-The concrete ShapeManipulatorStrategies are responsible for 
-
-1. Understanding how mouse events modify the shape at the top of the 
-   PaintModel command stack.
-
-This strategy can be put in place either by having PaintPanel's mouse 
-events forwarded through PaintPanel into the current strategy, or by 
-simply switching the PaintPanel's event handlers as appropriate. 
-THIS IS BUG 10 SECOND PART
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-
-
-
 
 # COMPLETED USER STORIES/BUGS BELOW ###########################################
 --------------------------------------------------------------------------
@@ -405,4 +321,85 @@ PRIORITY :
 ESTIMATE : 
 ISSUE    : When undoing or redoing a move we delete the whole thing. Implement
 	   so that it is line by line.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG 9 : UTORID
+NAME     : Architecture behind choosing drawing mode is poor
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+ISSUE    : A better architecture behind selecting a drawing mode can be created 
+by implementing the Factory Design Pattern as follows:
+
+The factory design pattern should be used by the paint buttons. 
+The factory is responsible for creating different ShapeManipulatorStrategy 
+instances (see BUG 2.4). That is, when a button is pressed, the appropriate 
+ShapeManipulatorStrategy is created and installed in the PaintPanel. 
+Note that you can associate text with a button, even if you 
+display an ImageIcon. The string attached to the button causes the right choice 
+of object creation.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG 10 : UTORID
+NAME     : Architecture behind creating shape instances is poor
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+ISSUE    : A better architecture for creating shape instances so that it is 
+more flexible, and easier to work with can be created using the Strategy Design 
+pattern as follows:
+
+Create class/abstract class/interface  ShapeManipulatorStrategy as well 
+as subclasses/implementators for each type of Shape. Call these the
+concrete ShapeNamipulatorStrategies
+
+The concrete ShapeManipulatorStrategies are responsible for 
+
+1. Creating instances of Shape and putting them on top of 
+   the PaintModel command stack.
+
+2. Calling the PaintPanel repaint at appropriate times.
+
+This strategy can be put in place either by having PaintPanel's mouse 
+events forwarded through PaintPanel into the current strategy, or by 
+simply switching the PaintPanel's event handlers as appropriate.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG 14 : UTORID
+NAME     : Architecture behind creating shape instances is poor
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+ISSUE    : A better architecture for creating shape instances so that it is 
+more flexible, and easier to work with can be created using the Strategy Design 
+pattern as follows:
+
+Create class/abstract class/interface  ShapeManipulatorStrategy as well 
+as subclasses/implementators for each type of Shape. Call these the
+concrete ShapeNamipulatorStrategies
+
+The concrete ShapeManipulatorStrategies are responsible for 
+
+1. Understanding how mouse events modify the shape at the top of the 
+   PaintModel command stack.
+
+This strategy can be put in place either by having PaintPanel's mouse 
+events forwarded through PaintPanel into the current strategy, or by 
+simply switching the PaintPanel's event handlers as appropriate. 
+THIS IS BUG 10 SECOND PART
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG 8 : UTORID
+NAME     : Architecture for handling shape modifiers can be improved 
+OWNER    : 
+PRIORITY :
+ESTIMATE : 
+ISSUE    : The architecture can be improved if we implement the Command Design 
+Pattern to handle changes to the graphics contex such as changing drawing 
+color, stroke width etc. You can accomplished this by wrapping the changes
+to the graphics context in a DrawingCommand. This way these changes can be
+added to the Bug 2.1 DrawingCommand list. That is, these new types of 
+DrawingCommands appear on PaintPanel's list right along side 
+the Shape type DrawingCommands.
+--------------------------------------------------------------------------
 --------------------------------------------------------------------------

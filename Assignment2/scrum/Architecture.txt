@@ -50,17 +50,19 @@ DESIGN PATTERNS USED
 	Overall, this strategy allows use to add new shapes of our own by creating a new concrete shapeBehaviour strategy. This also
 	keeps code simple because we do not need to scroll through blocks of code to find a specific block associated to a specific shape.
 	We can simply fix/modify any bugs associated to a shape by fixing code within its own behaviour strategy.
+
 	Command:
 	arnejagu: Tried implementing Command design pattern for Bug8 so that it would work with colors and thickness but didn't have enough time
 	to think of a implementation that could make the overall program more efficient. All the ways that I could think of implementing it would have 
 	resulted in program becoming more inefficient. This is reason we did not implement Bug8
 
 	Strategy:
-	Command: Introduced this pattern to complete Bug7. The method behind it is 
-	repaint calls the operateAll method which executes all the commands in the 
-	commandqueue located in the PaintModel class. The execute command is called 
-	from the Commands class (implemented from ShapeCommand) which finds out which
-	instance the object is so it can then be drawn to the canvas.
+
+	Command: 
+	galegoer: Introduced this pattern to complete Bug7. The method behind it is repaint calls the operateAll method which executes all the commands in the 
+	commandqueue located in the PaintModel class. The execute command is called from the Commands class (implemented from ShapeCommand) which finds out which
+	instance the object is so it can then be drawn to the canvas. This helped to get rid of the arraylists for each individual object and instead we now have
+	a single arraylist of commands.
 
 	Singleton:
 	Composite:
