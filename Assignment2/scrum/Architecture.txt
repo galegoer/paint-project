@@ -50,7 +50,11 @@ DESIGN PATTERNS USED
 	Overall, this strategy allows use to add new shapes of our own by creating a new concrete shapeBehaviour strategy. This also
 	keeps code simple because we do not need to scroll through blocks of code to find a specific block associated to a specific shape.
 	We can simply fix/modify any bugs associated to a shape by fixing code within its own behaviour strategy.
-	Command: 
+	Command:
+	arnejagu: Tried implementing Command design pattern for Bug8 so that it would work with colors and thickness but didn't have enough time
+	to think of a implementation that could make the overall program more efficient. All the ways that I could think of implementing it would have 
+	resulted in program becoming more inefficient. This is reason we did not implement Bug8
+	 
 	Singleton:
 	Composite:
 	Factory:
