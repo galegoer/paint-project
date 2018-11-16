@@ -44,8 +44,8 @@ public class roundedRectBehaviour implements shapeBehaviour {
 	 */
 	public void mouseDragged(MouseEvent e) {
 		// Begin
-		int x1 = roundedrectangle.getCentre().getX();
-		int y1 = roundedrectangle.getCentre().getY();
+		int x1 = roundedrectangle.getTopLeft().getX();
+		int y1 = roundedrectangle.getTopLeft().getY();
 		// mouse release or end
 		int x2 = (int) e.getX();
 		int y2 = (int) e.getY();
@@ -57,7 +57,7 @@ public class roundedRectBehaviour implements shapeBehaviour {
 			Point centre = new Point(x1, y1);
 			roundedrectangle.setHeight(y2 - y1);
 			roundedrectangle.setWidth(x2 - x1);
-			roundedrectangle.setCentre(centre);
+			roundedrectangle.setTopLeft(centre);
 			roundedrectangle.setArcHeight((int)((y2 - y1)* (double)(0.2)));
 			roundedrectangle.setArcWidth((int)((x2 - x1)* (double)(0.2)));
 		}
@@ -124,8 +124,8 @@ public class roundedRectBehaviour implements shapeBehaviour {
 		if (roundedrectangle != null) {
 
 			// EDIT THIS BLOCK OF CODE TO SET ARC HEIGHT AND WIDTH.
-			int x1 = roundedrectangle.getCentre().getX();
-			int y1 = roundedrectangle.getCentre().getY();
+			int x1 = roundedrectangle.getTopLeft().getX();
+			int y1 = roundedrectangle.getTopLeft().getY();
 			// mouse release or end
 			int x2 = (int) e.getX();
 			int y2 = (int) e.getY();
@@ -185,6 +185,10 @@ public class roundedRectBehaviour implements shapeBehaviour {
 		// TODO Auto-generated method stub
 
 	}
+	/**
+	 * Gets the current value of slider and assigns it to thick.
+	 * @param slider_num	current slider value.
+	 */
 	public void setstrokethickness(int slider_num) {
 		thick = slider_num;
 

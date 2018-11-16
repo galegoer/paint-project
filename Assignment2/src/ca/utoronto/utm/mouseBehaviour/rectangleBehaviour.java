@@ -46,8 +46,8 @@ public class rectangleBehaviour implements shapeBehaviour {
 	public void mouseDragged(MouseEvent e) {
 
 		// Begin
-		int x1 = rectangle.getCentre().getX();
-		int y1 = rectangle.getCentre().getY();
+		int x1 = rectangle.getTopLeft().getX();
+		int y1 = rectangle.getTopLeft().getY();
 		// mouse release or end
 		int x2 = (int) e.getX();
 		int y2 = (int) e.getY();
@@ -57,7 +57,7 @@ public class rectangleBehaviour implements shapeBehaviour {
 			Point centre = new Point(x1, y1);
 			rectangle.setHeight(y2 - y1);
 			rectangle.setWidth(x2 - x1);
-			rectangle.setCentre(centre);
+			rectangle.setTopLeft(centre);
 		}
 		// Scenario 2
 		else if (x1 > x2 && y2 < y1) {
@@ -112,8 +112,8 @@ public class rectangleBehaviour implements shapeBehaviour {
 		if (rectangle != null) {
 			// Begin
 
-			int x1 = rectangle.getCentre().getX();
-			int y1 = rectangle.getCentre().getY();
+			int x1 = rectangle.getTopLeft().getX();
+			int y1 = rectangle.getTopLeft().getY();
 			// mouse release or end
 			int x2 = (int) e.getX();
 			int y2 = (int) e.getY();

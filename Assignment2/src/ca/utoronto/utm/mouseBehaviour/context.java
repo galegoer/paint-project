@@ -23,21 +23,23 @@ public class context {
 	View view;
 	String lineStyle;
 	
-	/**Creates a new context object
-	 * 
+	/**
+	 * Creates a new context object
 	 */
 	public context() {
 		return;
 	}
 
 	
-	/**Sets the context model to the given paint model
+	/**
+	 * Sets the context model to the given paint model
 	 * @param s the given paint model
 	 */
 	public void setModel(PaintModel s) {
 		this.model = s;
 	}
-	/**sets the context color to the given color
+	/**
+	 * sets the context color to the given color
 	 * @param s the given color
 	 */
 	public void setColor(String s) {
@@ -50,15 +52,16 @@ public class context {
 	public void setThick(int s) {
 		this.thick = s;
 	}
-	/**sets the modes to an arraylist containing the current mode
+	/**
+	 * sets the modes to an arraylist containing the current mode
 	 * @param s the arraylist modes should be set to
 	 */
 	public void setModes(ArrayList<String> s) {
 		this.modes = s;
 	}
 	
-	/**Creates the correct shapebehaviour strategy corresponding to the given mode, represented by the string s.
-	 * 
+	/**
+	 * Creates the correct shapebehaviour strategy corresponding to the given mode, represented by the string s.
 	 * @param s the mode that the user is currently on
 	 */
 	public void setBehaviour(String s) {
@@ -111,8 +114,8 @@ public class context {
 		}
 	}
 	
-	/**sets the view of the context object to the given view
-	 * 
+	/**
+	 * sets the view of the context object to the given view
 	 * @param view2 the given view
 	 */
 	public void setView(View view2) {

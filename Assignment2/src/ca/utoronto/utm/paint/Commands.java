@@ -34,11 +34,15 @@ public class Commands extends Observable implements ShapeCommand {
 			this.createRoundedRect((RoundedRectangle) obj, g);
 		}
 	}
-	
+
 	public Object getObj() {
 		return this.obj;
 	}
-
+	/**
+	 * 
+	 * @param c
+	 * @param g
+	 */
 	private void createLine(Line c, GraphicsContext g) {
 		int x = c.getCentre().getX();
 		int y = c.getCentre().getY();
@@ -55,6 +59,12 @@ public class Commands extends Observable implements ShapeCommand {
 		}
 
 	}
+	
+	/**
+	 * 
+	 * @param p
+	 * @param g
+	 */
 	private void createPolyLine (PolyLine p, GraphicsContext g) {
 		ArrayList<Point> polyLinePoints = p.getList();
 		for (int i = 0; i < polyLinePoints.size() - 1; i++) {
@@ -65,7 +75,11 @@ public class Commands extends Observable implements ShapeCommand {
 			g.strokeLine(p1.getX(), p1.getY(), p2.getX(), p2.getY());
 		}
 	}
-
+	/**
+	 * 
+	 * @param squig
+	 * @param g
+	 */
 	public void createSquig(Squiggle squig, GraphicsContext g) {
 		g.setStroke(Circle.setPaint(squig.getString())); //GETS COLOR
 		g.setLineWidth(squig.getThick());
@@ -73,6 +87,11 @@ public class Commands extends Observable implements ShapeCommand {
 			g.strokeLine(squig.getPoint(i).getX(), squig.getPoint(i).getY(), squig.getPoint(i+1).getX(), squig.getPoint(i+1).getY());
 	}
 
+	/**
+	 * 
+	 * @param c
+	 * @param g
+	 */
 	public void createCircle(Circle c, GraphicsContext g) {
 		int x = c.getCentre().getX();
 		int y = c.getCentre().getY();
@@ -88,10 +107,14 @@ public class Commands extends Observable implements ShapeCommand {
 		g.strokeOval(x - radius, y - radius, 2 * radius, 2 * radius);
 		g.strokeOval(x - radius, y - radius, 2 * radius, 2 * radius);
 	}
-
+	/**
+	 * 
+	 * @param r
+	 * @param g
+	 */
 	public void createRect(Rectangle r, GraphicsContext g) {
-		int a = r.getCentre().getX();
-		int b = r.getCentre().getY();
+		int a = r.getTopLeft().getX();
+		int b = r.getTopLeft().getY();
 		int height = r.getHeight();
 		int width = r.getWidth();
 		g.setLineWidth(r.getThick());
@@ -120,9 +143,11 @@ public class Commands extends Observable implements ShapeCommand {
 		}
 	}
 
-	// Draw Squares
-	// ArrayList<Square> squares = this.model.getSquares();
-	// for (Square r : squares) {
+	/**
+	 * 
+	 * @param r
+	 * @param g
+	 */
 	public void createSquare(Square r, GraphicsContext g) {
 		int a = r.getCentre().getX();
 		int b = r.getCentre().getY();
@@ -154,9 +179,14 @@ public class Commands extends Observable implements ShapeCommand {
 			}
 		}
 	}
+	/**
+	 * 
+	 * @param p
+	 * @param g
+	 */
 	public void createRoundedRect(RoundedRectangle p, GraphicsContext g) {	
-		int a = p.getCentre().getX();
-		int b = p.getCentre().getY();
+		int a = p.getTopLeft().getX();
+		int b = p.getTopLeft().getY();
 		int height = p.getHeight();
 		int width = p.getWidth();
 		int arch = p.getArcHeight();

@@ -22,7 +22,7 @@ public class squareBehaviour implements shapeBehaviour {
 	static Square square;
 	int thick;
 	private int version;
-	
+
 	/**
 	 * Creates a new squareBehaviour strategy
 	 * @param s An arrayList of strings representing the current mode(s)
@@ -271,6 +271,6 @@ public class squareBehaviour implements shapeBehaviour {
 	@Override
 	public void mouseEntered(MouseEvent e) {
 	}
-	
+
 
 }

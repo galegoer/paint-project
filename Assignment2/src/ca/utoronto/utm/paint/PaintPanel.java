@@ -89,14 +89,16 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 	public void setColor(String color) {
 		this.color = color;
 	}
-
+	/**
+	 * Sets the thickness of this.thick
+	 * @param thick	current thickness
+	 */
 	public void setThick(int thick) {
 		this.thick = thick;
 	}
 
 	@Override
 	public void handle(MouseEvent event) {
-
 		c.setModel(this.model);
 		c.setColor(this.color);
 		c.setModes(this.modes);
@@ -106,7 +108,10 @@ class PaintPanel extends StackPane implements Observer, EventHandler<MouseEvent>
 		c.move(event);
 	}
 
-	// might need to remove
+	/**
+	 * Gets the current value of slider and assigns it to thick.
+	 * @param slider_num	current slider value.
+	 */
 	public void setstrokethickness(int slider_num) {
 		thick = slider_num;
 	}
