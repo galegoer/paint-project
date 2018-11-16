@@ -31,9 +31,7 @@ public class Commands extends Observable implements ShapeCommand {
 	@Override
 
 	public void execute(GraphicsContext g) {
-		if (obj instanceof Point) {
-			//this.createPoint((Point) obj, g);
-		} else if (obj instanceof Circle) {
+		if (obj instanceof Circle) {
 			this.createCircle((Circle) obj, g);
 		} else if (obj instanceof Rectangle) {
 			this.createRect((Rectangle) obj, g);
@@ -78,6 +76,7 @@ public class Commands extends Observable implements ShapeCommand {
 			g.strokeLine(x, y, x2, y2);
 			g.setLineDashes(null);
 		} else {
+			g.strokeLine(x, y, x2, y2);
 			g.strokeLine(x, y, x2, y2);
 		}
 
@@ -164,9 +163,15 @@ public class Commands extends Observable implements ShapeCommand {
 				g.strokeRect(a, b, width, height);
 			} else if (r.getScenario() == 2) {
 				g.strokeRect(a - width, b - height, width, height);
+				g.strokeRect(a - width, b - height, width, height);
+				g.strokeRect(a - width, b - height, width, height);
 			} else if (r.getScenario() == 3) {
 				g.strokeRect(a - width, b, width, height);
+				g.strokeRect(a - width, b, width, height);
+				g.strokeRect(a - width, b, width, height);
 			} else if (r.getScenario() == 4) {
+				g.strokeRect(a, b - height, width, height);
+				g.strokeRect(a, b - height, width, height);
 				g.strokeRect(a, b - height, width, height);
 			}
 		}
