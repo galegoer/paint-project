@@ -130,7 +130,6 @@ public class roundedRectBehaviour implements shapeBehaviour {
 			int x2 = (int) e.getX();
 			int y2 = (int) e.getY();
 			// Scenario 1
-			System.out.print("hi");
 			if (x2 > x1 && y2 > y1) {
 				roundedrectangle.setScenario(1);
 				roundedrectangle.setHeight(y2 - y1);
