@@ -2,16 +2,16 @@
 # Group Member: FILL THIS IN
 Oct 28, 2018
 	Yesterday :
-	Today     :
-	Obstacles :
+	Today     :Tried to contact members of other team
+	Obstacles :They all are busy.
 
 Oct 29, 2018
-	Yesterday :
-	Today     :
+	Yesterday :Tried to contact members of other team
+	Today     :Filled in the required info for members.txt.
 	Obstacles :
 
 Oct 30, 2018
-	Yesterday : 
+	Yesterday : Filled in the required info for members.txt.
 	Today     : Met with the group an divided the work. Also tried to understand how branching works.
 	Obstacles :
 
@@ -88,8 +88,9 @@ Nov 13, 2018
 Nov 14, 2018
 	Yesterday :Worked on Bug8.
 	Today     :Worked on Bug8 a bit. Hopefully I'll finish it by the end of tom.
-	Obstacles :Had a csc test today at 8pm. So spent most of the time preparing for it and didn't get much time for Bug8.
-Nov 14, 2018
+	Obstacles :Had a csc 236 test today at 8pm. So spent most of the time preparing for it and didn't get much time for Bug8.
+	
+Nov 15, 2018
 	Yesterday :Worked on Bug8.
 	Today     :Worked on Bug8. Gave up on Bug8. Finished JavaDocs.
 	Obstacles :Had lectures and tutorials the whole day because of which didn't get enough time to work on it today.
