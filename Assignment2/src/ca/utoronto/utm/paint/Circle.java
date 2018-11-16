@@ -123,6 +123,24 @@ public class Circle extends Shape{
 		if (stringcolor == "Purple"){
 			return Color.PURPLE;
 		}
+		if (stringcolor == "Crimson"){
+			return Color.CRIMSON;
+		}
+		if (stringcolor == "Chocolate"){
+			return Color.CHOCOLATE;
+		}
+		if (stringcolor == "Cyan"){
+			return Color.CYAN;
+			}
+		if (stringcolor == "Darkblue"){
+			return Color.DARKBLUE;
+			}
+		if (stringcolor == "Darkcyan"){
+			return Color.DARKCYAN;
+			}
+		if (stringcolor == "Ghostwhite"){
+			return Color.GHOSTWHITE;
+			}
 		else {
 			return Color.BLACK;
 		}

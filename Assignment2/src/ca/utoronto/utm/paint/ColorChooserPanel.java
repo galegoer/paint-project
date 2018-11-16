@@ -25,7 +25,8 @@ public class ColorChooserPanel extends GridPane implements EventHandler<ActionEv
 		final ToggleGroup group = new ToggleGroup();
 		this.view = view;
 		
-		String [] buttonLabels = {"Red", "Green", "Blue","Pink", "Orange", "Yellow", "Brown", "Purple", "Grey", "Black"};
+		String [] buttonLabels = {"Ghostwhite","Red", "Crimson", "Green", "Blue","Pink", "Orange", "Yellow", "Brown", "Purple", "Chocolate", "Cyan", "Darkblue", "Darkcyan",
+				"Grey", "Black", };
 	
 		int row = 0;
 	
