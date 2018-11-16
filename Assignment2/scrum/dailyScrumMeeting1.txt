@@ -93,3 +93,9 @@ Nov 14, 2018
 	Yesterday : Tried to study for 236.
 	Today     : Failed 236. Will begin working on Bug10
 	Obstacles : Might not pass 236. RIP
+
+
+Nov 14, 2018
+	Yesterday : Did 236 test
+	Today     : Finished adding javadoc to all functions I did, simplified some code where I could
+	Obstacles : None
