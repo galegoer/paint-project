@@ -1,0 +1,3 @@
+Total days,78
+Days mentioning bugs,28
+Days mentioning stories,19

@@ -1,0 +1,4 @@
+Total number of bugs,18
+Unassigned bugs,14
+Total number of stories,15
+Unassigned stories,13

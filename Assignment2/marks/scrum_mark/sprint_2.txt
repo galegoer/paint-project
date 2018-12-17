@@ -1,0 +1,95 @@
+# Sprint 2 Nov 3, 2018
+# Sprint 2 Backlog UserStories go below
+
+TYPE : USER STORY 9: askarya2
+NAME : Clear canvas button
+OWNER :
+PRIORITY :2
+ESTIMATE : 4 Hour
+AS A : user
+I WANT : Have a button that can be pressed to reset the canvas to a blank state.
+SO THAT : The canvas can be cleared.
+--------------------------------------------------------------------------
+TYPE : USER STORY 10: askarya2
+NAME : Backup one step
+OWNER :
+PRIORITY :3
+ESTIMATE : 4 Hour
+AS A : user
+I WANT : Have a button that can be pressed to remove the last drawn something, if i drew a line I want to be able to remove t, it I made a circle with the click of a button iwant it gone.
+SO THAT : A user can easily delete a mistake without having to reset and clear the entire canvas.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE : BUG 9 : askarya2
+NAME : Architecture behind choosing drawing mode is poor
+OWNER :
+PRIORITY :
+ESTIMATE :
+ISSUE : A better architecture behind selecting a drawing mode can be created
+by implementing the Factory Design Pattern as follows:
+
+The factory design pattern should be used by the paint buttons.
+The factory is responsible for creating different ShapeManipulatorStrategy
+instances (see BUG 2.4). That is, when a button is pressed, the appropriate
+ShapeManipulatorStrategy is created and installed in the PaintPanel.
+Note that you can associate text with a button, even if you
+display an ImageIcon. The string attached to the button causes the right choice
+of object creation.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE : BUG 3 : liwill13
+NAME : Architecture behind choosing selection mode is poor
+OWNER :
+PRIORITY :
+ESTIMATE :
+ISSUE : Code is not modular and is difficult to expand. Need a better
+architecture behind selecting a drawing mode, and handling
+the drawing events. Consider some design patterns here.
+Refactor ShapeChooserPanel and PaintPanel to get rid of the
+'if' blocks in the PaintPanel mouse event code.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE : USER STORY 7 : arnejagu
+NAME : Line thickness selector
+OWNER :
+PRIORITY :
+ESTIMATE : 12 hours.
+AS A : user
+I WANT : To be able to select the current line thickness, to be applied
+to subsequent shapes. Example:
+select fill style outline
+selects line thickness 1
+mode circle
+draw a circle
+draw a circle
+mode rectangle
+draw a rectangle
+select line thickness 9
+draw a rectangle
+draw a rectangle
+select mode squiggle
+draw a squiggle
+results in two thinly outlined circles and a thinly outlined
+rectangle as well as two thickly outlined rectangles and a thick squiggle
+SO THAT :
+--------------------------------------------------------------------------
+TYPE : USER STORY 11 : liwill13
+NAME : Implement Poly Line
+OWNER :
+PRIORITY :
+ESTIMATE :
+AS A : user
+I WANT : to be able to select the polyLine mode and click to create points to form a polyLine
+SO THAT : I can draw polyLines on my canvas
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE : USER STORY 12 : liwill13
+NAME : Implement Line
+OWNER :
+PRIORITY :
+ESTIMATE :
+ISSUE : YOU FILL THIS ONE IN!!
+--------------------------------------------------------------------------
+
+>>>>>>> UserStory12
+

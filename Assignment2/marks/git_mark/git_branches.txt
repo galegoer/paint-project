@@ -1,0 +1,400 @@
+* a044662 - Thu, 15 Nov 2018 23:53:21 -0500 (11 days ago) (HEAD -> master, origin/master, origin/HEAD)
+|           Colors to fit the new window size - askarya2
+*   aae73d4 - Thu, 15 Nov 2018 23:40:41 -0500 (11 days ago)
+|\            merging - Eric Galego
+| * 4311ded - Thu, 15 Nov 2018 23:34:48 -0500 (11 days ago)
+| |           daily scrum - liwill13
+* | 92c6e61 - Thu, 15 Nov 2018 23:38:54 -0500 (11 days ago)
+| |           dailyScrum galegoer - Eric Galego
+* | 129aa6d - Thu, 15 Nov 2018 23:36:56 -0500 (11 days ago)
+| |           dailyScrum galegoer - Eric Galego
+* | 734a455 - Thu, 15 Nov 2018 23:36:15 -0500 (11 days ago)
+|/            dailyScrum galegoer - Eric Galego
+| * 53a435b - Thu, 15 Nov 2018 23:44:40 -0500 (11 days ago) (origin/color2)
+|/            shoooot - askarya2
+* 2d275bd - Thu, 15 Nov 2018 23:25:57 -0500 (11 days ago)
+|           Another quick color fix - askarya2
+* 483ed26 - Thu, 15 Nov 2018 23:20:26 -0500 (11 days ago)
+|           quick color fix - askarya2
+* e4dc8ca - Thu, 15 Nov 2018 23:13:57 -0500 (11 days ago) (origin/morecolors)
+|           More colors added - askarya2
+*   eb2993a - Thu, 15 Nov 2018 22:52:35 -0500 (11 days ago)
+|\            Merge branch 'master' of https://mcsscm.utm.utoronto.ca/git/207/18f/repo_a2_TheCentipedeBoys - askarya2
+| * df87640 - Thu, 15 Nov 2018 22:28:57 -0500 (11 days ago)
+| |           scrum update - arnejagu
+* | 376ebc0 - Thu, 15 Nov 2018 22:19:00 -0500 (11 days ago) (origin/javadocaskarya)
+|/            Javadoc update askarya2 - askarya2
+*   2248979 - Thu, 15 Nov 2018 22:00:21 -0500 (11 days ago)
+|\            merging - Eric Galego
+| * 9e63a82 - Thu, 15 Nov 2018 20:09:16 -0500 (11 days ago) (origin/Javadoc_galegoer)
+| |           javadoc complete - Eric Galego
+| * 032ee34 - Thu, 15 Nov 2018 18:18:57 -0500 (11 days ago)
+| |           some more changes - Eric Galego
+| * 905b676 - Thu, 15 Nov 2018 14:23:41 -0500 (11 days ago)
+| |           Most of my Javadoc - Eric Galego
+* | d165942 - Thu, 15 Nov 2018 20:14:04 -0500 (11 days ago)
+| |           scrum update - arnejagu
+* | 28488ca - Thu, 15 Nov 2018 19:57:48 -0500 (11 days ago) (origin/JavaDocs)
+| |           javadocs finished - arnejagu
+* | 9a56389 - Thu, 15 Nov 2018 15:18:17 -0500 (11 days ago)
+| |           architechture modified - liwill13
+* | 60df920 - Thu, 15 Nov 2018 15:02:21 -0500 (11 days ago)
+| |           java docs merged - liwill13
+* |   ce09355 - Thu, 15 Nov 2018 15:00:39 -0500 (11 days ago)
+|\ \            Merge branch 'javadocliwill13' - liwill13
+| * | bcd729c - Thu, 15 Nov 2018 14:59:18 -0500 (11 days ago) (origin/javadocliwill13)
+| | |           javadocs complete git asd ads ad ? - liwill13
+* | | 1673415 - Wed, 14 Nov 2018 22:41:07 -0500 (12 days ago)
+| |/            scrum update - arnejagu
+|/|   
+* | fee2900 - Wed, 14 Nov 2018 22:09:11 -0500 (12 days ago)
+|/            dailyScrumMeeting2 galegoer - Eric Galego
+| * 10f39d2 - Thu, 15 Nov 2018 13:42:05 -0500 (11 days ago) (origin/Bug8)
+| |           changes - arnejagu
+| * 0cf2406 - Wed, 14 Nov 2018 22:35:09 -0500 (12 days ago)
+| |           making some more changes - arnejagu
+| * 7f23101 - Mon, 12 Nov 2018 22:56:00 -0500 (2 weeks ago)
+| |           changes - arnejagu
+| | * a66dfa2 - Wed, 14 Nov 2018 22:41:10 -0500 (12 days ago) (origin/Bug10)
+| | |           bug10 stuff - liwill13
+| | * 85260d7 - Wed, 14 Nov 2018 21:58:55 -0500 (12 days ago)
+| |/            Bug 10 started - liwill13
+|/|   
+* | 783ff49 - Wed, 14 Nov 2018 21:29:27 -0500 (12 days ago)
+| |           daily scrum - liwill13
+* | ef77f1e - Tue, 13 Nov 2018 23:09:07 -0500 (13 days ago)
+| |           daily scrum modified - liwill13
+* |   7172bbd - Tue, 13 Nov 2018 23:07:02 -0500 (13 days ago)
+|\ \            Merge branch 'master' of https://mcsscm.utm.utoronto.ca/git/207/18f/repo_a2_TheCentipedeBoys - liwill13
+| * | 08be719 - Tue, 13 Nov 2018 23:04:21 -0500 (13 days ago)
+| | |           DailyScrumMeeting2 galegoer - Eric Galego
+* | | 0066d9b - Tue, 13 Nov 2018 23:06:49 -0500 (13 days ago)
+|/ /            modified style chooser panel - liwill13
+* | 71d41a7 - Tue, 13 Nov 2018 13:59:33 -0500 (13 days ago)
+| |           backlog modified - liwill13
+* | 2ead995 - Tue, 13 Nov 2018 13:07:56 -0500 (13 days ago)
+| |           fixed error with undo and redo polylines - liwill13
+| | * 9289acc - Tue, 13 Nov 2018 20:23:58 -0500 (13 days ago) (origin/UserStory12)
+| | |           Better color panel, still not functioning - askarya2
+| | * 6f6a9cf - Tue, 13 Nov 2018 10:16:57 -0500 (13 days ago)
+| | |           Color pannel update - askarya2
+| | * f03d905 - Tue, 13 Nov 2018 00:55:20 -0500 (2 weeks ago)
+| |/            Update askarya2 - askarya2
+|/|   
+* | 03bfbe5 - Mon, 12 Nov 2018 22:33:28 -0500 (2 weeks ago)
+|/            dailyScrumMeeting2 galegoer - Eric Galego
+* a16b580 - Mon, 12 Nov 2018 21:17:59 -0500 (2 weeks ago)
+|           daily scrum update - liwill13
+* 0dca413 - Mon, 12 Nov 2018 20:55:36 -0500 (2 weeks ago) (origin/UserStory14)
+|           Userstory 14 Complete - liwill13
+* 90a9018 - Mon, 12 Nov 2018 19:06:15 -0500 (2 weeks ago)
+|           polyfeedback in progress - liwill13
+* 0099acf - Mon, 12 Nov 2018 17:33:57 -0500 (2 weeks ago)
+|           no notable change... - liwill13
+*   341135c - Mon, 12 Nov 2018 17:08:45 -0500 (2 weeks ago) (origin/UserStory10)
+|\            Merging - Eric Galego
+| * d4c0a76 - Mon, 12 Nov 2018 11:42:32 -0500 (2 weeks ago) (origin/UserStory15)
+| |           Finished UserStory15 - arnejagu
+* | da89a32 - Mon, 12 Nov 2018 17:06:13 -0500 (2 weeks ago)
+|/            UserStory10 complete - Eric Galego
+* f390da4 - Mon, 12 Nov 2018 01:31:22 -0500 (2 weeks ago) (origin/UserStory13)
+|           UserStory13 finished - arnejagu
+* acb3b1f - Sun, 11 Nov 2018 23:45:57 -0500 (2 weeks ago)
+|           daily scrum - liwill13
+* 5913cc8 - Sun, 11 Nov 2018 23:44:40 -0500 (2 weeks ago)
+|           DailyScrumMeeting2 galegoer - Eric Galego
+* 1232310 - Sun, 11 Nov 2018 23:30:54 -0500 (2 weeks ago)
+|           Fixed some bugs with polyLine - liwill13
+*   a7668a2 - Sun, 11 Nov 2018 22:50:52 -0500 (2 weeks ago)
+|\            Bug5 merge complete - Eric Galego
+| *   663dc2b - Sun, 11 Nov 2018 15:17:58 -0500 (2 weeks ago)
+| |\            UserStory11 Merged - liwill13
+| | * 0c595ea - Sun, 11 Nov 2018 15:00:21 -0500 (2 weeks ago) (origin/UserStory11)
+| | |           UserStory11 Complete - liwill13
+| | * 427c101 - Sat, 10 Nov 2018 21:34:56 -0500 (2 weeks ago)
+| | |           PolyLine nearly complete - liwill13
+| | * 95261b4 - Sat, 10 Nov 2018 19:51:08 -0500 (2 weeks ago)
+| | |           Temporary added Line - liwill13
+| | * 82dab73 - Sat, 10 Nov 2018 19:39:39 -0500 (2 weeks ago)
+| | |           PolyLine in progress - liwill13
+| | * a350f0b - Fri, 9 Nov 2018 22:58:37 -0500 (2 weeks ago)
+| | |           PolyLine implmentation complete with some bugs - liwill13
+| * |   be95ddd - Sun, 11 Nov 2018 14:51:54 -0500 (2 weeks ago)
+| |\ \            UserStory12 Line merged - liwill13
+| | * | 685aedb - Sun, 11 Nov 2018 14:08:51 -0500 (2 weeks ago)
+| | | |           finishing up - liwill13
+| | * | b110560 - Fri, 9 Nov 2018 16:16:29 -0500 (2 weeks ago)
+| | |/            Userstory12 Finished - liwill13
+| * | fe7b446 - Sun, 11 Nov 2018 13:26:44 -0500 (2 weeks ago)
+| | |           backlog update - liwill13
+| * | 274296d - Sun, 11 Nov 2018 13:20:17 -0500 (2 weeks ago)
+| | |           backlog update - liwill13
+| * | 9dc50e1 - Sat, 10 Nov 2018 23:56:20 -0500 (2 weeks ago)
+| | |           dailyScrumMeeting2 galegoer - Eric Galego
+| * | 1bb9a48 - Sun, 11 Nov 2018 04:28:18 -0500 (2 weeks ago)
+| | |           Scrum update - askarya2
+| * | c89aee2 - Sat, 10 Nov 2018 21:38:10 -0500 (2 weeks ago)
+| | |           Daily scrum update - liwill13
+| * | 25e5c28 - Sat, 10 Nov 2018 19:50:07 -0500 (2 weeks ago)
+| | |           made some changes - arnejagu
+| * | 6ce37f1 - Fri, 9 Nov 2018 23:59:43 -0500 (2 weeks ago)
+| | |           dailyScrumMeeting2 galegoer - Eric Galego
+| * | c9cb874 - Fri, 9 Nov 2018 23:01:41 -0500 (2 weeks ago)
+| | |           Scrum update, askarya2 -_____- - askarya2
+| * | fbc4632 - Fri, 9 Nov 2018 23:00:24 -0500 (2 weeks ago)
+| | |           Daily scrum updated - liwill13
+* | | 93a6061 - Sun, 11 Nov 2018 22:00:40 -0500 (2 weeks ago)
+| | |           Bug5 complete - talk2
+* | | 55ee054 - Sat, 10 Nov 2018 23:53:49 -0500 (2 weeks ago)
+| | |           Squiggle still not working - Eric Galego
+* | | 4e681a1 - Sat, 10 Nov 2018 23:27:35 -0500 (2 weeks ago)
+| | |           Squiggle is dotted line - Eric Galego
+* | | 2f12d68 - Sat, 10 Nov 2018 15:15:27 -0500 (2 weeks ago)
+| | |           some changes - Eric Galego
+* | | 4c8f3fb - Fri, 9 Nov 2018 23:54:01 -0500 (2 weeks ago)
+|/ /            Squiggle almost done - Eric Galego
+* | 5998a0d - Fri, 9 Nov 2018 17:12:36 -0500 (2 weeks ago)
+| |           Some more updates to Backlogs - Eric Galego
+* | dbc6695 - Fri, 9 Nov 2018 17:01:16 -0500 (2 weeks ago) (origin/Bug12)
+| |           Bug12 Complete - Eric Galego
+* | 4a88f3f - Fri, 9 Nov 2018 16:41:20 -0500 (2 weeks ago)
+| |           Updated backlogs - Eric Galego
+* |   9bb75e6 - Fri, 9 Nov 2018 16:24:59 -0500 (2 weeks ago) (origin/Bug4)
+|\ \            Fixed merge Bug4 - Eric Galego
+| |/  
+| * 1a3e5cc - Fri, 9 Nov 2018 00:05:20 -0500 (3 weeks ago)
+| |           Scrum update - arnejagu
+| * ebf50f9 - Fri, 9 Nov 2018 00:02:50 -0500 (3 weeks ago)
+| |           Deleted Unneccessary File - Eric Galego
+| * d896316 - Thu, 8 Nov 2018 23:59:15 -0500 (3 weeks ago)
+| |           dailyScrumMeeting2 galegoer - Eric Galego
+| * a68e57e - Thu, 8 Nov 2018 23:51:24 -0500 (3 weeks ago)
+| |           scrum - arnejagu
+| *   75ca510 - Thu, 8 Nov 2018 23:47:31 -0500 (3 weeks ago)
+| |\            UserStory7 done arnejagu - arnejagu
+| | * 5698964 - Thu, 8 Nov 2018 23:33:03 -0500 (3 weeks ago)
+| | |           Product/sprint log updated - liwill13
+| | * 6d1a403 - Thu, 8 Nov 2018 23:12:23 -0500 (3 weeks ago)
+| | |           sprintbacklog update - liwill13
+| | * e73764d - Thu, 8 Nov 2018 23:02:05 -0500 (3 weeks ago)
+| | |           Scrum update askarya2 - askarya2
+| * |   882bc87 - Thu, 8 Nov 2018 23:44:25 -0500 (3 weeks ago)
+| |\ \            UserStory7 arnejagu - arnejagu
+| | |/  
+| |/|   
+| | * e75a7b4 - Thu, 8 Nov 2018 22:42:22 -0500 (3 weeks ago) (origin/UserStory7)
+| | |           UserStory7 - arnejagu
+| * | 43d16c3 - Thu, 8 Nov 2018 22:31:51 -0500 (3 weeks ago)
+| | |           Daily scrum updated - liwill13
+| * |   7a42880 - Thu, 8 Nov 2018 22:28:53 -0500 (3 weeks ago)
+| |\ \            Merge branch 'master' of https://mcsscm.utm.utoronto.ca/git/207/18f/repo_a2_TheCentipedeBoys - liwill13
+| | |/  
+| | * cac57e8 - Wed, 7 Nov 2018 23:59:08 -0500 (3 weeks ago)
+| | |           DailyScrumMeeting2 galegoer - Eric Galego
+| | * ae18daf - Wed, 7 Nov 2018 23:43:06 -0500 (3 weeks ago)
+| | |           Scrum meeting update - arnejagu
+| * |   4713199 - Thu, 8 Nov 2018 22:28:20 -0500 (3 weeks ago)
+| |\ \            bug3 merged - liwill13
+| | |/  
+| |/|   
+| | * b297795 - Thu, 8 Nov 2018 22:12:29 -0500 (3 weeks ago) (origin/Bug3)
+| | |           Bug3 complete - liwill13
+| | * e7b2df6 - Thu, 8 Nov 2018 14:41:47 -0500 (3 weeks ago)
+| | |           Circle and square behaviour created - liwill13
+| | * b369984 - Wed, 7 Nov 2018 23:19:58 -0500 (3 weeks ago)
+| | |           Bug3 almost complete - liwill13
+| | * 1829330 - Wed, 7 Nov 2018 22:47:42 -0500 (3 weeks ago)
+| | |           Bug3 in progress - liwill13
+| | * f29c63b - Wed, 7 Nov 2018 22:30:06 -0500 (3 weeks ago)
+| | |           Bug3 in progress - liwill13
+| * | 5db505f - Wed, 7 Nov 2018 23:27:22 -0500 (3 weeks ago)
+| | |           Dailyscrum updated - liwill13
+| * |   08e4ec1 - Wed, 7 Nov 2018 23:20:32 -0500 (3 weeks ago)
+| |\ \            Merge branch 'master' of https://mcsscm.utm.utoronto.ca/git/207/18f/repo_a2_TheCentipedeBoys - liwill13
+| | * | c737624 - Wed, 7 Nov 2018 22:34:41 -0500 (3 weeks ago)
+| | | |           Scrum update - askarya2
+| * | | 50a5819 - Wed, 7 Nov 2018 22:54:21 -0500 (3 weeks ago)
+| | |/            fixed a bracket in master - liwill13
+| |/|   
+* | | 4bed9bb - Fri, 9 Nov 2018 15:49:03 -0500 (2 weeks ago)
+| | |           Bug4 Complete - Eric Galego
+* | | a022334 - Thu, 8 Nov 2018 23:51:25 -0500 (3 weeks ago)
+| | |           Rough Command Design(Not Working) - Eric Galego
+* | | b566a53 - Wed, 7 Nov 2018 23:57:05 -0500 (3 weeks ago)
+| |/            Rough outline Design Pattern for repaint - Eric Galego
+|/|   
+| | * bcff7b2 - Wed, 7 Nov 2018 17:40:59 -0500 (3 weeks ago) (origin/Bug5)
+| |/            Bug5 some changes - Eric Galego
+|/|   
+* | 4b0bd2f - Tue, 6 Nov 2018 23:23:27 -0500 (3 weeks ago)
+|/            dailyScrumMeeting2 galegoer - Eric Galego
+* c1a426a - Tue, 6 Nov 2018 21:57:20 -0500 (3 weeks ago)
+|           Daily scrum update - liwill13
+* 8951bff - Tue, 6 Nov 2018 21:44:19 -0500 (3 weeks ago)
+|           Scrum update askarya2 - askarya2
+* d56359a - Mon, 5 Nov 2018 21:48:26 -0500 (3 weeks ago)
+|           DailyScrumMeeting2 galegoer - Eric Galego
+* 9764e35 - Mon, 5 Nov 2018 21:41:44 -0500 (3 weeks ago)
+|           Scrum update, askarya2 - askarya2
+* 10dfc79 - Mon, 5 Nov 2018 21:37:22 -0500 (3 weeks ago)
+|           daily scrum updated - liwill13
+* 3cf5f6e - Sun, 4 Nov 2018 22:30:48 -0500 (3 weeks ago)
+|           another Scrum update, askarya2 - askarya2
+* deab005 - Sun, 4 Nov 2018 22:25:38 -0500 (3 weeks ago)
+|           Daily scrum updated - liwill13
+*   154fdd2 - Sun, 4 Nov 2018 21:25:34 -0500 (3 weeks ago)
+|\            Merge branch 'master' of https://mcsscm.utm.utoronto.ca/git/207/18f/repo_a2_TheCentipedeBoys - Eric Galego
+| * 8e42cd4 - Sun, 4 Nov 2018 21:21:48 -0500 (3 weeks ago)
+| |           askarya2 another scrum update - askarya2
+* | 9dc74d6 - Sun, 4 Nov 2018 21:22:21 -0500 (3 weeks ago)
+|/            DailyScrumMeeting2 galegoer - Eric Galego
+* a898bf3 - Sun, 4 Nov 2018 20:30:06 -0500 (3 weeks ago)
+|           Clear buton completed askarya2 - askarya2
+* e70fc8d - Sun, 4 Nov 2018 20:25:11 -0500 (3 weeks ago) (origin/UserStory9)
+|           askarya2 UserStory9 Completed - askarya2
+* 7ebfbe2 - Sat, 3 Nov 2018 21:53:08 -0400 (3 weeks ago)
+|           Daily scrum modified - liwill13
+* 23b55ed - Sat, 3 Nov 2018 18:06:54 -0400 (3 weeks ago)
+|           dailyScrumMeeting2 galegoer - Eric Galego
+* 9d4072c - Sat, 3 Nov 2018 17:56:23 -0400 (3 weeks ago) (origin/UserStory6)
+|           UserStory6 Complete w/ Merges galegoer - Eric Galego
+*   32adb85 - Sat, 3 Nov 2018 17:31:33 -0400 (3 weeks ago)
+|\            Merge_head exists - Eric Galego
+| *   6859ba8 - Sat, 3 Nov 2018 17:23:13 -0400 (3 weeks ago)
+| |\            Merge branch 'icons' - liwill13
+| | * 0c485c8 - Sat, 3 Nov 2018 17:22:42 -0400 (3 weeks ago) (origin/icons)
+| | |           Color icons added - liwill13
+* | |   605b149 - Sat, 3 Nov 2018 17:29:27 -0400 (3 weeks ago)
+|\ \ \            Still Fixing - Eric Galego
+| |/ /  
+| * | 2973947 - Sat, 3 Nov 2018 17:11:25 -0400 (3 weeks ago)
+| | |           UserStory5 works for squares - askarya2
+| * | 9c04e64 - Sat, 3 Nov 2018 17:07:00 -0400 (3 weeks ago)
+| | |           user5 works for rectngle now - askarya2
+| * |   98dff26 - Sat, 3 Nov 2018 17:02:09 -0400 (3 weeks ago)
+| |\ \            UserSTory5 works for rectangles - askarya2
+| | |/  
+| * | 2f503cd - Sat, 3 Nov 2018 17:00:51 -0400 (3 weeks ago)
+| | |           Works for rectangles now too, userstory 5 - askarya2
+* | |   929fcc4 - Sat, 3 Nov 2018 17:19:53 -0400 (3 weeks ago)
+|\ \ \            Fixing with Merge UserStory6 - Eric Galego
+| | |/  
+| |/|   
+| * |   66c0e94 - Sat, 3 Nov 2018 16:41:23 -0400 (3 weeks ago)
+| |\ \            UserStory8 Merged - liwill13
+| | |/  
+| |/|   
+| | * f5f1c81 - Sat, 3 Nov 2018 16:09:11 -0400 (3 weeks ago) (origin/UserStory8)
+| | |           UserStory8 Finished - liwill13
+| | * 316b2b9 - Sat, 3 Nov 2018 15:27:16 -0400 (3 weeks ago)
+| | |           UserStory8 In Progress - liwill13
+| * | 123d9d2 - Sat, 3 Nov 2018 16:24:23 -0400 (3 weeks ago)
+| | |           User Story 5 - askarya2
+| * |   07eee1e - Sat, 3 Nov 2018 16:22:53 -0400 (3 weeks ago)
+| |\ \            UserStory5 - askarya2
+| | * | 48d7007 - Sat, 3 Nov 2018 16:12:30 -0400 (3 weeks ago) (origin/UserStory5askarya2)
+| | | |           Scrum update - askarya2
+| | * | 10ba293 - Sat, 3 Nov 2018 16:01:07 -0400 (3 weeks ago)
+| | | |           Scrum update - askarya2
+| | * | d885027 - Sat, 3 Nov 2018 15:52:37 -0400 (3 weeks ago)
+| | | |           UserStory complete for cicle and squiggle - askarya2
+| | * | 3a61671 - Fri, 2 Nov 2018 14:53:01 -0400 (3 weeks ago)
+| | | |           UserStory5, background color changed, color buttons work now - askarya2
+| | * | 4ce5f26 - Thu, 1 Nov 2018 23:33:24 -0400 (4 weeks ago)
+| | | |           askarya2 added new javaclass allowing for buttons of color choices for userstory5 - askarya2
+* | | |   8211141 - Sat, 3 Nov 2018 16:59:38 -0400 (3 weeks ago)
+|\ \ \ \            UserStory6 Complete galegoer - Eric Galego
+| |/ / /  
+| * | | e13b211 - Sat, 3 Nov 2018 15:15:28 -0400 (3 weeks ago)
+| | | |           Scrum meeting update - arnejagu
+| * | |   48b224f - Sat, 3 Nov 2018 15:00:09 -0400 (3 weeks ago)
+| |\ \ \            Merging UserStory4 - Eric Galego
+| | |_|/  
+| |/| |   
+| | * | 2a356d4 - Sat, 3 Nov 2018 14:47:19 -0400 (3 weeks ago) (origin/UserStory4)
+| | | |           UserStory4 Complete galegoer - Eric Galego
+| | * |   55ba249 - Sat, 3 Nov 2018 01:54:04 -0400 (3 weeks ago)
+| | |\ \            UserStory4 update (Works RightSide) galegoer - Eric Galego
+| | * | | 47bae6f - Wed, 31 Oct 2018 23:21:07 -0400 (4 weeks ago)
+| | | | |           UserStory4NotTested galegoer - Eric Galego
+| * | | | 33e0154 - Sat, 3 Nov 2018 14:26:38 -0400 (3 weeks ago)
+| | | | |           Added UserStory Square - liwill13
+| * | | |   44f59d4 - Sat, 3 Nov 2018 12:44:20 -0400 (3 weeks ago)
+| |\ \ \ \            Bug2 Merged -liwill13 - liwill13
+| | |_|/ /  
+| |/| | |   
+| | * | | dfedd31 - Sat, 3 Nov 2018 12:29:46 -0400 (3 weeks ago) (origin/Bug2)
+| | | | |           Bug 2 Complete -liwill13 - liwill13
+| | * | | 2969656 - Fri, 2 Nov 2018 22:58:28 -0400 (3 weeks ago)
+| | | | |           Bug 2 In progress liwill13 - liwill13
+| * | | | d8aa1de - Fri, 2 Nov 2018 23:46:53 -0400 (3 weeks ago)
+| | | | |           DailyScrumMeeting2 Nov2 galegoer - Eric Galego
+| * | | | 3a5a4a0 - Fri, 2 Nov 2018 23:33:39 -0400 (3 weeks ago)
+| | | | |           More modifications - liwill13
+| * | | | cf9dfa6 - Fri, 2 Nov 2018 23:32:03 -0400 (3 weeks ago)
+| | | | |           Buttons should now change mode -liwill13 - liwill13
+| * | | | cb08cb7 - Fri, 2 Nov 2018 23:09:58 -0400 (3 weeks ago)
+| | | | |           Dailyscrum liwill13 - liwill13
+| * | | | 45c8625 - Fri, 2 Nov 2018 21:02:03 -0400 (3 weeks ago)
+| |/ / /            Modified sprintbacklog - liwill13
+| * | |   c382ce3 - Fri, 2 Nov 2018 20:58:49 -0400 (3 weeks ago)
+| |\ \ \            Bug1 merged -liwill13 - liwill13
+| | * | | cbafc8c - Fri, 2 Nov 2018 20:43:23 -0400 (3 weeks ago) (origin/Bug1)
+| | | | |           Finishing up Bug1 -liwill13 - liwill13
+| | * | | 7e6a1d5 - Fri, 2 Nov 2018 15:34:41 -0400 (3 weeks ago)
+| | | | |           Bug1 Complete - liwill13
+| | * | | 07dfb75 - Fri, 2 Nov 2018 15:19:27 -0400 (3 weeks ago)
+| | | | |           Bug1 Modified - liwill13
+| | * | | 3665fae - Fri, 2 Nov 2018 14:49:33 -0400 (3 weeks ago)
+| | | | |           Bug1 Currently Complete -liwill13 - liwill13
+| | * | | 7661330 - Fri, 2 Nov 2018 01:05:18 -0400 (4 weeks ago)
+| | | | |           Bug1 Complete -liwill13 - liwill13
+| | * | | 0d833ec - Thu, 1 Nov 2018 22:42:55 -0400 (4 weeks ago)
+| | | | |           Modified bug1 - liwill13
+| | * | | 9655e38 - Thu, 1 Nov 2018 21:20:55 -0400 (4 weeks ago)
+| | | | |           Bug1 in progress adding squiggle image -liwill13 - liwill13
+| | * | | 022703e - Thu, 1 Nov 2018 14:09:22 -0400 (4 weeks ago)
+| | | | |           Bug1 in Progress -liwill13 - liwill13
+| * | | | d4b55f1 - Fri, 2 Nov 2018 15:47:21 -0400 (3 weeks ago)
+| | | | |           Modified sprintbacklog - liwill13
+| * | | |   27bcb95 - Fri, 2 Nov 2018 15:41:47 -0400 (3 weeks ago)
+| |\ \ \ \            Merging Userstory3 arnejagu - arnejagu
+| | * | | | 9ed3e7c - Fri, 2 Nov 2018 15:34:40 -0400 (3 weeks ago) (origin/UserStory3)
+| | | | | |           UserStory3 Complete arnejagu - arnejagu
+| | * | | | b32d17c - Thu, 1 Nov 2018 23:54:50 -0400 (4 weeks ago)
+| | | | | |           added stuff for UserStory3 almost working - arnejagu
+| * | | | | 780b630 - Fri, 2 Nov 2018 15:04:09 -0400 (3 weeks ago)
+| |/ / / /            added pictures - liwill13
+| * | | | f05bb60 - Thu, 1 Nov 2018 22:10:37 -0400 (4 weeks ago)
+| | | | |           DailyScrumMeeting2 galegoer - Eric Galego
+| * | | | d76a6b4 - Thu, 1 Nov 2018 21:55:58 -0400 (4 weeks ago)
+| | | | |           Backlog updated - liwill13
+| * | | | 8ce1532 - Thu, 1 Nov 2018 21:24:28 -0400 (4 weeks ago)
+| | |_|/            Daily scrum meeting updated -liwill13 - liwill13
+| |/| |   
+* | | | 4ce2362 - Fri, 2 Nov 2018 15:23:57 -0400 (3 weeks ago)
+|/ / /            Fill With Some Errors - Eric Galego
+* | | 0a5744a - Wed, 31 Oct 2018 23:31:49 -0400 (4 weeks ago)
+| | |           dailyScrumMeeting2 October 31 galegoer - Eric Galego
+* | | 00db449 - Thu, 1 Nov 2018 02:40:36 -0400 (4 weeks ago)
+|/ /            Scrum updated - askarya2
+* | c9f08d2 - Wed, 31 Oct 2018 22:33:53 -0400 (4 weeks ago)
+|/            Filling in dailyscrum info -liwill13 - liwill13
+* b0ec08a - Wed, 31 Oct 2018 19:35:58 -0400 (4 weeks ago)
+|           Bug11 liwilll13 - Eric Galego
+* 8824981 - Wed, 31 Oct 2018 19:24:36 -0400 (4 weeks ago)
+|           Bug11 complete liwilll13 - Eric Galego
+*   2258045 - Wed, 31 Oct 2018 17:58:10 -0400 (4 weeks ago)
+|\            UserStory2 merged - Eric Galego
+| * fd51968 - Wed, 31 Oct 2018 17:43:04 -0400 (4 weeks ago)
+| |           UserStory 2 complete, but has bug -liwill13 - Eric Galego
+* | e802b5e - Wed, 31 Oct 2018 17:35:25 -0400 (4 weeks ago)
+|/            member info - arnejagu
+* 6155c88 - Wed, 31 Oct 2018 16:25:24 -0400 (4 weeks ago)
+|           UserStory1 galegoer - Eric Galego
+* 579140a - Tue, 30 Oct 2018 16:16:20 -0400 (4 weeks ago)
+|           Eric Contact Info - Eric Galego
+* 083faf4 - Mon, 29 Oct 2018 21:49:11 -0400 (4 weeks ago)
+|           Add contact info - liwill13
+* b5becdd - Mon, 29 Oct 2018 20:53:27 -0400 (4 weeks ago)
+            Added Assignment2 - Arnold Rosenbloom

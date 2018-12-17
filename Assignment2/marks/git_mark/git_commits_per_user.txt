@@ -1,0 +1,170 @@
+liwill13 (66):
+      Add contact info
+      Filling in dailyscrum info -liwill13
+      Bug1 in Progress -liwill13
+      Bug1 in progress adding squiggle image -liwill13
+      Daily scrum meeting updated -liwill13
+      Backlog updated
+      Modified bug1
+      Bug1 Complete -liwill13
+      Bug1 Currently Complete -liwill13
+      added pictures
+      Bug1 Modified
+      Bug1 Complete
+      Modified sprintbacklog
+      Finishing up Bug1 -liwill13
+      Modified sprintbacklog
+      Bug 2 In progress liwill13
+      Dailyscrum liwill13
+      Buttons should now change mode -liwill13
+      More modifications
+      Bug 2 Complete -liwill13
+      Added UserStory Square
+      UserStory8 In Progress
+      UserStory8 Finished
+      Color icons added
+      Daily scrum modified
+      Daily scrum updated
+      daily scrum updated
+      Daily scrum update
+      Bug3 in progress
+      Bug3 in progress
+      fixed a bracket in master
+      Bug3 almost complete
+      Dailyscrum updated
+      Circle and square behaviour created
+      Bug3 complete
+      Daily scrum updated
+      sprintbacklog update
+      Product/sprint log updated
+      Userstory12 Finished
+      PolyLine implmentation complete with some bugs
+      Daily scrum updated
+      PolyLine in progress
+      Temporary added Line
+      PolyLine nearly complete
+      Daily scrum update
+      backlog update
+      backlog update
+      finishing up
+      UserStory11 Complete
+      Fixed some bugs with polyLine
+      daily scrum
+      no notable change...
+      polyfeedback in progress
+      Userstory 14 Complete
+      daily scrum update
+      fixed error with undo and redo polylines
+      backlog modified
+      modified style chooser panel
+      daily scrum modified
+      daily scrum
+      Bug 10 started
+      bug10 stuff
+      javadocs complete git asd ads ad ?
+      java docs merged
+      architechture modified
+      daily scrum
+
+Eric Galego (43):
+      Eric Contact Info
+      UserStory1 galegoer
+      UserStory 2 complete, but has bug -liwill13
+      Bug11 complete liwilll13
+      Bug11 liwilll13
+      UserStory4NotTested galegoer
+      dailyScrumMeeting2 October 31 galegoer
+      DailyScrumMeeting2 galegoer
+      Fill With Some Errors
+      DailyScrumMeeting2 Nov2 galegoer
+      UserStory4 Complete galegoer
+      UserStory6 Complete w/ Merges galegoer
+      dailyScrumMeeting2 galegoer
+      DailyScrumMeeting2 galegoer
+      DailyScrumMeeting2 galegoer
+      dailyScrumMeeting2 galegoer
+      Bug5 some changes
+      Rough outline Design Pattern for repaint
+      DailyScrumMeeting2 galegoer
+      Rough Command Design(Not Working)
+      dailyScrumMeeting2 galegoer
+      Deleted Unneccessary File
+      Bug4 Complete
+      Updated backlogs
+      Bug12 Complete
+      Some more updates to Backlogs
+      Squiggle almost done
+      dailyScrumMeeting2 galegoer
+      some changes
+      Squiggle is dotted line
+      Squiggle still not working
+      dailyScrumMeeting2 galegoer
+      DailyScrumMeeting2 galegoer
+      UserStory10 complete
+      dailyScrumMeeting2 galegoer
+      DailyScrumMeeting2 galegoer
+      dailyScrumMeeting2 galegoer
+      Most of my Javadoc
+      some more changes
+      javadoc complete
+      dailyScrum galegoer
+      dailyScrum galegoer
+      dailyScrum galegoer
+
+askarya2 (29):
+      Scrum updated
+      askarya2 added new javaclass allowing for buttons of color choices for userstory5
+      UserStory5, background color changed, color buttons work now
+      UserStory complete for cicle and squiggle
+      Scrum update
+      Scrum update
+      User Story 5
+      Works for rectangles now too, userstory 5
+      user5 works for rectngle now
+      UserStory5 works for squares
+      askarya2 UserStory9 Completed
+      Clear buton completed askarya2
+      askarya2 another scrum update
+      another Scrum update, askarya2
+      Scrum update, askarya2
+      Scrum update askarya2
+      Scrum update
+      Scrum update askarya2
+      Scrum update, askarya2 -_____-
+      Scrum update
+      Update askarya2
+      Color pannel update
+      Better color panel, still not functioning
+      Javadoc update askarya2
+      More colors added
+      quick color fix
+      Another quick color fix
+      shoooot
+      Colors to fit the new window size
+
+arnejagu (18):
+      member info
+      added stuff for UserStory3 almost working
+      UserStory3 Complete arnejagu
+      Scrum meeting update
+      Scrum meeting update
+      UserStory7
+      scrum
+      Scrum update
+      made some changes
+      UserStory13 finished
+      Finished UserStory15
+      changes
+      making some more changes
+      scrum update
+      changes
+      javadocs finished
+      scrum update
+      scrum update
+
+Arnold Rosenbloom (1):
+      Added Assignment2
+
+talk2 (1):
+      Bug5 complete
+
