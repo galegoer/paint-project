@@ -1,10 +1,28 @@
-arnejagu,
-askarya2,
-galegoer,
-liwill13,
+arnejagu, 20%
+askarya2, 20%
+galegoer, 30%
+liwill13, 30%
 --------------------------
 Please put revised work distribution above.
 Total above should be 100%
 Explain reason for change here.
+
+Unfortunately, we placed our UTORID's in the sprintbacklog instead of the productbacklog so none of the
+marks were redistributed based on what each member did. We have added our UTORID's to all completed
+Userstories and Bugs in the productbacklog and hope each of our marks are adjusted accordingly.
+
+The revised distrubtion above is just an idea of what we feel each member did based on our productbacklog as 
+we do not know the exact weight of each specific bug/UserStory.
+
+Since our marks for architecture only came from code written by galegoer
+and liwill13, we feel like they should receive more credit.
+
+
 --------------------------
 Other marking issues go below
+
+
+
+
+
+

@@ -358,7 +358,7 @@ ISSUE    : To have the feature to be able to draw rounded rectangles.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 TYPE     : USER STORY 15 : arnejagu
-NAME     : Implement rounded rectangles.
+NAME     : Implement rounded squares.
 OWNER    : 
 PRIORITY :
 ESTIMATE : 2 hours
